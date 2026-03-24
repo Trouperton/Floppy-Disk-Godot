@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dltqfqq4a1akj"]
+
+[ext_resource type="MeshLibrary" uid="uid://cqwiys68401cq" path="res://resources/ML_Prototype.tres" id="1_yvvix"]
+[ext_resource type="Script" uid="uid://to5nvc5amn32" path="res://_dev/SegmentMove.gd" id="2_wkt5j"]
+[ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/CharacterController.gd" id="3_6r4da"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_wfdhh"]
+sky_material = SubResource("ProceduralSkyMaterial_7nyux")
+
+[sub_resource type="Environment" id="Environment_2v7ry"]
+background_mode = 2
+sky = SubResource("Sky_wfdhh")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_wfdhh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2v7ry"]
+
+[node name="Node3D" type="Node3D" unique_id=1983202797]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276924402]
+transform = Transform3D(0.5446391, 0.72631, -0.41933522, 0, 0.49999997, 0.86602545, 0.8386705, -0.47167134, 0.27231953, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=688706798]
+environment = SubResource("Environment_2v7ry")
+
+[node name="SegmentManager" type="Node3D" parent="." unique_id=260624578]
+
+[node name="GridMap" type="GridMap" parent="SegmentManager" unique_id=142029549]
+mesh_library = ExtResource("1_yvvix")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(1, 0, 655360, 65537, 0, 655360, 131073, 0, 655360, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0, 917505, 0, 0, 917504, 0, 0, 917506, 0, 0, 983039, 0, 0, 983038, 0, 0, 917507, 0, 0, 917508, 0, 0)
+}
+script = ExtResource("2_wkt5j")
+metadata/_editor_floor_ = Vector3(0, 0, -1)
+
+[node name="GridMap2" type="GridMap" parent="SegmentManager" unique_id=1865966212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+mesh_library = ExtResource("1_yvvix")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(-2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, 917505, 0, 0, 917504, 0, 0, 917506, 0, 0, 983039, 0, 0, 983038, 0, 0, 917507, 0, 0, 917508, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0)
+}
+script = ExtResource("2_wkt5j")
+metadata/_editor_floor_ = Vector3(0, 0, -1)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=387661659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.5)
+script = ExtResource("3_6r4da")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=474726639]
+mesh = SubResource("BoxMesh_wfdhh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1226839485]
+shape = SubResource("SphereShape3D_2v7ry")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1100286366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 10)
+current = true
