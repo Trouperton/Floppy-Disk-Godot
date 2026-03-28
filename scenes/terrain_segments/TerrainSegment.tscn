@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://b12h8njnd3dna"]
 
 [ext_resource type="MeshLibrary" uid="uid://cqwiys68401cq" path="res://resources/ML_Prototype.tres" id="1_tp6my"]
+[ext_resource type="Script" uid="uid://p0skfi2qf02d" path="res://code/scripts/ScoreThreshold.gd" id="2_q3rvf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tp6my"]
+size = Vector3(1, 14, 1)
 
 [node name="TerrainSegment" type="GridMap" unique_id=960714774 groups=["obstacle"]]
 mesh_library = ExtResource("1_tp6my")
@@ -9,3 +13,14 @@ data = {
 "cells": PackedInt32Array(-65536, 0, 0, 917504, 0, 0, -65535, 0, 0, 917505, 0, 0, -65534, 0, 0, 917506, 0, 0, -65533, 0, 0, 3, 0, 655360, 65539, 0, 655360, 131075, 0, 655360, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, -65532, 0, 0, 917508, 0, 0, -65531, 0, 0, 917509, 0, 0, -65530, 0, 0, 917510, 0, 0)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="ScoreThreshold" type="Area3D" parent="." unique_id=812442303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.009062, 7.076864, 0)
+script = ExtResource("2_q3rvf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScoreThreshold" unique_id=1564840787]
+shape = SubResource("BoxShape3D_tp6my")
+
+[connection signal="area_entered" from="ScoreThreshold" to="ScoreThreshold" method="_on_area_entered"]
+[connection signal="area_shape_entered" from="ScoreThreshold" to="ScoreThreshold" method="_on_area_shape_entered"]
+[connection signal="body_entered" from="ScoreThreshold" to="ScoreThreshold" method="_on_body_entered"]

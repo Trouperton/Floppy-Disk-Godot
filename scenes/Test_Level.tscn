@@ -43,7 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 [node name="TerrainSegment_HighTight" parent="SegmentManager" unique_id=1702239990 instance=ExtResource("3_wkt5j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=387661659]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=387661659 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.5)
 script = ExtResource("3_6r4da")
 
@@ -56,3 +56,20 @@ shape = SubResource("SphereShape3D_2v7ry")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1100286366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 10)
 current = true
+
+[node name="HUD" type="Control" parent="." unique_id=1578123926]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1952512950]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 141.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 32
+text = "Score: 0"
