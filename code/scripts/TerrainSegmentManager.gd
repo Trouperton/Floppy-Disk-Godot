@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var base_terrain_speed = 1.0
 var terrain_segments
 
 const DEBUG_IDENTIFIER = "[TerrainSegmentManager.gd]"
@@ -13,8 +14,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	for segment in terrain_segments:
-		segment.position.x -= 1 * delta
-	pass
+		segment.position.x -= base_terrain_speed * delta
 
 func find_segments():
 	terrain_segments = get_children()

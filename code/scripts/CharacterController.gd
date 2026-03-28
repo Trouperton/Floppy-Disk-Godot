@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const JUMP_VELOCITY = 4.5
+@export var jump_velocity = 4.5
 
 func _physics_process(delta: float) -> void:
 	if get_slide_collision_count() > 0:
@@ -15,6 +15,6 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept"):
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 
 	move_and_slide()
