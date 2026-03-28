@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dltqfqq4a1akj"]
 
+[ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/TerrainSegmentManager.gd" id="1_wkt5j"]
 [ext_resource type="MeshLibrary" uid="uid://cqwiys68401cq" path="res://resources/ML_Prototype.tres" id="1_yvvix"]
 [ext_resource type="Script" uid="uid://to5nvc5amn32" path="res://code/scripts/TerrainSegment.gd" id="2_wkt5j"]
 [ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/CharacterController.gd" id="3_6r4da"]
@@ -31,6 +32,7 @@ shadow_enabled = true
 environment = SubResource("Environment_2v7ry")
 
 [node name="SegmentManager" type="Node3D" parent="." unique_id=260624578]
+script = ExtResource("1_wkt5j")
 
 [node name="GridMap" type="GridMap" parent="SegmentManager" unique_id=142029549 groups=["obstacle"]]
 mesh_library = ExtResource("1_yvvix")
