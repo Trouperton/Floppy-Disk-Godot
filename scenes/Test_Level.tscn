@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dltqfqq4a1akj"]
 
 [ext_resource type="MeshLibrary" uid="uid://cqwiys68401cq" path="res://resources/ML_Prototype.tres" id="1_yvvix"]
-[ext_resource type="Script" uid="uid://to5nvc5amn32" path="res://_dev/SegmentMove.gd" id="2_wkt5j"]
+[ext_resource type="Script" uid="uid://to5nvc5amn32" path="res://code/scripts/TerrainSegment.gd" id="2_wkt5j"]
 [ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/CharacterController.gd" id="3_6r4da"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
