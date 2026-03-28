@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/TerrainSegmentManager.gd" id="1_wkt5j"]
 [ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain_segments/TerrainSegment.tscn" id="2_wkt5j"]
+[ext_resource type="PackedScene" uid="uid://1wbg62mj1x38" path="res://scenes/terrain_segments/TerrainSegment_High.tscn" id="3_5slh6"]
 [ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/CharacterController.gd" id="3_6r4da"]
 [ext_resource type="PackedScene" uid="uid://bj4ypjmqepujv" path="res://scenes/terrain_segments/TerrainSegment_HighTight.tscn" id="3_wkt5j"]
 
@@ -36,8 +37,11 @@ script = ExtResource("1_wkt5j")
 
 [node name="TerrainSegment" parent="SegmentManager" unique_id=468532464 instance=ExtResource("2_wkt5j")]
 
-[node name="TerrainSegment2" parent="SegmentManager" unique_id=960714774 instance=ExtResource("3_wkt5j")]
+[node name="TerrainSegment3" parent="SegmentManager" unique_id=960714774 instance=ExtResource("3_5slh6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="TerrainSegment2" parent="SegmentManager" unique_id=627946022 instance=ExtResource("3_wkt5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=387661659]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.5)
