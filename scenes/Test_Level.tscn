@@ -36,7 +36,7 @@ environment = SubResource("Environment_2v7ry")
 
 [node name="SegmentManager" type="Node3D" parent="." unique_id=260624578]
 script = ExtResource("1_wkt5j")
-base_terrain_speed = 5.0
+base_terrain_speed = 2.0
 
 [node name="TerrainSegment" parent="SegmentManager" unique_id=468532464 instance=ExtResource("2_wkt5j")]
 

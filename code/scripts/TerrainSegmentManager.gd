@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var base_terrain_speed = 1.0
+@export var base_terrain_speed: float = 1.0
 var terrain_segments
 
 const DEBUG_IDENTIFIER = "[TerrainSegmentManager.gd]"
