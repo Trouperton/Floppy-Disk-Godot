@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/TerrainSegmentManager.gd" id="1_wkt5j"]
 [ext_resource type="MeshLibrary" uid="uid://cqwiys68401cq" path="res://resources/ML_Prototype.tres" id="1_yvvix"]
-[ext_resource type="Script" uid="uid://to5nvc5amn32" path="res://code/scripts/TerrainSegment.gd" id="2_wkt5j"]
 [ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/CharacterController.gd" id="3_6r4da"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
@@ -40,7 +39,6 @@ cell_size = Vector3(1, 1, 1)
 data = {
 "cells": PackedInt32Array(1, 0, 655360, 65537, 0, 655360, 131073, 0, 655360, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0, 917505, 0, 0, 917504, 0, 0, 917506, 0, 0, 983039, 0, 0, 983038, 0, 0, 917507, 0, 0, 917508, 0, 0)
 }
-script = ExtResource("2_wkt5j")
 metadata/_editor_floor_ = Vector3(0, 0, -1)
 
 [node name="GridMap2" type="GridMap" parent="SegmentManager" unique_id=1865966212 groups=["obstacle"]]
@@ -50,7 +48,6 @@ cell_size = Vector3(1, 1, 1)
 data = {
 "cells": PackedInt32Array(-2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, 917505, 0, 0, 917504, 0, 0, 917506, 0, 0, 983039, 0, 0, 983038, 0, 0, 917507, 0, 0, 917508, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0)
 }
-script = ExtResource("2_wkt5j")
 metadata/_editor_floor_ = Vector3(0, 0, -1)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=387661659]
