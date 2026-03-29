@@ -18,4 +18,4 @@ func _process(delta: float) -> void:
 
 func find_segments():
 	terrain_segments = get_children()
-	print(terrain_segments)
+	print(DEBUG_IDENTIFIER, "[find_segments()] found ", terrain_segments)

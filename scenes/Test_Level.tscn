@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dltqfqq4a1akj"]
 
+[ext_resource type="Script" uid="uid://c8fbihv1boefu" path="res://Code/Scripts/LevelManager.gd" id="1_5slh6"]
 [ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/TerrainSegmentManager.gd" id="1_wkt5j"]
 [ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain_segments/TerrainSegment.tscn" id="2_wkt5j"]
 [ext_resource type="PackedScene" uid="uid://1wbg62mj1x38" path="res://scenes/terrain_segments/TerrainSegment_High.tscn" id="3_5slh6"]
@@ -23,7 +24,9 @@ glow_enabled = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2v7ry"]
 
-[node name="Node3D" type="Node3D" unique_id=1983202797]
+[node name="World" type="Node3D" unique_id=1983202797 node_paths=PackedStringArray("score_label")]
+script = ExtResource("1_5slh6")
+score_label = NodePath("HUD/ScoreLabel")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276924402]
 transform = Transform3D(0.5446391, 0.72631, -0.41933522, 0, 0.49999997, 0.86602545, 0.8386705, -0.47167134, 0.27231953, 0, 0, 0)
