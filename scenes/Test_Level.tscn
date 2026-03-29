@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/TerrainSegmentManager.gd" id="1_wkt5j"]
 [ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="2_wkt5j"]
 [ext_resource type="PackedScene" uid="uid://1wbg62mj1x38" path="res://scenes/terrain/segments/TerrainSegment_High.tscn" id="3_5slh6"]
-[ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/CharacterController.gd" id="3_6r4da"]
 [ext_resource type="PackedScene" uid="uid://bj4ypjmqepujv" path="res://scenes/terrain/segments/TerrainSegment_HighTight.tscn" id="3_wkt5j"]
+[ext_resource type="PackedScene" uid="uid://b7gbl2o8jgcy2" path="res://scenes/terrain/segments/TerrainSegment_Empty.tscn" id="6_jyykg"]
+[ext_resource type="PackedScene" uid="uid://ba0vxdpdxmw6q" path="res://scenes/PlayerFloppy.tscn" id="7_jyykg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,10 +20,6 @@ background_mode = 2
 sky = SubResource("Sky_wfdhh")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_wfdhh"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_2v7ry"]
 
 [node name="World" type="Node3D" unique_id=1983202797 node_paths=PackedStringArray("score_label")]
 script = ExtResource("1_5slh6")
@@ -47,15 +44,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 [node name="TerrainSegment_HighTight" parent="SegmentManager" unique_id=1702239990 instance=ExtResource("3_wkt5j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=387661659 groups=["player"]]
+[node name="TerrainSegment_Empty" parent="SegmentManager" unique_id=1423568598 instance=ExtResource("6_jyykg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="TerrainSegment_Empty2" parent="SegmentManager" unique_id=933223107 instance=ExtResource("6_jyykg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+
+[node name="TerrainSegment_Empty3" parent="SegmentManager" unique_id=2046376729 instance=ExtResource("6_jyykg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 0)
+
+[node name="PlayerFloppy" parent="." unique_id=188171447 instance=ExtResource("7_jyykg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.5)
-script = ExtResource("3_6r4da")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=474726639]
-mesh = SubResource("BoxMesh_wfdhh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1226839485]
-shape = SubResource("SphereShape3D_2v7ry")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1100286366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 10)

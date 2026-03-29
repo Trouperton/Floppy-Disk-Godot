@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b7gbl2o8jgcy2"]
+
+[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="1_juioh"]
+
+[node name="TerrainSegment_Empty" unique_id=960714774 instance=ExtResource("1_juioh")]
+data = {
+"cells": PackedInt32Array(-65536, 0, 0, 917504, 0, 0, -65535, 0, 0, 917505, 0, 0, -65534, 0, 0, 917506, 0, 0, -65533, 0, 0, 917507, 0, 0, -65532, 0, 0, 917508, 0, 0, -65531, 0, 0, 917509, 0, 0, -65530, 0, 0, 917510, 0, 0)
+}
