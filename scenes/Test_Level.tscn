@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c8fbihv1boefu" path="res://Code/Scripts/LevelManager.gd" id="1_5slh6"]
 [ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/TerrainSegmentManager.gd" id="1_wkt5j"]
-[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain_segments/TerrainSegment.tscn" id="2_wkt5j"]
-[ext_resource type="PackedScene" uid="uid://1wbg62mj1x38" path="res://scenes/terrain_segments/TerrainSegment_High.tscn" id="3_5slh6"]
+[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="2_wkt5j"]
+[ext_resource type="PackedScene" uid="uid://1wbg62mj1x38" path="res://scenes/terrain/segments/TerrainSegment_High.tscn" id="3_5slh6"]
 [ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/CharacterController.gd" id="3_6r4da"]
-[ext_resource type="PackedScene" uid="uid://bj4ypjmqepujv" path="res://scenes/terrain_segments/TerrainSegment_HighTight.tscn" id="3_wkt5j"]
+[ext_resource type="PackedScene" uid="uid://bj4ypjmqepujv" path="res://scenes/terrain/segments/TerrainSegment_HighTight.tscn" id="3_wkt5j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
