@@ -19,6 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.009062, 7.076864, 0)
 script = ExtResource("2_q3rvf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ScoreThreshold" unique_id=1564840787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 shape = SubResource("BoxShape3D_tp6my")
 
 [connection signal="area_entered" from="ScoreThreshold" to="ScoreThreshold" method="_on_area_entered"]
