@@ -4,7 +4,6 @@ extends CharacterBody3D
 
 func _physics_process(delta: float) -> void:
 	if get_slide_collision_count() > 0:
-		print(get_slide_collision(0).get_collider(0).get_groups())
 		for group in get_slide_collision(0).get_collider(0).get_groups():
 			if group == "obstacle":
 				print("lose")
