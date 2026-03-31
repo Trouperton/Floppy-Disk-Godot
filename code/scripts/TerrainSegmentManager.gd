@@ -1,5 +1,8 @@
 extends Node3D
 
+@export var terrain_check_interval: float = 5;
+var terrain_check_timer: float = 0
+
 @export var base_terrain_speed: float = 1.0
 var terrain_segments
 
@@ -12,9 +15,30 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	for segment in terrain_segments:
 		segment.position.x -= base_terrain_speed * delta
+	
+	check_terrain()
+	
+	terrain_check_timer += delta
+
+
 
 func find_segments():
 	terrain_segments = get_children()
 	print_debug(name, " node found ", terrain_segments)
 	if terrain_segments.size() == 0:
 		printerr(name, " failed to find terrain segments!")
+
+
+func check_terrain():
+	if terrain_check_timer > terrain_check_interval:
+		var segments_freed = false
+		for segment in terrain_segments:
+			if segment.position.x < -20:
+				segments_freed = true
+				remove_child(segment)
+				segment.queue_free()
+		
+		if segments_freed:
+			find_segments()
+		
+		terrain_check_timer = 0
