@@ -8,6 +8,9 @@ var can_dash = true
 enum Animation_States {RESTING ,RISING, FALLING, VERTICAL_DASH}
 var animation_state: int
 
+func _ready() -> void:
+	$"Floppy Disk/AnimationPlayer".animation_finished.connect(_on_animation_finished)
+
 func _physics_process(delta: float) -> void:
 	animation_state = Animation_States.RESTING
 	if velocity.y > 0:
@@ -52,17 +55,6 @@ func dash():
 			animation_state = Animation_States.VERTICAL_DASH
 			start_dash_cooldown()
 
-func animate():
-	match animation_state:
-		Animation_States.RISING:
-			$"Floppy Disk".rotation_degrees.z = 15
-			$"Floppy Disk/AnimationPlayer".play("idle")
-		Animation_States.FALLING:
-			$"Floppy Disk".rotation_degrees.z -= 1.5
-			$"Floppy Disk/AnimationPlayer".play("idle")
-		Animation_States.VERTICAL_DASH:
-			$"Floppy Disk".rotation_degrees = Vector3(0, 0, 0)
-			$"Floppy Disk/AnimationPlayer".play("spin")
 
 func start_dash_cooldown():
 	can_dash = false
@@ -71,3 +63,22 @@ func start_dash_cooldown():
 
 func _on_dash_cooldown_timer_timeout() -> void:
 	can_dash = true
+
+
+func animate():
+	match animation_state:
+		Animation_States.RISING:
+			#$"Floppy Disk".rotation_degrees.z = 15
+			$"Floppy Disk/AnimationPlayer".play("idle")
+		Animation_States.FALLING:
+			#$"Floppy Disk".rotation_degrees.z -= 1.5
+			if $"Floppy Disk/AnimationPlayer".current_animation != "falling_1":
+				$"Floppy Disk/AnimationPlayer".play("falling_0")
+		Animation_States.VERTICAL_DASH:
+			$"Floppy Disk".rotation_degrees = Vector3(0, 0, 0)
+			$"Floppy Disk/AnimationPlayer".play("spin")
+
+
+func _on_animation_finished(name: String):
+	if name == "falling_0":
+		$"Floppy Disk/AnimationPlayer".play("falling_1")
