@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dltqfqq4a1akj"]
 
-[ext_resource type="Script" uid="uid://c8fbihv1boefu" path="res://Code/Scripts/LevelManager.gd" id="1_5slh6"]
+[ext_resource type="Script" uid="uid://c8fbihv1boefu" path="res://code/scripts/LevelManager.gd" id="1_5slh6"]
 [ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/TerrainSegmentManager.gd" id="1_wkt5j"]
 [ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="2_wkt5j"]
 [ext_resource type="PackedScene" uid="uid://1wbg62mj1x38" path="res://scenes/terrain/segments/TerrainSegment_High.tscn" id="3_5slh6"]
