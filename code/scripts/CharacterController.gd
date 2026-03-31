@@ -37,18 +37,18 @@ func dash():
 		elif Input.is_action_just_pressed("dash_down"):
 			velocity.y = -vertical_dash_velocity
 			start_dash_cooldown()
-	
-	match animation_state:
-		Animation_States.RISING:
-			$"Floppy Disk".rotation_degrees.z = 15
-		Animation_States.FALLING:
-			$"Floppy Disk".rotation_degrees.z -= 1.5
 
 func animate():
 	if velocity.y > 0:
 		animation_state = Animation_States.RISING
 	else:
 		animation_state = Animation_States.FALLING
+	
+	match animation_state:
+		Animation_States.RISING:
+			$"Floppy Disk".rotation_degrees.z = 15
+		Animation_States.FALLING:
+			$"Floppy Disk".rotation_degrees.z -= 1.5
 
 func start_dash_cooldown():
 	can_dash = false
