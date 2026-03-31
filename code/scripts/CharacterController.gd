@@ -68,10 +68,8 @@ func _on_dash_cooldown_timer_timeout() -> void:
 func animate():
 	match animation_state:
 		Animation_States.RISING:
-			#$"Floppy Disk".rotation_degrees.z = 15
 			$"Floppy Disk/AnimationPlayer".play("idle")
 		Animation_States.FALLING:
-			#$"Floppy Disk".rotation_degrees.z -= 1.5
 			if $"Floppy Disk/AnimationPlayer".current_animation != "falling_1":
 				$"Floppy Disk/AnimationPlayer".play("falling_0")
 		Animation_States.VERTICAL_DASH:
