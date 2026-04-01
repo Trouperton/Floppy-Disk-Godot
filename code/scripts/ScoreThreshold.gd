@@ -1,7 +1,7 @@
 extends Area3D
 
 signal score_threshold_triggered(points: int)
-@onready var level_manager = $"../../.."
+@onready var level_manager = $"../../../.."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
