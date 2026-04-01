@@ -35,6 +35,7 @@ environment = SubResource("Environment_2v7ry")
 [node name="SegmentManager" type="Node3D" parent="." unique_id=260624578]
 script = ExtResource("1_wkt5j")
 base_terrain_speed = 2.0
+terrain_segment_spawn_collection = Array[PackedScene]([ExtResource("2_wkt5j"), ExtResource("3_5slh6"), ExtResource("3_wkt5j")])
 
 [node name="TerrainSegment" parent="SegmentManager" unique_id=468532464 instance=ExtResource("2_wkt5j")]
 

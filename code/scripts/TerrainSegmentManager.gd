@@ -1,10 +1,12 @@
 extends Node3D
 
+@export var base_terrain_speed: float = 1.0
+var terrain_segments
+
 @export var terrain_check_interval: float = 5;
 var terrain_check_timer: float = 0
 
-@export var base_terrain_speed: float = 1.0
-var terrain_segments
+@export var terrain_segment_spawn_collection: Array[PackedScene]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -43,7 +45,7 @@ func check_terrain():
 		
 		if furthest_forward.position.x < 20:
 			print("should create more terrain")
-			for i in range(5):
+			for i in 5:
 				print("placing segment")
 		
 		if segments_changed:
