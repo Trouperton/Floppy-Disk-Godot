@@ -43,22 +43,22 @@ autostart = true
 
 [node name="TerrainSegments" type="Node3D" parent="TerrainSegmentManager" unique_id=180250620]
 
-[node name="TerrainSegment" parent="TerrainSegmentManager/TerrainSegments" unique_id=468532464 instance=ExtResource("2_wkt5j")]
-
-[node name="TerrainSegment_High" parent="TerrainSegmentManager/TerrainSegments" unique_id=960714774 instance=ExtResource("3_5slh6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
-
-[node name="TerrainSegment_HighTight" parent="TerrainSegmentManager/TerrainSegments" unique_id=1702239990 instance=ExtResource("3_wkt5j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
-
-[node name="TerrainSegment_Empty" parent="TerrainSegmentManager/TerrainSegments" unique_id=1423568598 instance=ExtResource("6_jyykg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+[node name="TerrainSegment_Empty3" parent="TerrainSegmentManager/TerrainSegments" unique_id=2046376729 instance=ExtResource("6_jyykg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 0)
 
 [node name="TerrainSegment_Empty2" parent="TerrainSegmentManager/TerrainSegments" unique_id=933223107 instance=ExtResource("6_jyykg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
 
-[node name="TerrainSegment_Empty3" parent="TerrainSegmentManager/TerrainSegments" unique_id=2046376729 instance=ExtResource("6_jyykg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 0)
+[node name="TerrainSegment_Empty" parent="TerrainSegmentManager/TerrainSegments" unique_id=1423568598 instance=ExtResource("6_jyykg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="TerrainSegment_Empty4" parent="TerrainSegmentManager/TerrainSegments" unique_id=960714774 instance=ExtResource("6_jyykg")]
+
+[node name="TerrainSegment_HighTight" parent="TerrainSegmentManager/TerrainSegments" unique_id=1702239990 instance=ExtResource("3_wkt5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="TerrainSegment_High" parent="TerrainSegmentManager/TerrainSegments" unique_id=1607352331 instance=ExtResource("3_5slh6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 
 [node name="PlayerFloppy" parent="." unique_id=188171447 instance=ExtResource("7_jyykg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.5)
