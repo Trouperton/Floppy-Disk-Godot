@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 	terrain_check_timer += delta
 
 
-
 func find_segments():
 	terrain_segments = get_children()
 	print_debug(name, " node found ", terrain_segments)
@@ -31,14 +30,23 @@ func find_segments():
 
 func check_terrain():
 	if terrain_check_timer > terrain_check_interval:
-		var segments_freed = false
+		var segments_changed = false
+		var furthest_forward: GridMap
 		for segment in terrain_segments:
 			if segment.position.x < -20:
-				segments_freed = true
+				segments_changed = true
 				remove_child(segment)
 				segment.queue_free()
+			
+			if furthest_forward == null or segment.position.x > furthest_forward.position.x:
+				furthest_forward = segment
 		
-		if segments_freed:
+		if furthest_forward.position.x < 20:
+			print("should create more terrain")
+			for i in range(5):
+				print("placing segment")
+		
+		if segments_changed:
 			find_segments()
 		
 		terrain_check_timer = 0
