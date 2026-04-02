@@ -8,6 +8,8 @@ var can_dash = true
 enum Animation_States {RESTING ,RISING, FALLING, VERTICAL_DASH}
 var animation_state: int
 
+signal died
+
 func _ready() -> void:
 	$"Floppy Disk/AnimationPlayer".animation_finished.connect(_on_animation_finished)
 
@@ -28,7 +30,9 @@ func _physics_process(delta: float) -> void:
 		for group in get_slide_collision(0).get_collider(0).get_groups():
 			if group == "obstacle":
 				print("lose")
-				get_tree().reload_current_scene()
+				#get_tree().reload_current_scene()
+				get_tree().paused = true
+				died.emit()
 	
 	# Add the gravity.
 	velocity += get_gravity() * delta

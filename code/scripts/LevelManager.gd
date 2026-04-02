@@ -5,7 +5,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
-#	pass # Replace with function body.
+	#pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,3 +21,9 @@ func increase_score(points: int):
 	score += points
 	print_debug(name," node added ",points, " points, new score is " , score)
 	score_label.text = "Score: " + str(score)
+
+
+func _on_player_floppy_died() -> void:
+	$HUD.hide()
+	$EndScreen/Panel/VBoxContainer/ScoreDisplayLabel.text = str(score)
+	$EndScreen.show()
