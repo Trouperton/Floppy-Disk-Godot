@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcl6mv7qls6ph"
-path.s3tc="res://.godot/imported/Floppy Disk_T_FloppyDisk.png-1074300af955cd04cd3032320ff84e85.s3tc.ctex"
+path.s3tc="res://.godot/imported/Floppy Disk_T_FloppyDisk.png-6283ae3fadd9f8d1f2c1f2a7f88eb4f1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://art/Floppy Disk_T_FloppyDisk.png"
-dest_files=["res://.godot/imported/Floppy Disk_T_FloppyDisk.png-1074300af955cd04cd3032320ff84e85.s3tc.ctex"]
+source_file="res://art/objects/floppy_disk/Floppy Disk_T_FloppyDisk.png"
+dest_files=["res://.godot/imported/Floppy Disk_T_FloppyDisk.png-6283ae3fadd9f8d1f2c1f2a7f88eb4f1.s3tc.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://doaklmqjy54id"
-path="res://.godot/imported/Floppy Disk.glb-219d2cdd3250fbf0458e608a3a8e6c5a.scn"
+path="res://.godot/imported/Floppy Disk.glb-c0183a015a277ad9527a8ddef6b53aa0.scn"
 
 [deps]
 
-source_file="res://art/Floppy Disk.glb"
-dest_files=["res://.godot/imported/Floppy Disk.glb-219d2cdd3250fbf0458e608a3a8e6c5a.scn"]
+source_file="res://art/objects/floppy_disk/Floppy Disk.glb"
+dest_files=["res://.godot/imported/Floppy Disk.glb-c0183a015a277ad9527a8ddef6b53aa0.scn"]
 
 [params]
 
