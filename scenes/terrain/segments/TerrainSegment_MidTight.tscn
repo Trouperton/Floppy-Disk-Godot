@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bttvg1dteoe28"]
+
+[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="1_j5b15"]
+
+[node name="TerrainSegment_MidTight" unique_id=960714774 instance=ExtResource("1_j5b15")]
+data = {
+"cells": PackedInt32Array(-65536, 0, 0, 917504, 0, 0, -65535, 0, 0, 917505, 0, 0, -65534, 0, 0, 917506, 0, 0, -65533, 0, 0, 3, 0, 655360, 65539, 0, 655360, 131075, 0, 655360, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, -65532, 0, 0, 917508, 0, 0, -65531, 0, 0, 917509, 0, 0, -65530, 0, 0, 917510, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 589827, 0, 0, 655363, 0, 0)
+}

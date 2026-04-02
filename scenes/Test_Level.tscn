@@ -5,8 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="2_wkt5j"]
 [ext_resource type="PackedScene" uid="uid://1wbg62mj1x38" path="res://scenes/terrain/segments/TerrainSegment_High.tscn" id="3_5slh6"]
 [ext_resource type="PackedScene" uid="uid://bj4ypjmqepujv" path="res://scenes/terrain/segments/TerrainSegment_HighTight.tscn" id="3_wkt5j"]
+[ext_resource type="PackedScene" uid="uid://dghnsv1glw8n0" path="res://scenes/terrain/segments/TerrainSegment_Mid.tscn" id="6_8rj4q"]
 [ext_resource type="PackedScene" uid="uid://b7gbl2o8jgcy2" path="res://scenes/terrain/segments/TerrainSegment_Empty.tscn" id="6_jyykg"]
 [ext_resource type="PackedScene" uid="uid://ba0vxdpdxmw6q" path="res://scenes/PlayerFloppy.tscn" id="7_jyykg"]
+[ext_resource type="PackedScene" uid="uid://bttvg1dteoe28" path="res://scenes/terrain/segments/TerrainSegment_MidTight.tscn" id="7_kd8ca"]
+[ext_resource type="PackedScene" uid="uid://byj8xyrqufghu" path="res://scenes/terrain/segments/TerrainSegment_Low.tscn" id="8_70qg3"]
+[ext_resource type="PackedScene" uid="uid://csq3vh6rlxv56" path="res://scenes/terrain/segments/TerrainSegment_LowTight.tscn" id="9_71oo0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -35,7 +39,7 @@ environment = SubResource("Environment_2v7ry")
 [node name="TerrainSegmentManager" type="Node3D" parent="." unique_id=260624578]
 script = ExtResource("1_wkt5j")
 base_terrain_speed = 2.0
-terrain_segment_spawn_collection = Array[PackedScene]([ExtResource("2_wkt5j"), ExtResource("3_5slh6"), ExtResource("3_wkt5j")])
+terrain_segment_spawn_collection = Array[PackedScene]([ExtResource("2_wkt5j"), ExtResource("3_5slh6"), ExtResource("3_wkt5j"), ExtResource("6_8rj4q"), ExtResource("7_kd8ca"), ExtResource("8_70qg3"), ExtResource("9_71oo0")])
 
 [node name="TerrainCheckTimer" type="Timer" parent="TerrainSegmentManager" unique_id=93723995]
 wait_time = 5.0
