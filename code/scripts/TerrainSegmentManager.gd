@@ -13,6 +13,7 @@ var terrain_segments
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	find_segments()
+	check_terrain() 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,10 +43,7 @@ func check_terrain():
 			segment.queue_free()
 	
 	if furthest_forward.position.x < 25:
-		print("should create more terrain")
 		for i in minimum_segments_to_spawn:
-			print(i, "placing segment")
-			
 			var new_segment: GridMap = terrain_segment_spawn_collection[randi_range(0, terrain_segment_spawn_collection.size() - 1)].instantiate()
 			$TerrainSegments.add_child(new_segment)
 			new_segment.position.x = furthest_forward.position.x + (7 * (i + 1))

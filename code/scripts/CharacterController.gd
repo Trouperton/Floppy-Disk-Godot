@@ -77,6 +77,6 @@ func animate():
 			$"Floppy Disk/AnimationPlayer".play("spin")
 
 
-func _on_animation_finished(name: String):
-	if name == "falling_0":
+func _on_animation_finished(animation_name: String):
+	if animation_name == "falling_0":
 		$"Floppy Disk/AnimationPlayer".play("falling_1")
