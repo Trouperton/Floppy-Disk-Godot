@@ -10,5 +10,6 @@ func _process(delta: float) -> void:
 func _on_visibility_changed() -> void:
 	if visible:
 		get_tree().paused = true
+		$Panel2/VBoxContainer/ScoreDisplayLabel.text = str($"..".score)
 	else:
 		get_tree().paused = false
