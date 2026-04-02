@@ -37,16 +37,18 @@ func check_terrain():
 		if furthest_forward == null or segment.position.x > furthest_forward.position.x:
 			furthest_forward = segment
 		
-		if segment.position.x < -20:
+		if segment.position.x < -30:
 			segments_changed = true
 			$TerrainSegments.remove_child(segment)
 			segment.queue_free()
 	
-	if furthest_forward.position.x < 25:
+	if furthest_forward.position.x < 30:
 		for i in minimum_segments_to_spawn:
 			var new_segment: GridMap = terrain_segment_spawn_collection[randi_range(0, terrain_segment_spawn_collection.size() - 1)].instantiate()
 			$TerrainSegments.add_child(new_segment)
 			new_segment.position.x = furthest_forward.position.x + (7 * (i + 1))
+		
+		segments_changed = true
 	
 	if segments_changed:
 		find_segments()
