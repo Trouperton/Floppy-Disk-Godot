@@ -85,4 +85,53 @@ offset_bottom = 55.0
 theme_override_font_sizes/font_size = 32
 text = "Score: 0"
 
+[node name="EndScreen" type="Control" parent="." unique_id=520132344]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="EndScreen" unique_id=1159359007]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37
+anchor_top = 0.19100001
+anchor_right = 0.63000005
+anchor_bottom = 0.809
+offset_left = -0.23999023
+offset_top = 0.231987
+offset_right = 0.2399292
+offset_bottom = -0.23199463
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen/Panel" unique_id=544153318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="EndScreen/Panel/VBoxContainer" unique_id=630281201]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Final Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="EndScreen/Panel/VBoxContainer" unique_id=1060195370]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "00000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="TerrainSegmentManager/TerrainCheckTimer" to="TerrainSegmentManager" method="_on_terrain_check_timer_timeout"]
