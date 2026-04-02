@@ -156,6 +156,7 @@ text = "Exit"
 script = ExtResource("13_70qg3")
 
 [node name="PauseScreen" type="Control" parent="." unique_id=235882125]
+process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -176,3 +177,4 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_70qg3")
 
 [connection signal="timeout" from="TerrainSegmentManager/TerrainCheckTimer" to="TerrainSegmentManager" method="_on_terrain_check_timer_timeout"]
 [connection signal="died" from="PlayerFloppy" to="." method="_on_player_floppy_died"]
+[connection signal="visibility_changed" from="PauseScreen" to="PauseScreen" method="_on_visibility_changed"]
