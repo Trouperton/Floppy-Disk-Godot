@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/CharacterController.gd" id="1_io1uj"]
 [ext_resource type="PackedScene" uid="uid://doaklmqjy54id" path="res://art/objects/floppy_disk/Floppy Disk.glb" id="2_et5am"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_2v7ry"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_et5am"]
+radius = 0.45
 
 [node name="PlayerFloppy" type="CharacterBody3D" unique_id=188171447 groups=["player"]]
 script = ExtResource("1_io1uj")
@@ -11,7 +12,7 @@ script = ExtResource("1_io1uj")
 [node name="Floppy Disk" parent="." unique_id=407769934 instance=ExtResource("2_et5am")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1739364924]
-shape = SubResource("SphereShape3D_2v7ry")
+shape = SubResource("SphereShape3D_et5am")
 
 [node name="DashCooldownTimer" type="Timer" parent="." unique_id=1608018954]
 one_shot = true

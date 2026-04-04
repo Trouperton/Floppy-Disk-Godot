@@ -27,12 +27,13 @@ func _physics_process(delta: float) -> void:
 			pass
 	
 	if get_slide_collision_count() > 0:
-		for group in get_slide_collision(0).get_collider(0).get_groups():
-			if group == "obstacle":
-				print("lose")
-				#get_tree().reload_current_scene()
-				get_tree().paused = true
-				died.emit()
+		for i in get_slide_collision_count():
+			for group in get_slide_collision(i).get_collider(0).get_groups():
+				if group == "obstacle":
+					#print("lose")
+					#get_tree().reload_current_scene()
+					get_tree().paused = true
+					died.emit()
 	
 	# Add the gravity.
 	velocity += get_gravity() * delta
