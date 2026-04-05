@@ -15,16 +15,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	animation_state = Animation_States.RESTING
-	if velocity.y > 0:
-		if can_dash:
+	if can_dash:
+		if velocity.y > 0:
 			animation_state = Animation_States.RISING
 		else:
-			pass
-	else:
-		if can_dash:
 			animation_state = Animation_States.FALLING
-		else:
-			pass
 	
 	if get_slide_collision_count() > 0:
 		for i in get_slide_collision_count():
@@ -41,6 +36,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = jump_velocity
+		animation_state = Animation_States.RISING
 	
 	dash()
 	
@@ -73,12 +69,14 @@ func _on_dash_cooldown_timer_timeout() -> void:
 func animate():
 	match animation_state:
 		Animation_States.RISING:
-			$"Floppy Disk/AnimationPlayer".play("idle")
+			if velocity.y > 4:
+				$"Floppy Disk/AnimationPlayer".play("jump_0")
+			else:
+				$"Floppy Disk/AnimationPlayer".play("jump_1")
 		Animation_States.FALLING:
 			if $"Floppy Disk/AnimationPlayer".current_animation != "falling_1":
 				$"Floppy Disk/AnimationPlayer".play("falling_0")
 		Animation_States.VERTICAL_DASH:
-			$"Floppy Disk".rotation_degrees = Vector3(0, 0, 0)
 			$"Floppy Disk/AnimationPlayer".play("spin")
 
 
