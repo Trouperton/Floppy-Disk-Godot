@@ -2,9 +2,24 @@
 
 [ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/CharacterController.gd" id="1_io1uj"]
 [ext_resource type="PackedScene" uid="uid://doaklmqjy54id" path="res://art/objects/floppy_disk/Floppy Disk.glb" id="2_et5am"]
+[ext_resource type="AudioStream" uid="uid://dyuhjauh7yem7" path="res://resources/Sylvio Jump 002.wav" id="3_4qg6e"]
+[ext_resource type="AudioStream" uid="uid://cgmepaexf2twb" path="res://resources/Sylvio Jump 003.wav" id="4_ko03r"]
+[ext_resource type="AudioStream" uid="uid://cb8s2r5w0fnwu" path="res://resources/Jingle Win 003.wav" id="5_n4g6x"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_et5am"]
 radius = 0.45
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ko03r"]
+random_pitch = 1.122462
+random_volume_offset_db = 0.5
+streams_count = 1
+stream_0/stream = ExtResource("3_4qg6e")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n4g6x"]
+random_pitch = 1.122462
+random_volume_offset_db = 0.5
+streams_count = 1
+stream_0/stream = ExtResource("4_ko03r")
 
 [node name="PlayerFloppy" type="CharacterBody3D" unique_id=188171447 groups=["player"]]
 script = ExtResource("1_io1uj")
@@ -17,5 +32,18 @@ shape = SubResource("SphereShape3D_et5am")
 [node name="DashCooldownTimer" type="Timer" parent="." unique_id=1608018954]
 one_shot = true
 ignore_time_scale = true
+
+[node name="JumpAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=2098547583]
+stream = SubResource("AudioStreamRandomizer_ko03r")
+volume_db = -15.0
+max_polyphony = 2
+
+[node name="DashVerticalAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1157614742]
+stream = SubResource("AudioStreamRandomizer_n4g6x")
+volume_db = -15.0
+
+[node name="DeathAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=2080747168]
+stream = ExtResource("5_n4g6x")
+volume_db = -15.0
 
 [connection signal="timeout" from="DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]

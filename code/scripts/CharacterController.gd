@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 					#get_tree().reload_current_scene()
 					get_tree().paused = true
 					died.emit()
+					$DeathAudioPlayer.play()
 	
 	# Add the gravity.
 	velocity += get_gravity() * delta
@@ -37,6 +38,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = jump_velocity
 		animation_state = Animation_States.RISING
+		$JumpAudioPlayer.play()
 	
 	dash()
 	
@@ -50,10 +52,12 @@ func dash():
 		if Input.is_action_just_pressed("dash_up"):
 			velocity.y = vertical_dash_velocity
 			animation_state = Animation_States.VERTICAL_DASH
+			$DashVerticalAudioPlayer.play()
 			start_dash_cooldown()
 		elif Input.is_action_just_pressed("dash_down"):
 			velocity.y = -vertical_dash_velocity
 			animation_state = Animation_States.VERTICAL_DASH
+			$DashVerticalAudioPlayer.play()
 			start_dash_cooldown()
 
 
