@@ -25,8 +25,6 @@ func _physics_process(delta: float) -> void:
 		for i in get_slide_collision_count():
 			for group in get_slide_collision(i).get_collider(0).get_groups():
 				if group == "obstacle":
-					#print("lose")
-					#get_tree().reload_current_scene()
 					get_tree().paused = true
 					died.emit()
 					$DeathAudioPlayer.play()
