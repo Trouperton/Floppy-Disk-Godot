@@ -35,13 +35,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	velocity += get_gravity() * delta
 	
-	# Handle jump.
-	if Input.is_action_just_pressed("jump"):
-		velocity.y = jump_velocity
-		animation_state = Animation_States.RISING
-		$JumpAudioPlayer.play()
-	
-	dash()
+	player_input()
 	
 	move_and_slide()
 	
@@ -50,7 +44,17 @@ func _physics_process(delta: float) -> void:
 ## =============================== MOVEMENT ====================================
 
 
-func dash():
+func player_input():
+	# Handle jump.
+	if Input.is_action_just_pressed("jump"):
+		velocity.y = jump_velocity
+		animation_state = Animation_States.RISING
+		$JumpAudioPlayer.play()
+	
+	check_dash()
+
+
+func check_dash():
 	if can_dash:
 		if Input.is_action_just_pressed("dash_up"):
 			vertical_dash(true)
