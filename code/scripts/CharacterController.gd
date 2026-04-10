@@ -4,14 +4,17 @@ extends CharacterBody3D
 
 @export var vertical_dash_velocity: float = 14
 var can_dash = true
+var has_dashed_vertically = false
 
 enum Animation_States {RESTING ,RISING, FALLING, VERTICAL_DASH}
 var animation_state: int
 
 signal died
+signal dashed_vertically(points: int)
 
 func _ready() -> void:
 	$"Floppy Disk/AnimationPlayer".animation_finished.connect(_on_animation_finished)
+	self.dashed_vertically.connect($".."._on_dashed_vertically)
 
 func _physics_process(delta: float) -> void:
 	animation_state = Animation_States.RESTING
@@ -52,11 +55,17 @@ func dash():
 			animation_state = Animation_States.VERTICAL_DASH
 			$DashVerticalAudioPlayer.play()
 			start_dash_cooldown()
+			if not has_dashed_vertically:
+				dashed_vertically.emit(25)
+			has_dashed_vertically = true
 		elif Input.is_action_just_pressed("dash_down"):
 			velocity.y = -vertical_dash_velocity
 			animation_state = Animation_States.VERTICAL_DASH
 			$DashVerticalAudioPlayer.play()
 			start_dash_cooldown()
+			if not has_dashed_vertically:
+				dashed_vertically.emit(25)
+			has_dashed_vertically = true
 
 
 func start_dash_cooldown():
@@ -66,6 +75,7 @@ func start_dash_cooldown():
 
 func _on_dash_cooldown_timer_timeout() -> void:
 	can_dash = true
+	has_dashed_vertically = false
 
 
 func animate():

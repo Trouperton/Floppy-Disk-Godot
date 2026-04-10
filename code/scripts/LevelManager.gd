@@ -16,6 +16,8 @@ extends Node3D
 func _on_score_threshold_triggered(points: int):
 	increase_score(points)
 
+func _on_dashed_vertically(points: int):
+	increase_score(points)
 
 func increase_score(points: int):
 	score += points
