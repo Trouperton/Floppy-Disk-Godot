@@ -41,9 +41,8 @@ func _physics_process(delta: float) -> void:
 	
 	animate()
 
-## =============================== MOVEMENT ====================================
 
-
+#region Movement
 func player_input():
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
@@ -81,10 +80,10 @@ func start_dash_cooldown():
 func _on_dash_cooldown_timer_timeout() -> void:
 	can_dash = true
 	has_dashed_vertically = false
+#endregion
 
-## =============================== ANIMATION ===================================
 
-
+#region Animation
 func animate():
 	match animation_state:
 		Animation_States.RISING:
@@ -102,3 +101,4 @@ func animate():
 func _on_animation_finished(animation_name: String):
 	if animation_name == "falling_0":
 		$"Floppy Disk/AnimationPlayer".play("falling_1")
+#endregion
