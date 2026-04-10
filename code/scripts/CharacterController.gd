@@ -49,24 +49,24 @@ func _physics_process(delta: float) -> void:
 
 ## =============================== MOVEMENT ====================================
 
+
 func dash():
 	if can_dash:
 		if Input.is_action_just_pressed("dash_up"):
-			velocity.y = vertical_dash_velocity
-			animation_state = Animation_States.VERTICAL_DASH
-			$DashVerticalAudioPlayer.play()
-			start_dash_cooldown()
-			if not has_dashed_vertically:
-				dashed_vertically.emit(25)
-			has_dashed_vertically = true
+			vertical_dash(true)
 		elif Input.is_action_just_pressed("dash_down"):
-			velocity.y = -vertical_dash_velocity
-			animation_state = Animation_States.VERTICAL_DASH
-			$DashVerticalAudioPlayer.play()
-			start_dash_cooldown()
-			if not has_dashed_vertically:
-				dashed_vertically.emit(25)
-			has_dashed_vertically = true
+			vertical_dash(false)
+
+
+func vertical_dash(dash_up: bool):
+	if dash_up:
+		velocity.y = vertical_dash_velocity
+	else:
+		velocity.y = -vertical_dash_velocity
+	animation_state = Animation_States.VERTICAL_DASH
+	$DashVerticalAudioPlayer.play()
+	dashed_vertically.emit(25)
+	start_dash_cooldown()
 
 
 func start_dash_cooldown():
