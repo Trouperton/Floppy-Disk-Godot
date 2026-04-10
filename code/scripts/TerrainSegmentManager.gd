@@ -2,6 +2,7 @@ extends Node3D
 
 ## How fast the terrain will scroll by default in metres per second.
 @export var base_terrain_speed: float = 1.0
+var terrain_speed: float
 var terrain_segments
 
 @export_category("Terrain Spawning")
@@ -12,6 +13,7 @@ var terrain_segments
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	terrain_speed = base_terrain_speed
 	find_segments()
 	check_terrain() 
 
@@ -19,7 +21,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	for segment in terrain_segments:
-		segment.position.x -= base_terrain_speed * delta
+		segment.position.x -= terrain_speed * delta
 
 
 func find_segments():

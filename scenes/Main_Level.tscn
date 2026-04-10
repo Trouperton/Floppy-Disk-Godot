@@ -15,6 +15,11 @@
 [ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/ExitButton.gd" id="13_70qg3"]
 [ext_resource type="Script" uid="uid://bpc55oex1bfxf" path="res://code/scripts/PauseScreen.gd" id="14_71oo0"]
 
+[sub_resource type="Curve" id="Curve_u1hvi"]
+_limits = [0.0, 2.0, 0.0, 25.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(25, 2), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -34,6 +39,7 @@ bg_color = Color(0.32544088, 0.3254409, 0.32544076, 1)
 [node name="World" type="Node3D" unique_id=1983202797 node_paths=PackedStringArray("score_label")]
 script = ExtResource("1_5slh6")
 score_label = NodePath("HUD/ScoreLabel")
+difficulty_curve = SubResource("Curve_u1hvi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276924402]
 transform = Transform3D(0.5446391, 0.72631, -0.41933522, 0, 0.49999997, 0.86602545, 0.8386705, -0.47167134, 0.27231953, 0, 0, 0)
