@@ -16,9 +16,9 @@
 [ext_resource type="Script" uid="uid://bpc55oex1bfxf" path="res://code/scripts/PauseScreen.gd" id="14_71oo0"]
 
 [sub_resource type="Curve" id="Curve_u1hvi"]
-_limits = [0.0, 2.0, 0.0, 25.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(25, 2), 0.0, 0.0, 0, 0]
-point_count = 2
+_limits = [0.0, 3.0, 0.0, 75.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(25, 2), 0.0, 0.0, 0, 0, Vector2(75, 3), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
