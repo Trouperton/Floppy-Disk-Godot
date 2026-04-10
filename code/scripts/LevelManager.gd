@@ -18,6 +18,8 @@ func _ready() -> void:
 #func _process(delta: float) -> void:
 #	pass
 
+## ========================== SCORE MANIPULATION ===============================
+
 
 func _on_score_threshold_triggered(points: int):
 	pillars_passed += 1
@@ -31,6 +33,8 @@ func increase_score(points: int):
 	score += points
 	print_debug(name," node added ",points, " points, new score is " , score)
 	score_label.text = "Score: " + str(score)
+
+## ============================= PLAYER STATE ==================================
 
 
 func _on_player_floppy_died() -> void:

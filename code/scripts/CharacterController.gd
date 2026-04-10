@@ -47,6 +47,7 @@ func _physics_process(delta: float) -> void:
 	
 	animate()
 
+## =============================== MOVEMENT ====================================
 
 func dash():
 	if can_dash:
@@ -76,6 +77,8 @@ func start_dash_cooldown():
 func _on_dash_cooldown_timer_timeout() -> void:
 	can_dash = true
 	has_dashed_vertically = false
+
+## =============================== ANIMATION ===================================
 
 
 func animate():

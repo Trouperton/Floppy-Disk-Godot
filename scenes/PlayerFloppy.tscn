@@ -30,6 +30,7 @@ script = ExtResource("1_io1uj")
 shape = SubResource("SphereShape3D_et5am")
 
 [node name="DashCooldownTimer" type="Timer" parent="." unique_id=1608018954]
+wait_time = 0.1
 one_shot = true
 ignore_time_scale = true
 
