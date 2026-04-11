@@ -17,12 +17,10 @@ func _ready() -> void:
 	self.dashed_vertically.connect($".."._on_dashed_vertically)
 
 func _physics_process(delta: float) -> void:
-	animation_state = Animation_States.RESTING
-	if can_dash:
-		if velocity.y > 0:
-			animation_state = Animation_States.RISING
-		else:
-			animation_state = Animation_States.FALLING
+	if velocity.y > 0 and velocity.y < vertical_dash_velocity / 2:
+		animation_state = Animation_States.RISING
+	elif animation_state == Animation_States.RISING:
+		animation_state = Animation_States.FALLING
 	
 	if get_slide_collision_count() > 0:
 		for i in get_slide_collision_count():
