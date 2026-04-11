@@ -8,6 +8,10 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
+	pass
+
+
+func _on_body_exited(body: Node3D) -> void:
 	for group in body.get_groups():
 		if group == "player":
 			score_threshold_triggered.emit(100)

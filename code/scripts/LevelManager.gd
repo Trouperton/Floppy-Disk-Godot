@@ -56,6 +56,7 @@ func _on_player_floppy_dashed_forward(points: int) -> void:
 func difficulty_speed():
 	return terrain_manager.base_terrain_speed + difficulty_curve.sample(pillars_passed)
 #endregion
+
 #endregion
 
 
