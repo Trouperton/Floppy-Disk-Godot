@@ -22,9 +22,7 @@ func _ready() -> void:
 #	pass
 
 
-## ========================== SCORE MANIPULATION ===============================
-
-
+#region Score Manipulation
 func _on_score_threshold_triggered(points: int):
 	pillars_passed += 1
 	terrain_manager.terrain_speed = difficulty_speed()
@@ -35,6 +33,13 @@ func _on_score_threshold_triggered(points: int):
 	can_score_from_forward_dash = true
 
 
+func increase_score(points: int):
+	score += points
+	print_debug(name," node added ",points, " points, new score is " , score)
+	score_label.text = "Score: " + str(score)
+
+
+#region Movement
 func _on_player_floppy_dashed_vertically(points: int) -> void:
 	if can_score_from_vertical_dash:
 		increase_score(points)
@@ -50,18 +55,13 @@ func _on_player_floppy_dashed_forward(points: int) -> void:
 
 func difficulty_speed():
 	return terrain_manager.base_terrain_speed + difficulty_curve.sample(pillars_passed)
+#endregion
+#endregion
 
 
-func increase_score(points: int):
-	score += points
-	print_debug(name," node added ",points, " points, new score is " , score)
-	score_label.text = "Score: " + str(score)
-
-
-## ============================= PLAYER STATE ==================================
-
-
+#region Player State
 func _on_player_floppy_died() -> void:
 	$HUD.hide()
 	$EndScreen/Panel/VBoxContainer/ScoreDisplayLabel.text = str(score)
 	$EndScreen.show()
+#endregion
