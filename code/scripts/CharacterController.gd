@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var jump_velocity: float = 4.5
 
 @export var vertical_dash_velocity: float = 14
+@export var forward_dash_speed_factor: float = 3
 var can_dash = true
 var has_dashed_vertically = false
 
@@ -15,7 +16,6 @@ signal dashed_forward(points: int)
 
 func _ready() -> void:
 	$"Floppy Disk/AnimationPlayer".animation_finished.connect(_on_animation_finished)
-	self.dashed_vertically.connect($".."._on_dashed_vertically)
 
 func _physics_process(delta: float) -> void:
 	if velocity.y > 0 and velocity.y < vertical_dash_velocity / 2:
