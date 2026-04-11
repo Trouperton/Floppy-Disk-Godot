@@ -11,6 +11,7 @@ var animation_state: int
 
 signal died
 signal dashed_vertically(points: int)
+signal dashed_forward(points: int)
 
 func _ready() -> void:
 	$"Floppy Disk/AnimationPlayer".animation_finished.connect(_on_animation_finished)
@@ -57,6 +58,8 @@ func check_dash():
 			vertical_dash(true)
 		elif Input.is_action_just_pressed("dash_down"):
 			vertical_dash(false)
+		elif Input.is_action_just_pressed("dash_forward"):
+			forward_dash()
 
 
 func vertical_dash(dash_up: bool):
@@ -68,6 +71,10 @@ func vertical_dash(dash_up: bool):
 	$DashVerticalAudioPlayer.play()
 	dashed_vertically.emit(25)
 	start_dash_cooldown()
+
+
+func forward_dash():
+	dashed_forward.emit(25)
 
 
 func start_dash_cooldown():
