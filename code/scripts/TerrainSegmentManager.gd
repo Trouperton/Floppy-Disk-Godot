@@ -20,10 +20,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	move_terrain(delta)
+
+
+func move_terrain(delta: float):
 	for segment in terrain_segments:
 		segment.position.x -= terrain_speed * delta
 
 
+#region Terrain Checking
 func find_segments():
 	terrain_segments = $TerrainSegments.get_children()
 	print_debug(name, " node found ", terrain_segments)
@@ -58,3 +63,4 @@ func check_terrain():
 
 func _on_terrain_check_timer_timeout() -> void:
 	check_terrain()
+#endregion
