@@ -5,6 +5,7 @@ extends CharacterBody3D
 ## Also manipulates the player's CharacterBody3D instance.
 
 @export var jump_velocity: float = 4.5
+var gravity_enabled: bool = true
 
 @export var vertical_dash_velocity: float = 14
 @export var forward_dash_speed_factor: float = 3
@@ -36,7 +37,8 @@ func _physics_process(delta: float) -> void:
 		animation_state = Animation_States.FALLING
 	
 	# Add the gravity.
-	velocity += get_gravity() * delta
+	if gravity_enabled:
+		velocity += get_gravity() * delta
 	
 	player_input()
 	

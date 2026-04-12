@@ -9,12 +9,12 @@ var can_score_from_forward_dash: bool = true
 var pillars_passed = 0
 var forward_dash_speed_factor: float = 2
 
-var terrain_manager
+@onready var player_character = $PlayerFloppy
+@onready var terrain_manager = $TerrainSegmentManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	terrain_manager = $TerrainSegmentManager
-	forward_dash_speed_factor = $PlayerFloppy.forward_dash_speed_factor
+	forward_dash_speed_factor = player_character.forward_dash_speed_factor
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,6 +29,7 @@ func _on_score_threshold_triggered(points: int):
 	
 	# TODO reactivate gravity for the player since the above speed change also
 	# Removes the forward dash boost.
+	player_character.gravity_enabled = true
 	
 	increase_score(points)
 	
@@ -57,6 +58,8 @@ func _on_player_floppy_dashed_forward(points: int) -> void:
 	
 	# TODO make it so that the player gravity is temporarily disabled and velocity
 	# is set to 0 so that the forward dash is a straight line.
+	player_character.gravity_enabled = false
+	player_character.velocity = Vector3(0, 0, 0)
 
 
 func difficulty_speed():
