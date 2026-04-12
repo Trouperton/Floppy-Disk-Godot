@@ -1,4 +1,8 @@
 extends CharacterBody3D
+## Script that allows the player to interact with the game world
+##
+## Handles gameplay related player inputs such as the movement based ones.
+## Also manipulates the player's CharacterBody3D instance.
 
 @export var jump_velocity: float = 4.5
 
@@ -7,7 +11,13 @@ extends CharacterBody3D
 var can_dash = true
 var has_dashed_vertically = false
 
-enum Animation_States {RESTING ,RISING, FALLING, VERTICAL_DASH}
+enum Animation_States {
+	RESTING,
+	RISING,
+	FALLING,
+	VERTICAL_DASH
+}
+
 var animation_state: int = Animation_States.FALLING
 
 signal died
@@ -36,7 +46,8 @@ func _physics_process(delta: float) -> void:
 	# Changes animation's played by the animator based on current animation state
 	animate()
 
-
+## Handles collision checks that are detected by move_and_slide() looking for
+## collisions with obstacles.
 func check_collisions():
 	for i in get_slide_collision_count():
 		for group in get_slide_collision(i).get_collider(0).get_groups():
@@ -49,6 +60,7 @@ func check_collisions():
 
 
 #region Movement
+## Checks the player inputs and applies player behaviours accordingly.
 func player_input():
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
@@ -59,7 +71,7 @@ func player_input():
 	check_dash()
 
 
-# Checks both whether the dash is ready and if the player pressed relevant inputs
+## Checks both whether the dash is ready and if the player pressed relevant inputs.
 func check_dash():
 	if can_dash:
 		if Input.is_action_just_pressed("dash_up"):
@@ -70,6 +82,7 @@ func check_dash():
 			forward_dash()
 
 
+## Executes an up or down dash depending on the value parsed through the property.
 func vertical_dash(dash_up: bool):
 	if dash_up:
 		velocity.y = vertical_dash_velocity
@@ -81,6 +94,7 @@ func vertical_dash(dash_up: bool):
 	start_dash_cooldown()
 
 
+## Emits a signal to trigger behaviour needed to perform the forward dash.
 func forward_dash():
 	dashed_forward.emit(25)
 
@@ -97,6 +111,8 @@ func _on_dash_cooldown_timer_timeout() -> void:
 
 
 #region Animation
+## Sets the current animation being played by the animator based on the current
+## animation state and some extra logic for certain behaviours.
 func animate():
 	match animation_state:
 		Animation_States.RISING:
