@@ -30,8 +30,10 @@ func _physics_process(delta: float) -> void:
 	
 	player_input()
 	
+	# Built in method that moves the player based on velocity
 	move_and_slide()
 	
+	# Changes animation's played by the animator based on current animation state
 	animate()
 
 
@@ -42,6 +44,8 @@ func check_collisions():
 				get_tree().paused = true
 				died.emit()
 				$DeathAudioPlayer.play()
+	
+	# ATTENTION BUG implement player collision cast to prevent wall sliding.
 
 
 #region Movement
@@ -55,6 +59,7 @@ func player_input():
 	check_dash()
 
 
+# Checks both whether the dash is ready and if the player pressed relevant inputs
 func check_dash():
 	if can_dash:
 		if Input.is_action_just_pressed("dash_up"):

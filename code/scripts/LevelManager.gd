@@ -27,6 +27,9 @@ func _on_score_threshold_triggered(points: int):
 	pillars_passed += 1
 	terrain_manager.terrain_speed = difficulty_speed()
 	
+	# TODO reactivate gravity for the player since the above speed change also
+	# Removes the forward dash boost.
+	
 	increase_score(points)
 	
 	can_score_from_vertical_dash = true
@@ -51,6 +54,9 @@ func _on_player_floppy_dashed_forward(points: int) -> void:
 		increase_score(points)
 		can_score_from_forward_dash = false
 	terrain_manager.terrain_speed = difficulty_speed() * forward_dash_speed_factor
+	
+	# TODO make it so that the player gravity is temporarily disabled and velocity
+	# is set to 0 so that the forward dash is a straight line.
 
 
 func difficulty_speed():
