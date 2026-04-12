@@ -46,9 +46,10 @@ func _physics_process(delta: float) -> void:
 	# Changes animation's played by the animator based on current animation state
 	animate()
 
-## Handles collision checks that are detected by move_and_slide() looking for
-## collisions with obstacles.
+## Handles collision checks that are detected by move_and_slide() and
+## WallCheckCast3D node looking for collisions with obstacles.
 func check_collisions():
+	# Checks for collisions detected by move_and_slide()
 	for i in get_slide_collision_count():
 		for group in get_slide_collision(i).get_collider(0).get_groups():
 			if group == "obstacle":
@@ -56,7 +57,13 @@ func check_collisions():
 				died.emit()
 				$DeathAudioPlayer.play()
 	
-	# ATTENTION BUG implement player collision cast to prevent wall sliding.
+	# Checks if the player collided with a wall with a cast
+	for i in $WallCheckCast3D.get_collision_count():
+		for group in $WallCheckCast3D.get_collider(i).get_groups():
+			if group == "obstacle":
+				get_tree().paused = true
+				died.emit()
+				$DeathAudioPlayer.play()
 
 
 #region Movement
