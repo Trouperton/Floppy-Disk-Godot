@@ -8,7 +8,7 @@ var can_dash = true
 var has_dashed_vertically = false
 
 enum Animation_States {RESTING ,RISING, FALLING, VERTICAL_DASH}
-var animation_state: int
+var animation_state: int = Animation_States.FALLING
 
 signal died
 signal dashed_vertically(points: int)
@@ -18,18 +18,12 @@ func _ready() -> void:
 	$"Floppy Disk/AnimationPlayer".animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
+	check_collisions()
+	
 	if velocity.y > 0 and velocity.y < vertical_dash_velocity / 2:
 		animation_state = Animation_States.RISING
 	elif animation_state == Animation_States.RISING:
 		animation_state = Animation_States.FALLING
-	
-	if get_slide_collision_count() > 0:
-		for i in get_slide_collision_count():
-			for group in get_slide_collision(i).get_collider(0).get_groups():
-				if group == "obstacle":
-					get_tree().paused = true
-					died.emit()
-					$DeathAudioPlayer.play()
 	
 	# Add the gravity.
 	velocity += get_gravity() * delta
@@ -39,6 +33,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	animate()
+
+
+func check_collisions():
+	for i in get_slide_collision_count():
+		for group in get_slide_collision(i).get_collider(0).get_groups():
+			if group == "obstacle":
+				get_tree().paused = true
+				died.emit()
+				$DeathAudioPlayer.play()
 
 
 #region Movement
