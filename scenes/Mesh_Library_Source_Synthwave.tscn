@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b2hmcsh3sqs5l"]
+
+[ext_resource type="PackedScene" uid="uid://bkc6gqiwhb0po" path="res://art/Terrain/SynthwaveTerrain_Cube.glb" id="1_dagcl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_014pr"]
+
+[node name="Node3D" type="Node3D" unique_id=1024189807]
+
+[node name="SynthwaveTerrain_Cube" parent="." unique_id=2114599085 instance=ExtResource("1_dagcl")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SynthwaveTerrain_Cube" unique_id=194349943]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SynthwaveTerrain_Cube/StaticBody3D" unique_id=1477173155]
+shape = SubResource("BoxShape3D_014pr")
