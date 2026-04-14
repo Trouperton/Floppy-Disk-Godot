@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bttvg1dteoe28" path="res://scenes/terrain/segments/TerrainSegment_MidTight.tscn" id="7_kd8ca"]
 [ext_resource type="PackedScene" uid="uid://byj8xyrqufghu" path="res://scenes/terrain/segments/TerrainSegment_Low.tscn" id="8_70qg3"]
 [ext_resource type="PackedScene" uid="uid://csq3vh6rlxv56" path="res://scenes/terrain/segments/TerrainSegment_LowTight.tscn" id="9_71oo0"]
+[ext_resource type="MeshLibrary" uid="uid://cqwiys68401cq" path="res://resources/ML_Prototype.tres" id="11_lujic"]
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/RestartButton.gd" id="12_kd8ca"]
 [ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/ExitButton.gd" id="13_70qg3"]
 [ext_resource type="Script" uid="uid://bpc55oex1bfxf" path="res://code/scripts/PauseScreen.gd" id="14_71oo0"]
@@ -61,14 +62,18 @@ autostart = true
 
 [node name="TerrainSegment_Empty3" parent="TerrainSegmentManager/TerrainSegments" unique_id=2046376729 instance=ExtResource("6_jyykg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 0)
+mesh_library = ExtResource("11_lujic")
 
 [node name="TerrainSegment_Empty2" parent="TerrainSegmentManager/TerrainSegments" unique_id=933223107 instance=ExtResource("6_jyykg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+mesh_library = ExtResource("11_lujic")
 
 [node name="TerrainSegment_Empty" parent="TerrainSegmentManager/TerrainSegments" unique_id=1423568598 instance=ExtResource("6_jyykg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+mesh_library = ExtResource("11_lujic")
 
 [node name="TerrainSegment_Empty4" parent="TerrainSegmentManager/TerrainSegments" unique_id=960714774 instance=ExtResource("6_jyykg")]
+mesh_library = ExtResource("11_lujic")
 
 [node name="TerrainSegment" parent="TerrainSegmentManager/TerrainSegments" unique_id=1747596346 instance=ExtResource("2_wkt5j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)

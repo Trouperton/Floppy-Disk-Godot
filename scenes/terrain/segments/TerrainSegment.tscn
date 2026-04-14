@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://b12h8njnd3dna"]
 
-[ext_resource type="MeshLibrary" uid="uid://cqwiys68401cq" path="res://resources/ML_Prototype.tres" id="1_tp6my"]
+[ext_resource type="MeshLibrary" uid="uid://bsb8ejg3bfdlc" path="res://resources/ML_Synthwave.tres" id="1_w7erq"]
 [ext_resource type="Script" uid="uid://p0skfi2qf02d" path="res://code/scripts/ScoreThreshold.gd" id="2_q3rvf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tp6my"]
 size = Vector3(1, 14, 1)
 
 [node name="TerrainSegment" type="GridMap" unique_id=960714774 groups=["obstacle"]]
-mesh_library = ExtResource("1_tp6my")
+mesh_library = ExtResource("1_w7erq")
 cell_size = Vector3(1, 1, 1)
 data = {
-"cells": PackedInt32Array(-65536, 0, 0, 917504, 0, 0, -65535, 0, 0, 917505, 0, 0, -65534, 0, 0, 917506, 0, 0, -65533, 0, 0, 3, 0, 655360, 65539, 0, 655360, 131075, 0, 655360, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, -65532, 0, 0, 917508, 0, 0, -65531, 0, 0, 917509, 0, 0, -65530, 0, 0, 917510, 0, 0)
+"cells": PackedInt32Array(-65536, 0, 0, 917504, 0, 0, -65535, 0, 0, 917505, 0, 0, -65534, 0, 0, 917506, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, -65532, 0, 0, 917508, 0, 0, -65531, 0, 0, 917509, 0, 0, -65530, 0, 0, 917510, 0, 0)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
