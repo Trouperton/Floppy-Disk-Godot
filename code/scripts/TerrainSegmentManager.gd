@@ -31,7 +31,7 @@ func move_terrain(delta: float):
 #region Terrain Checking
 func find_segments():
 	terrain_segments = $TerrainSegments.get_children()
-	print_debug(name, " node found ", terrain_segments)
+	#print_debug(name, " node found ", terrain_segments)
 	if terrain_segments.size() == 0:
 		printerr(name, " failed to find terrain segments!")
 

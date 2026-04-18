@@ -39,7 +39,7 @@ func _on_score_threshold_triggered(points: int):
 
 func increase_score(points: int):
 	score += points
-	print_debug(name," node added ",points, " points, new score is " , score)
+	#print_debug(name," node added ",points, " points, new score is " , score)
 	score_label.text = "Score: " + str(score)
 
 
