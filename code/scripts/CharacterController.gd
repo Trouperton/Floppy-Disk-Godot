@@ -4,6 +4,8 @@ extends CharacterBody3D
 ## Handles gameplay related player inputs such as the movement based ones.
 ## Also manipulates the player's CharacterBody3D instance.
 
+const OBSTACLE_GROUP = "obstacle"
+
 @export var jump_velocity: float = 4.5
 var gravity_enabled: bool = true
 
@@ -52,21 +54,25 @@ func _physics_process(delta: float) -> void:
 ## Handles collision checks that are detected by move_and_slide() and
 ## WallCheckCast3D node looking for collisions with obstacles.
 func check_collisions():
+	var is_dead = false
 	# Checks for collisions detected by move_and_slide()
 	for i in get_slide_collision_count():
-		for group in get_slide_collision(i).get_collider(0).get_groups():
-			if group == "obstacle":
-				get_tree().paused = true
-				died.emit()
-				$DeathAudioPlayer.play()
+		if get_slide_collision(i).get_collider().is_in_group(OBSTACLE_GROUP):
+			is_dead = true
 	
 	# Checks if the player collided with a wall with a cast
 	for i in $WallCheckCast3D.get_collision_count():
-		for group in $WallCheckCast3D.get_collider(i).get_groups():
-			if group == "obstacle":
-				get_tree().paused = true
-				died.emit()
-				$DeathAudioPlayer.play()
+		if $WallCheckCast3D.get_collider(i).is_in_group(OBSTACLE_GROUP):
+			is_dead = true
+	
+	if is_dead:
+		kill_player()
+
+
+func kill_player():
+	get_tree().paused = true
+	died.emit()
+	$DeathAudioPlayer.play()
 
 
 #region Movement
