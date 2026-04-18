@@ -1,15 +1,19 @@
 extends Node3D
 
+
 ## How fast the terrain will scroll by default in metres per second.
 @export var base_terrain_speed: float = 1.0
-var terrain_speed: float
-var terrain_segments
 
 @export_category("Terrain Spawning")
 ## The minimum number of segments that will be spawned whenever the manager spawns more.
 @export var minimum_segments_to_spawn: int = 5
 ## The selection of terrain segments that will be spawned by the terrain segment manager.
 @export var terrain_segment_spawn_collection: Array[PackedScene]
+
+
+var terrain_speed: float
+var terrain_segments
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

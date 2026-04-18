@@ -4,29 +4,34 @@ extends CharacterBody3D
 ## Handles gameplay related player inputs such as the movement based ones.
 ## Also manipulates the player's CharacterBody3D instance.
 
-const OBSTACLE_GROUP = "obstacle"
 
-@export var jump_velocity: float = 4.5
-var gravity_enabled: bool = true
+signal died
+signal dashed_vertically(points: int)
+signal dashed_forward(points: int)
 
-@export var vertical_dash_velocity: float = 14
-@export var forward_dash_speed_factor: float = 3
-var can_dash = true
-var has_dashed_vertically = false
 
 # ATTENTION TODO: Add an animation state for the forward dash.
-enum Animation_States {
+enum AnimationStates {
 	RESTING,
 	RISING,
 	FALLING,
 	VERTICAL_DASH
 }
 
-var animation_state: int = Animation_States.FALLING
 
-signal died
-signal dashed_vertically(points: int)
-signal dashed_forward(points: int)
+const OBSTACLE_GROUP = "obstacle"
+
+
+@export var jump_velocity: float = 4.5
+@export var vertical_dash_velocity: float = 14
+@export var forward_dash_speed_factor: float = 3
+
+
+var gravity_enabled: bool = true
+var can_dash = true
+var has_dashed_vertically = false
+var animation_state: int = AnimationStates.FALLING
+
 
 func _ready() -> void:
 	$"Floppy Disk/AnimationPlayer".animation_finished.connect(_on_animation_finished)
@@ -35,9 +40,9 @@ func _physics_process(delta: float) -> void:
 	check_collisions()
 	
 	if velocity.y > 0 and velocity.y < vertical_dash_velocity / 2:
-		animation_state = Animation_States.RISING
-	elif animation_state == Animation_States.RISING:
-		animation_state = Animation_States.FALLING
+		animation_state = AnimationStates.RISING
+	elif animation_state == AnimationStates.RISING:
+		animation_state = AnimationStates.FALLING
 	
 	# Add the gravity.
 	if gravity_enabled:
@@ -81,7 +86,7 @@ func player_input():
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = jump_velocity
-		animation_state = Animation_States.RISING
+		animation_state = AnimationStates.RISING
 		$JumpAudioPlayer.play()
 	
 	check_dash()
@@ -104,7 +109,7 @@ func vertical_dash(dash_up: bool):
 		velocity.y = vertical_dash_velocity
 	else:
 		velocity.y = -vertical_dash_velocity
-	animation_state = Animation_States.VERTICAL_DASH
+	animation_state = AnimationStates.VERTICAL_DASH
 	$DashVerticalAudioPlayer.play()
 	dashed_vertically.emit(25)
 	start_dash_cooldown()
@@ -132,15 +137,15 @@ func _on_dash_cooldown_timer_timeout() -> void:
 ## animation state and some extra logic for certain behaviours.
 func animate():
 	match animation_state:
-		Animation_States.RISING:
+		AnimationStates.RISING:
 			if velocity.y > 4:
 				$"Floppy Disk/AnimationPlayer".play("jump_0")
 			else:
 				$"Floppy Disk/AnimationPlayer".play("jump_1")
-		Animation_States.FALLING:
+		AnimationStates.FALLING:
 			if $"Floppy Disk/AnimationPlayer".current_animation != "falling_1":
 				$"Floppy Disk/AnimationPlayer".play("falling_0")
-		Animation_States.VERTICAL_DASH:
+		AnimationStates.VERTICAL_DASH:
 			$"Floppy Disk/AnimationPlayer".play("spin")
 	
 	# ATTENTION TODO: Add an animation state for the forward dash.

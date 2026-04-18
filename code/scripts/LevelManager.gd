@@ -1,14 +1,15 @@
 extends Node3D
 
+
 @export var score: int = 0
 @export var score_label: Label
+@export var difficulty_curve: Curve
+
+
 var can_score_from_vertical_dash: bool = true
 var can_score_from_forward_dash: bool = true
-
-@export var difficulty_curve: Curve
 var pillars_passed = 0
 var forward_dash_speed_factor: float = 2
-
 @onready var player_character = $PlayerFloppy
 @onready var terrain_manager = $TerrainSegmentManager
 

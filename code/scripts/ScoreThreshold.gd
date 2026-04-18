@@ -1,14 +1,12 @@
 extends Area3D
 
+
 signal score_threshold_triggered(points: int)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.score_threshold_triggered.connect($"../../../.."._on_score_threshold_triggered)
-
-
-func _on_body_entered(body: Node3D) -> void:
-	pass
 
 
 func _on_body_exited(body: Node3D) -> void:
