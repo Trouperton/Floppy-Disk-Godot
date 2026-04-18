@@ -5,6 +5,8 @@ extends Node3D
 @export var base_terrain_speed: float = 1.0
 
 @export_category("Terrain Spawning")
+@export var terrain_delete_threshold: float = -30
+@export var terrain_spawning_threshold: float = 30
 ## The minimum number of segments that will be spawned whenever the manager spawns more.
 @export var minimum_segments_to_spawn: int = 5
 ## The selection of terrain segments that will be spawned by the terrain segment manager.
@@ -48,16 +50,16 @@ func check_terrain():
 		if furthest_forward == null or segment.position.x > furthest_forward.position.x:
 			furthest_forward = segment
 		
-		if segment.position.x < -30:
+		if segment.position.x < terrain_delete_threshold:
 			segments_changed = true
 			$TerrainSegments.remove_child(segment)
 			segment.queue_free()
 	
-	if furthest_forward.position.x < 30:
+	if furthest_forward.position.x < terrain_spawning_threshold:
 		for i in minimum_segments_to_spawn:
 			var new_segment: GridMap = terrain_segment_spawn_collection[randi_range(0, terrain_segment_spawn_collection.size() - 1)].instantiate()
 			$TerrainSegments.add_child(new_segment)
-			new_segment.position.x = furthest_forward.position.x + (7 * (i + 1))
+			new_segment.position.x = furthest_forward.position.x + (7 * (i + 1)) #7 corresponds to terrain segment width and the + 1 is there so it counts from 1 not 0.
 		
 		segments_changed = true
 	

@@ -24,7 +24,9 @@ const OBSTACLE_GROUP = "obstacle"
 
 @export var jump_velocity: float = 4.5
 @export var vertical_dash_velocity: float = 14
+@export var vertical_dash_points: int = 25
 @export var forward_dash_speed_factor: float = 3
+@export var forward_dash_points: int = 25
 
 
 var gravity_enabled: bool = true
@@ -111,13 +113,13 @@ func vertical_dash(dash_up: bool):
 		velocity.y = -vertical_dash_velocity
 	animation_state = AnimationStates.VERTICAL_DASH
 	$DashVerticalAudioPlayer.play()
-	dashed_vertically.emit(25)
+	dashed_vertically.emit(vertical_dash_points)
 	start_dash_cooldown()
 
 
 ## Emits a signal to trigger behaviour needed to perform the forward dash.
 func forward_dash():
-	dashed_forward.emit(25)
+	dashed_forward.emit(forward_dash_points)
 	# ATTENTION TODO: Add an animation state for the forward dash.
 
 
