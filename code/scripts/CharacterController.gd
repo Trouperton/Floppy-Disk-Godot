@@ -12,6 +12,7 @@ var gravity_enabled: bool = true
 var can_dash = true
 var has_dashed_vertically = false
 
+# ATTENTION TODO: Add an animation state for the forward dash.
 enum Animation_States {
 	RESTING,
 	RISING,
@@ -106,6 +107,7 @@ func vertical_dash(dash_up: bool):
 ## Emits a signal to trigger behaviour needed to perform the forward dash.
 func forward_dash():
 	dashed_forward.emit(25)
+	# ATTENTION TODO: Add an animation state for the forward dash.
 
 
 func start_dash_cooldown():
@@ -134,6 +136,8 @@ func animate():
 				$"Floppy Disk/AnimationPlayer".play("falling_0")
 		Animation_States.VERTICAL_DASH:
 			$"Floppy Disk/AnimationPlayer".play("spin")
+	
+	# ATTENTION TODO: Add an animation state for the forward dash.
 
 
 func _on_animation_finished(animation_name: String):
