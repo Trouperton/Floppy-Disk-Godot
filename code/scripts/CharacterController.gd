@@ -40,7 +40,8 @@ func _ready() -> void:
 	$"Floppy Disk/AnimationPlayer".animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
-	check_collisions()
+	if Engine.get_physics_frames() % 3 == 0:
+		check_collisions()
 	
 	if velocity.y > 0 and velocity.y < vertical_dash_velocity / 2:
 		animation_state = AnimationStates.RISING
