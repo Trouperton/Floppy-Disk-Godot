@@ -13,8 +13,7 @@ func _ready() -> void:
 
 
 func _on_body_exited(body: Node3D) -> void:
-	for group in body.get_groups():
-		if group == "player":
-			score_threshold_triggered.emit(points)
-			
-			self.queue_free()
+	if body.is_in_group("player"):
+		score_threshold_triggered.emit(points)
+		
+		self.queue_free()
