@@ -122,6 +122,7 @@ func vertical_dash(dash_up: bool):
 func forward_dash():
 	dashed_forward.emit(forward_dash_points)
 	
+	# TODO: Add an audio player to play a sound when the player dashes forward.
 	animation_state = AnimationStates.FORWARD_DASH
 
 
