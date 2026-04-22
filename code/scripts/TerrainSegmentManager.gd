@@ -24,8 +24,7 @@ func _ready() -> void:
 	check_terrain() 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	move_terrain(delta)
 
 
@@ -44,7 +43,7 @@ func find_segments():
 
 func check_terrain():
 	var segments_changed = false
-	var furthest_forward: GridMap
+	var furthest_forward: GridMap = null
 	
 	for segment in terrain_segments:
 		if furthest_forward == null or segment.position.x > furthest_forward.position.x:
