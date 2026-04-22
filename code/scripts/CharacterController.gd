@@ -10,7 +10,6 @@ signal dashed_vertically(points: int)
 signal dashed_forward(points: int)
 
 
-# ATTENTION TODO: Add an animation state for the forward dash.
 enum AnimationStates {
 	RESTING,
 	RISING,
@@ -122,7 +121,7 @@ func vertical_dash(dash_up: bool):
 ## Emits a signal to trigger behaviour needed to perform the forward dash.
 func forward_dash():
 	dashed_forward.emit(forward_dash_points)
-	# ATTENTION TODO: Add an animation state for the forward dash.
+	
 	animation_state = AnimationStates.FORWARD_DASH
 
 
@@ -157,8 +156,6 @@ func animate():
 				$"Floppy Disk/AnimationPlayer".play("falling_0")
 		AnimationStates.VERTICAL_DASH:
 			$"Floppy Disk/AnimationPlayer".play("spin")
-			
-	# ATTENTION TODO: Add an animation state for the forward dash.
 		AnimationStates.FORWARD_DASH:
 			$"Floppy Disk/AnimationPlayer".play("roll")
 
