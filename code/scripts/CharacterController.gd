@@ -34,6 +34,7 @@ var gravity_enabled: bool = true
 var can_dash = true
 var has_dashed_vertically = false
 var animation_state: int = AnimationStates.FALLING
+var is_dead = false
 
 
 func _ready() -> void:
@@ -63,7 +64,6 @@ func _physics_process(delta: float) -> void:
 ## Handles collision checks that are detected by move_and_slide() and
 ## WallCheckCast3D node looking for collisions with obstacles.
 func check_collisions():
-	var is_dead = false
 	# Checks for collisions detected by move_and_slide()
 	for i in get_slide_collision_count():
 		if get_slide_collision(i).get_collider().is_in_group(OBSTACLE_GROUP):
