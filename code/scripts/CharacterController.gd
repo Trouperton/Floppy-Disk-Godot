@@ -5,7 +5,7 @@ extends CharacterBody3D
 ## Also manipulates the player's CharacterBody3D instance.
 
 
-signal died
+signal died()
 signal dashed_vertically(points: int)
 signal dashed_forward(points: int)
 
@@ -15,7 +15,8 @@ enum AnimationStates {
 	RESTING,
 	RISING,
 	FALLING,
-	VERTICAL_DASH
+	VERTICAL_DASH,
+	FORWARD_DASH
 }
 
 
@@ -121,6 +122,7 @@ func vertical_dash(dash_up: bool):
 func forward_dash():
 	dashed_forward.emit(forward_dash_points)
 	# ATTENTION TODO: Add an animation state for the forward dash.
+	animation_state = AnimationStates.FORWARD_DASH
 
 
 func start_dash_cooldown():
@@ -131,6 +133,11 @@ func start_dash_cooldown():
 func _on_dash_cooldown_timer_timeout() -> void:
 	can_dash = true
 	has_dashed_vertically = false
+
+
+func _on_world_passed_pillar() -> void:
+	gravity_enabled = true
+	animation_state = AnimationStates.FALLING
 #endregion
 
 
@@ -149,8 +156,10 @@ func animate():
 				$"Floppy Disk/AnimationPlayer".play("falling_0")
 		AnimationStates.VERTICAL_DASH:
 			$"Floppy Disk/AnimationPlayer".play("spin")
-	
+			
 	# ATTENTION TODO: Add an animation state for the forward dash.
+		AnimationStates.FORWARD_DASH:
+			$"Floppy Disk/AnimationPlayer".play("roll")
 
 
 func _on_animation_finished(animation_name: String):

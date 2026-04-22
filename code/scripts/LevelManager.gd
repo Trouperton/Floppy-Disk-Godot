@@ -1,6 +1,9 @@
 extends Node3D
 
 
+signal passed_pillar()
+
+
 @export var score: int = 0
 @export var score_label: Label
 @export var difficulty_curve: Curve
@@ -31,9 +34,8 @@ func _on_score_threshold_triggered(points: int):
 	# signal that will be read instead by the terrain manager.
 	terrain_manager.terrain_speed = difficulty_speed()
 	
-	# Re-enables the player character's gravity.
-	# NOTE: might be worth changing to a signal in the future.
-	player_character.gravity_enabled = true
+	# Emits a signal for the passed_pillar one.
+	passed_pillar.emit()
 	
 	increase_score(points)
 	
