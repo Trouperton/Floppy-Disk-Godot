@@ -84,3 +84,9 @@ func _on_player_floppy_died() -> void:
 	$EndScreen/Panel/VBoxContainer/ScoreDisplayLabel.text = str(score)
 	$EndScreen.show()
 #endregion
+
+
+func _on_terrain_segment_manager_segment_spawned(segment: GridMap) -> void:
+	for child: Area3D in segment.get_children():
+		if child.has_signal("score_threshold_triggered"):
+			child.score_threshold_triggered.connect(_on_score_threshold_triggered)

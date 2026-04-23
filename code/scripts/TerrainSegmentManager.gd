@@ -1,6 +1,9 @@
 extends Node3D
 
 
+signal segment_spawned(segment: GridMap)
+
+
 ## How fast the terrain will scroll by default in metres per second.
 @export var base_terrain_speed: float = 1.0
 
@@ -27,6 +30,10 @@ var terrain_segments
 func _ready() -> void:
 	terrain_speed = base_terrain_speed
 	find_segments()
+	
+	for segment in terrain_segments:
+		segment_spawned.emit(segment)
+	
 	check_terrain() 
 
 
@@ -74,6 +81,7 @@ func check_terrain():
 			var new_segment: GridMap = terrain_segment_spawn_collection[randi_range(0, terrain_segment_spawn_collection.size() - 1)].instantiate()
 			$TerrainSegments.add_child(new_segment)
 			new_segment.position.x = furthest_forward.position.x + (7 * (i + 1)) #7 corresponds to terrain segment width and the + 1 is there so it counts from 1 not 0.
+			segment_spawned.emit(new_segment)
 		
 		segments_changed = true
 	

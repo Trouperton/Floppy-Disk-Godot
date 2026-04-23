@@ -237,6 +237,7 @@ text = "Exit"
 script = ExtResource("13_70qg3")
 
 [connection signal="passed_pillar" from="." to="PlayerFloppy" method="_on_world_passed_pillar"]
+[connection signal="segment_spawned" from="TerrainSegmentManager" to="." method="_on_terrain_segment_manager_segment_spawned"]
 [connection signal="timeout" from="TerrainSegmentManager/TerrainCheckTimer" to="TerrainSegmentManager" method="_on_terrain_check_timer_timeout"]
 [connection signal="dashed_forward" from="PlayerFloppy" to="." method="_on_player_floppy_dashed_forward"]
 [connection signal="dashed_vertically" from="PlayerFloppy" to="." method="_on_player_floppy_dashed_vertically"]
