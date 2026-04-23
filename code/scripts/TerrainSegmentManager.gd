@@ -67,6 +67,10 @@ func check_terrain():
 	var segments_changed = false
 	var furthest_forward: GridMap = null
 	
+	if terrain_segments.size() == 0:
+		printerr(name, " has no terrain segments, can't check terrain!")
+		return
+	
 	for segment in terrain_segments:
 		if furthest_forward == null or segment.position.x > furthest_forward.position.x:
 			furthest_forward = segment
@@ -75,6 +79,10 @@ func check_terrain():
 			segments_changed = true
 			$TerrainSegments.remove_child(segment)
 			segment.queue_free()
+	
+	if furthest_forward == null:
+		printerr(name, " could not determine the further forward segment!")
+		return
 	
 	if furthest_forward.position.x < terrain_spawning_threshold:
 		for i in minimum_segments_to_spawn:
