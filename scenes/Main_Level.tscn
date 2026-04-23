@@ -51,10 +51,13 @@ environment = SubResource("Environment_2v7ry")
 [node name="TerrainSegmentManager" type="Node3D" parent="." unique_id=260624578]
 script = ExtResource("1_wkt5j")
 base_terrain_speed = 2.0
+terrain_delete_threshold = -40.0
+terrain_spawning_threshold = 40.0
+minimum_segments_to_spawn = 10
 terrain_segment_spawn_collection = Array[PackedScene]([ExtResource("2_wkt5j"), ExtResource("3_5slh6"), ExtResource("3_wkt5j"), ExtResource("6_8rj4q"), ExtResource("7_kd8ca"), ExtResource("8_70qg3"), ExtResource("9_71oo0")])
 
 [node name="TerrainCheckTimer" type="Timer" parent="TerrainSegmentManager" unique_id=93723995]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [node name="TerrainSegments" type="Node3D" parent="TerrainSegmentManager" unique_id=180250620]

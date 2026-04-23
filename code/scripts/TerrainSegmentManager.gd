@@ -92,7 +92,7 @@ func check_terrain():
 		for i in minimum_segments_to_spawn:
 			var new_segment: GridMap = terrain_segment_spawn_collection[randi_range(0, terrain_segment_spawn_collection.size() - 1)].instantiate()
 			$TerrainSegments.add_child(new_segment)
-			new_segment.position.x = furthest_forward.position.x + (7 * (i + 1)) #7 corresponds to terrain segment width and the + 1 is there so it counts from 1 not 0.
+			new_segment.position.x = furthest_forward.position.x + (7 * (i + 1)) # 7 corresponds to terrain segment width and the + 1 is there so it counts from 1 not 0.
 			segment_spawned.emit(new_segment)
 		
 		segments_changed = true
