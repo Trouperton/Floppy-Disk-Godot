@@ -66,6 +66,7 @@ func find_segments():
 func check_terrain():
 	var segments_changed = false
 	var furthest_forward: GridMap = null
+	var segments_to_delete: Array[GridMap]
 	
 	if terrain_segments.size() == 0:
 		printerr(name, " has no terrain segments, can't check terrain!")
@@ -77,8 +78,11 @@ func check_terrain():
 		
 		if segment.position.x < terrain_delete_threshold:
 			segments_changed = true
-			$TerrainSegments.remove_child(segment)
-			segment.queue_free()
+			segments_to_delete.append(segment)
+	
+	for segment in segments_to_delete:
+		$TerrainSegments.remove_child(segment)
+		segment.queue_free()
 	
 	if furthest_forward == null:
 		printerr(name, " could not determine the further forward segment!")
