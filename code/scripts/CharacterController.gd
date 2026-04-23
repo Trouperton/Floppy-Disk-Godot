@@ -31,7 +31,6 @@ const OBSTACLE_GROUP = "obstacle"
 
 var gravity_enabled: bool = true
 var can_dash = true
-var has_dashed_vertically = false
 var animation_state: int = AnimationStates.FALLING
 var is_dead = false
 
@@ -133,7 +132,6 @@ func start_dash_cooldown():
 
 func _on_dash_cooldown_timer_timeout() -> void:
 	can_dash = true
-	has_dashed_vertically = false
 
 
 func _on_world_passed_pillar() -> void:
@@ -147,6 +145,8 @@ func _on_world_passed_pillar() -> void:
 ## animation state and some extra logic for certain behaviours.
 func animate():
 	match animation_state:
+		AnimationStates.RESTING:
+			$"Floppy Disk/AnimationPlayer".play("idle")
 		AnimationStates.RISING:
 			if velocity.y > 4:
 				$"Floppy Disk/AnimationPlayer".play("jump_0")
