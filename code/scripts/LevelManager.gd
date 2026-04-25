@@ -32,7 +32,8 @@ func _on_score_threshold_triggered(points: int):
 	
 	# TODO: Change direct manipulation of terrain speed in another class to a
 	# signal that will be read instead by the terrain manager.
-	terrain_manager.terrain_speed = difficulty_speed()
+	#terrain_manager.terrain_speed = difficulty_speed()
+	reset_movement()
 	
 	# Emits a signal for the passed_pillar one.
 	passed_pillar.emit()
@@ -52,10 +53,18 @@ func increase_score(points: int):
 
 
 #region Movement
+func _on_player_floppy_jumped() -> void:
+	reset_movement()
+
+
 func _on_player_floppy_dashed_vertically(points: int) -> void:
 	if can_score_from_vertical_dash:
 		increase_score(points)
 		can_score_from_vertical_dash = false
+	
+	terrain_manager.terrain_speed = difficulty_speed()
+	player_character.gravity_enabled = false
+	#reset_movement()
 
 
 func _on_player_floppy_dashed_forward(points: int) -> void:
@@ -69,10 +78,16 @@ func _on_player_floppy_dashed_forward(points: int) -> void:
 	player_character.gravity_enabled = false
 	player_character.velocity = Vector3(0, 0, 0)
 
+
 ## Returns the sum of base terrain speed and the difficulty curve sample based on
 ## the number of pillars that were passed.
 func difficulty_speed():
 	return terrain_manager.base_terrain_speed + difficulty_curve.sample(pillars_passed)
+
+
+func reset_movement():
+	terrain_manager.terrain_speed = difficulty_speed()
+	player_character.gravity_enabled = true
 #endregion
 
 #endregion

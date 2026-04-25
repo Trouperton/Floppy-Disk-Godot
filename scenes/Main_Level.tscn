@@ -245,4 +245,5 @@ script = ExtResource("13_70qg3")
 [connection signal="dashed_forward" from="PlayerFloppy" to="." method="_on_player_floppy_dashed_forward"]
 [connection signal="dashed_vertically" from="PlayerFloppy" to="." method="_on_player_floppy_dashed_vertically"]
 [connection signal="died" from="PlayerFloppy" to="." method="_on_player_floppy_died"]
+[connection signal="jumped" from="PlayerFloppy" to="." method="_on_player_floppy_jumped"]
 [connection signal="visibility_changed" from="PauseScreen" to="PauseScreen" method="_on_visibility_changed"]

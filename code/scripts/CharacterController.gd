@@ -6,6 +6,7 @@ extends CharacterBody3D
 
 
 signal died()
+signal jumped()
 signal dashed_vertically(points: int)
 signal dashed_forward(points: int)
 
@@ -90,6 +91,7 @@ func player_input():
 		velocity.y = jump_velocity
 		animation_state = AnimationStates.RISING
 		$JumpAudioPlayer.play()
+		jumped.emit()
 	
 	check_dash()
 
@@ -135,7 +137,6 @@ func _on_dash_cooldown_timer_timeout() -> void:
 
 
 func _on_world_passed_pillar() -> void:
-	gravity_enabled = true
 	animation_state = AnimationStates.FALLING
 #endregion
 
