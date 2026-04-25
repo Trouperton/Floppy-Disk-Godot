@@ -76,7 +76,7 @@ func _on_player_floppy_dashed_forward(points: int) -> void:
 	# Resets velocity to 0 and disables gravity so the dash motion is a straight
 	# line forward
 	player_character.gravity_enabled = false
-	player_character.velocity = Vector3(0, 0, 0)
+	#player_character.velocity = Vector3(0, 0, 0)
 
 
 ## Returns the sum of base terrain speed and the difficulty curve sample based on

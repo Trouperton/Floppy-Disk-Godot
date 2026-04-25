@@ -121,6 +121,7 @@ func vertical_dash(dash_up: bool):
 
 ## Emits a signal to trigger behaviour needed to perform the forward dash.
 func forward_dash():
+	velocity = Vector3(0, 0, 0)
 	dashed_forward.emit(forward_dash_points)
 	
 	# TODO: Add an audio player to play a sound when the player dashes forward.
