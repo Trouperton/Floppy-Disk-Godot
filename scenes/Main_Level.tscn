@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://csq3vh6rlxv56" path="res://scenes/terrain/segments/TerrainSegment_LowTight.tscn" id="9_71oo0"]
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/RestartButton.gd" id="12_kd8ca"]
 [ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/ExitButton.gd" id="13_70qg3"]
+[ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="14_5p1a1"]
 [ext_resource type="Script" uid="uid://bpc55oex1bfxf" path="res://code/scripts/PauseScreen.gd" id="14_71oo0"]
 
 [sub_resource type="Curve" id="Curve_u1hvi"]
@@ -78,6 +79,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
 
 [node name="TerrainSegment" parent="TerrainSegmentManager/TerrainSegments" unique_id=1747596346 instance=ExtResource("2_wkt5j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="TerrainSegmentsDistant" type="Node3D" parent="TerrainSegmentManager" unique_id=200854100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+
+[node name="SynthwaveTerrain_Distant" parent="TerrainSegmentManager/TerrainSegmentsDistant" unique_id=465094110 instance=ExtResource("14_5p1a1")]
 
 [node name="PlayerFloppy" parent="." unique_id=188171447 instance=ExtResource("7_jyykg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.5)
