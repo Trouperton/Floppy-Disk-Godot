@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://7f5fl4wcmpry"]
+
+[ext_resource type="Script" uid="uid://cypm1g13s1h57" path="res://code/scripts/TerrainSegmentsManagerProperties.gd" id="1_o5wtr"]
+[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="2_3s7ua"]
+[ext_resource type="PackedScene" uid="uid://1wbg62mj1x38" path="res://scenes/terrain/segments/TerrainSegment_High.tscn" id="3_qflef"]
+[ext_resource type="PackedScene" uid="uid://bj4ypjmqepujv" path="res://scenes/terrain/segments/TerrainSegment_HighTight.tscn" id="4_8owl6"]
+[ext_resource type="PackedScene" uid="uid://dghnsv1glw8n0" path="res://scenes/terrain/segments/TerrainSegment_Mid.tscn" id="5_07rv3"]
+[ext_resource type="PackedScene" uid="uid://bttvg1dteoe28" path="res://scenes/terrain/segments/TerrainSegment_MidTight.tscn" id="6_dm01s"]
+[ext_resource type="PackedScene" uid="uid://byj8xyrqufghu" path="res://scenes/terrain/segments/TerrainSegment_Low.tscn" id="7_uly0q"]
+[ext_resource type="PackedScene" uid="uid://csq3vh6rlxv56" path="res://scenes/terrain/segments/TerrainSegment_LowTight.tscn" id="8_gxsfh"]
+
+[resource]
+script = ExtResource("1_o5wtr")
+delete_threshold = -40.0
+spawning_threshold = 40.0
+number_to_spawn = 10
+segment_collection = Array[PackedScene]([ExtResource("2_3s7ua"), ExtResource("3_qflef"), ExtResource("4_8owl6"), ExtResource("7_uly0q"), ExtResource("8_gxsfh"), ExtResource("5_07rv3"), ExtResource("6_dm01s")])

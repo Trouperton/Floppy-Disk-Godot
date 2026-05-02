@@ -8,22 +8,12 @@ signal segment_spawned(segment: GridMap)
 @export var base_terrain_speed: float = 1.0
 
 @export_category("Terrain Spawning")
-## The distance to the left from the centre of the screen at which terrain segments get
-## deleted to avoid major performance impact.
-@export var terrain_delete_threshold: float = -30
-## The distance to the right from the centre of the screen, if there is terrain
-## missing to the left of this point; more terrain gets spawned.
-@export var terrain_spawning_threshold: float = 30
-## The minimum number of segments that will be spawned whenever the manager spawns more.
-@export var minimum_segments_to_spawn: int = 5
-## The selection of terrain segments that will be spawned by the terrain segment manager.
-@export var terrain_segment_spawn_collection: Array[PackedScene]
+@export var terrains: Array[Resource]
 
 
 ## The current speed at which the terrain gets moved each physics process.
 var terrain_speed: float
-## The collection of terrain segments that the manager is currently managing.
-var terrain_segments
+var terrain_segments_distant
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,7 +21,7 @@ func _ready() -> void:
 	terrain_speed = base_terrain_speed
 	find_segments()
 	
-	for segment in terrain_segments:
+	for segment in terrains[0].segments:
 		segment_spawned.emit(segment)
 	
 	check_terrain() 
@@ -43,7 +33,10 @@ func _physics_process(delta: float) -> void:
 
 ## Moves all terrain segments to the left based on [member terrain_speed].
 func move_terrain(delta: float):
-	for segment in terrain_segments:
+	for segment in terrains[0].segments:
+		segment.position.x -= terrain_speed * delta
+	
+	for segment in terrain_segments_distant:
 		segment.position.x -= terrain_speed * delta
 
 
@@ -51,10 +44,12 @@ func move_terrain(delta: float):
 ## Looks for all the child ones of the empty "TerrainSegments" node and adds them
 ## to [member terrain_segments].
 func find_segments():
-	terrain_segments = $TerrainSegments.get_children()
+	terrains[0].segments = $TerrainSegments.get_children()
 	#print_debug(name, " node found ", terrain_segments)
-	if terrain_segments.size() == 0:
+	if terrains[0].segments.size() == 0:
 		printerr(name, " failed to find terrain segments!")
+	
+	terrain_segments_distant = $TerrainSegmentsDistant.get_children()
 
 
 ## Checks what [member terrain_segments] are currently present.[br][br]
@@ -62,21 +57,21 @@ func find_segments():
 ## Any segments past the [member terrain_delete_threshold], get deleted.[br][br]
 ##
 ## And if there isn't enough terrain segments ahead of the [member terrain_spawning_threshold],
-## spawns more based on [member minimum_segments_to_spawn].
+## spawns more based on [member segments_to_spawn].
 func check_terrain():
 	var segments_changed = false
 	var furthest_forward: GridMap = null
 	var segments_to_delete: Array[GridMap]
 	
-	if terrain_segments.size() == 0:
+	if terrains[0].segments.size() == 0:
 		printerr(name, " has no terrain segments, can't check terrain!")
 		return
 	
-	for segment in terrain_segments:
+	for segment in terrains[0].segments:
 		if furthest_forward == null or segment.position.x > furthest_forward.position.x:
 			furthest_forward = segment
 		
-		if segment.position.x < terrain_delete_threshold:
+		if segment.position.x < terrains[0].delete_threshold:
 			segments_changed = true
 			segments_to_delete.append(segment)
 	
@@ -88,11 +83,11 @@ func check_terrain():
 		printerr(name, " could not determine the further forward segment!")
 		return
 	
-	if furthest_forward.position.x < terrain_spawning_threshold:
-		for i in minimum_segments_to_spawn:
-			var new_segment: GridMap = terrain_segment_spawn_collection[randi_range(0, terrain_segment_spawn_collection.size() - 1)].instantiate()
+	if furthest_forward.position.x < terrains[0].spawning_threshold:
+		for i in terrains[0].number_to_spawn:
+			var new_segment: GridMap = terrains[0].segment_collection[randi_range(0, terrains[0].segment_collection.size() - 1)].instantiate()
 			$TerrainSegments.add_child(new_segment)
-			new_segment.position.x = furthest_forward.position.x + (7 * (i + 1)) # 7 corresponds to terrain segment width and the + 1 is there so it counts from 1 not 0.
+			new_segment.position.x = furthest_forward.position.x + (terrains[0].segment_width * (i + 1))
 			segment_spawned.emit(new_segment)
 		
 		segments_changed = true
