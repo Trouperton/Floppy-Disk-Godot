@@ -34,10 +34,16 @@ var gravity_enabled: bool = true
 var can_dash = true
 var animation_state: int = AnimationStates.FALLING
 var is_dead = false
+var all_ray_casts: Array[RayCast3D]
 
 
 func _ready() -> void:
 	$"Floppy Disk/AnimationPlayer".animation_finished.connect(_on_animation_finished)
+	
+	var temp_children = get_children()
+	for i in temp_children:
+		if i is RayCast3D:
+			all_ray_casts.append(i)
 
 func _physics_process(delta: float) -> void:
 	if Engine.get_physics_frames() % 3 == 0:
@@ -69,14 +75,9 @@ func check_collisions():
 			is_dead = true
 	
 	# Checks if the player collided with a cast
-	if $WallRayCast3D.is_colliding() and $WallRayCast3D.get_collider().is_in_group(OBSTACLE_GROUP):
-		is_dead = true
-	
-	if $CeilingRayCast3D.is_colliding() and $CeilingRayCast3D.get_collider().is_in_group(OBSTACLE_GROUP):
-		is_dead = true
-	
-	if $FloorRayCast3D.is_colliding() and $FloorRayCast3D.get_collider().is_in_group(OBSTACLE_GROUP):
-		is_dead = true
+	for ray in all_ray_casts:
+		if ray.is_colliding() and ray.get_collider().is_in_group(OBSTACLE_GROUP):
+			is_dead = true
 	
 	if is_dead:
 		kill_player()
