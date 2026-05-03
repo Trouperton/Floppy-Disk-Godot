@@ -15,6 +15,10 @@ run/main_scene="uid://dltqfqq4a1akj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b1pa8shx5i1gi"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 obstacle="Cause the player to lose if collided with."

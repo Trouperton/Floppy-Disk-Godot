@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://7d2esih81gtk" path="res://resources/TerrainSegmentsDistantProperties.tres" id="4_anrmw"]
 [ext_resource type="PackedScene" uid="uid://b7gbl2o8jgcy2" path="res://scenes/terrain/segments/TerrainSegment_Empty.tscn" id="6_jyykg"]
 [ext_resource type="PackedScene" uid="uid://ba0vxdpdxmw6q" path="res://scenes/PlayerFloppy.tscn" id="7_jyykg"]
+[ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="12_2c6xe"]
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/RestartButton.gd" id="12_kd8ca"]
 [ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/ExitButton.gd" id="13_70qg3"]
 [ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="14_5p1a1"]
@@ -240,6 +241,10 @@ script = ExtResource("12_kd8ca")
 layout_mode = 2
 text = "Exit"
 script = ExtResource("13_70qg3")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=479728626]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 19.328157, -24.451464)
+texture = ExtResource("12_2c6xe")
 
 [connection signal="passed_pillar" from="." to="PlayerFloppy" method="_on_world_passed_pillar"]
 [connection signal="segment_spawned" from="TerrainSegmentManager" to="." method="_on_terrain_segment_manager_segment_spawned"]
