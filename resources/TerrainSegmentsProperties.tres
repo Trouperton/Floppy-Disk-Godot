@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://csq3vh6rlxv56" path="res://scenes/terrain/segments/TerrainSegment_LowTight.tscn" id="8_gxsfh"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_o5wtr")
+parent_node = NodePath("TerrainSegments")
 delete_threshold = -40.0
 spawning_threshold = 40.0
 number_to_spawn = 10

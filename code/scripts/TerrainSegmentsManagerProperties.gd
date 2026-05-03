@@ -1,5 +1,6 @@
 extends Resource
 
+@export var parent_node: NodePath
 @export var segment_width: float = 7
 ## The distance to the left from the centre of the screen at which terrain segments get
 ## deleted to avoid major performance impact.

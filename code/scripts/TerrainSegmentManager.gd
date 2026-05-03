@@ -19,12 +19,17 @@ var terrain_segments_distant
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	terrain_speed = base_terrain_speed
-	find_segments()
+	for terrain in terrains:
+		find_segments(terrain)
+		for segment in terrains[0].segments:
+			segment_spawned.emit(segment)
+		check_terrain(terrain) 
 	
-	for segment in terrains[0].segments:
-		segment_spawned.emit(segment)
-	
-	check_terrain() 
+	#for segment in terrains[0].segments:
+		#segment_spawned.emit(segment)
+	#
+	#for terrain in terrains:
+		#check_terrain(terrain) 
 
 
 func _physics_process(delta: float) -> void:
@@ -33,23 +38,27 @@ func _physics_process(delta: float) -> void:
 
 ## Moves all terrain segments to the left based on [member terrain_speed].
 func move_terrain(delta: float):
-	for segment in terrains[0].segments:
-		segment.position.x -= terrain_speed * delta
+	#for segment in terrains[0].segments:
+		#segment.position.x -= terrain_speed * delta
 	
-	for segment in terrain_segments_distant:
-		segment.position.x -= terrain_speed * delta
+	for terrain in terrains:
+		for segment in terrain.segments:
+			segment.position.x -= terrain_speed * delta
+	#for segment in terrain_segments_distant:
+		#segment.position.x -= terrain_speed * delta
 
 
 #region Terrain Checking
 ## Looks for all the child ones of the empty "TerrainSegments" node and adds them
 ## to [member terrain_segments].
-func find_segments():
-	terrains[0].segments = $TerrainSegments.get_children()
+func find_segments(terrain: Resource):
+	var node_parent: Node3D = get_node(terrain.parent_node)
+	terrain.segments = node_parent.get_children()
 	#print_debug(name, " node found ", terrain_segments)
-	if terrains[0].segments.size() == 0:
+	if terrain.segments.size() == 0:
 		printerr(name, " failed to find terrain segments!")
 	
-	terrain_segments_distant = $TerrainSegmentsDistant.get_children()
+	#terrain_segments_distant = $TerrainSegmentsDistant.get_children()
 
 
 ## Checks what [member terrain_segments] are currently present.[br][br]
@@ -58,44 +67,46 @@ func find_segments():
 ##
 ## And if there isn't enough terrain segments ahead of the [member terrain_spawning_threshold],
 ## spawns more based on [member segments_to_spawn].
-func check_terrain():
+func check_terrain(terrain: Resource):
 	var segments_changed = false
-	var furthest_forward: GridMap = null
+	var furthest_forward = null
 	var segments_to_delete: Array[GridMap]
-	
-	if terrains[0].segments.size() == 0:
+	var node_parent: Node3D = get_node(terrain.parent_node)
+	if terrain.segments.size() == 0:
 		printerr(name, " has no terrain segments, can't check terrain!")
 		return
 	
-	for segment in terrains[0].segments:
+	for segment in terrain.segments:
 		if furthest_forward == null or segment.position.x > furthest_forward.position.x:
 			furthest_forward = segment
 		
-		if segment.position.x < terrains[0].delete_threshold:
+		if segment.position.x < terrain.delete_threshold:
 			segments_changed = true
 			segments_to_delete.append(segment)
 	
 	for segment in segments_to_delete:
-		$TerrainSegments.remove_child(segment)
+		node_parent.remove_child(segment)
 		segment.queue_free()
 	
 	if furthest_forward == null:
 		printerr(name, " could not determine the further forward segment!")
 		return
 	
-	if furthest_forward.position.x < terrains[0].spawning_threshold:
-		for i in terrains[0].number_to_spawn:
-			var new_segment: GridMap = terrains[0].segment_collection[randi_range(0, terrains[0].segment_collection.size() - 1)].instantiate()
-			$TerrainSegments.add_child(new_segment)
-			new_segment.position.x = furthest_forward.position.x + (terrains[0].segment_width * (i + 1))
+	if furthest_forward.position.x < terrain.spawning_threshold:
+		for i in terrain.number_to_spawn:
+			var new_segment = terrain.segment_collection[randi_range(0, terrain.segment_collection.size() - 1)].instantiate()
+			node_parent.add_child(new_segment)
+			new_segment.position.x = furthest_forward.position.x + (terrain.segment_width * (i + 1))
 			segment_spawned.emit(new_segment)
 		
 		segments_changed = true
 	
 	if segments_changed:
-		find_segments()
+		find_segments(terrain)
 
 
 func _on_terrain_check_timer_timeout() -> void:
-	check_terrain()
+	for terrain in terrains:
+		print("checking ", terrain)
+		check_terrain(terrain)
 #endregion

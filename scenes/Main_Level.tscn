@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/TerrainSegmentManager.gd" id="1_wkt5j"]
 [ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="2_wkt5j"]
 [ext_resource type="Resource" uid="uid://7f5fl4wcmpry" path="res://resources/TerrainSegmentsProperties.tres" id="3_lujic"]
+[ext_resource type="Resource" uid="uid://7d2esih81gtk" path="res://resources/TerrainSegmentsDistantProperties.tres" id="4_anrmw"]
 [ext_resource type="PackedScene" uid="uid://b7gbl2o8jgcy2" path="res://scenes/terrain/segments/TerrainSegment_Empty.tscn" id="6_jyykg"]
 [ext_resource type="PackedScene" uid="uid://ba0vxdpdxmw6q" path="res://scenes/PlayerFloppy.tscn" id="7_jyykg"]
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/RestartButton.gd" id="12_kd8ca"]
@@ -47,7 +48,7 @@ environment = SubResource("Environment_2v7ry")
 [node name="TerrainSegmentManager" type="Node3D" parent="." unique_id=260624578]
 script = ExtResource("1_wkt5j")
 base_terrain_speed = 2.0
-terrains = Array[Resource]([ExtResource("3_lujic")])
+terrains = Array[Resource]([ExtResource("3_lujic"), ExtResource("4_anrmw")])
 
 [node name="TerrainCheckTimer" type="Timer" parent="TerrainSegmentManager" unique_id=93723995]
 wait_time = 3.0

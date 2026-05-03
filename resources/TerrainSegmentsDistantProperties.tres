@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://7d2esih81gtk"]
+
+[ext_resource type="Script" uid="uid://cypm1g13s1h57" path="res://code/scripts/TerrainSegmentsManagerProperties.gd" id="1_ise26"]
+[ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="2_ta8f2"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_ise26")
+parent_node = NodePath("TerrainSegmentsDistant")
+segment_width = 100.0
+delete_threshold = -51.0
+spawning_threshold = 51.0
+number_to_spawn = 1
+segment_collection = Array[PackedScene]([ExtResource("2_ta8f2")])
