@@ -68,10 +68,15 @@ func check_collisions():
 		if get_slide_collision(i).get_collider().is_in_group(OBSTACLE_GROUP):
 			is_dead = true
 	
-	# Checks if the player collided with a wall with a cast
-	for i in $WallCheckCast3D.get_collision_count():
-		if $WallCheckCast3D.get_collider(i).is_in_group(OBSTACLE_GROUP):
-			is_dead = true
+	# Checks if the player collided with a cast
+	if $WallRayCast3D.is_colliding() and $WallRayCast3D.get_collider().is_in_group(OBSTACLE_GROUP):
+		is_dead = true
+	
+	if $CeilingRayCast3D.is_colliding() and $CeilingRayCast3D.get_collider().is_in_group(OBSTACLE_GROUP):
+		is_dead = true
+	
+	if $FloorRayCast3D.is_colliding() and $FloorRayCast3D.get_collider().is_in_group(OBSTACLE_GROUP):
+		is_dead = true
 	
 	if is_dead:
 		kill_player()
