@@ -21,8 +21,9 @@ func _ready() -> void:
 	terrain_speed = base_terrain_speed
 	for terrain in terrains:
 		find_segments(terrain)
-		for segment in terrains[0].segments:
-			segment_spawned.emit(segment)
+		for segment in terrain.segments:
+			if segment is GridMap:
+				segment_spawned.emit(segment)
 		check_terrain(terrain) 
 	
 	#for segment in terrains[0].segments:
@@ -70,7 +71,7 @@ func find_segments(terrain: Resource):
 func check_terrain(terrain: Resource):
 	var segments_changed = false
 	var furthest_forward = null
-	var segments_to_delete: Array[GridMap]
+	var segments_to_delete: Array[Node3D]
 	var node_parent: Node3D = get_node(terrain.parent_node)
 	if terrain.segments.size() == 0:
 		printerr(name, " has no terrain segments, can't check terrain!")
@@ -97,7 +98,9 @@ func check_terrain(terrain: Resource):
 			var new_segment = terrain.segment_collection[randi_range(0, terrain.segment_collection.size() - 1)].instantiate()
 			node_parent.add_child(new_segment)
 			new_segment.position.x = furthest_forward.position.x + (terrain.segment_width * (i + 1))
-			segment_spawned.emit(new_segment)
+			if new_segment.get_node_or_null("ScoreThreshold") != null:
+				
+				segment_spawned.emit(new_segment)
 		
 		segments_changed = true
 	
@@ -107,6 +110,5 @@ func check_terrain(terrain: Resource):
 
 func _on_terrain_check_timer_timeout() -> void:
 	for terrain in terrains:
-		print("checking ", terrain)
 		check_terrain(terrain)
 #endregion

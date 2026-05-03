@@ -76,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 [node name="TerrainSegmentsDistant" type="Node3D" parent="TerrainSegmentManager" unique_id=200854100]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
 
-[node name="SynthwaveTerrain_Distant" parent="TerrainSegmentManager/TerrainSegmentsDistant" unique_id=465094110 instance=ExtResource("14_5p1a1")]
+[node name="SynthwaveTerrain_Distant" parent="TerrainSegmentManager/TerrainSegmentsDistant" unique_id=1282399969 instance=ExtResource("14_5p1a1")]
 
 [node name="PlayerFloppy" parent="." unique_id=188171447 instance=ExtResource("7_jyykg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.5)
