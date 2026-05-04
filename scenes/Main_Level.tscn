@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="2_wkt5j"]
 [ext_resource type="Resource" uid="uid://7f5fl4wcmpry" path="res://resources/TerrainSegmentsProperties.tres" id="3_lujic"]
 [ext_resource type="Resource" uid="uid://7d2esih81gtk" path="res://resources/TerrainSegmentsDistantProperties.tres" id="4_anrmw"]
+[ext_resource type="Resource" uid="uid://1a33nq4gwnwv" path="res://resources/TerrainSegmentsBackgroundProperties.tres" id="4_u1hvi"]
 [ext_resource type="PackedScene" uid="uid://b7gbl2o8jgcy2" path="res://scenes/terrain/segments/TerrainSegment_Empty.tscn" id="6_jyykg"]
+[ext_resource type="PackedScene" uid="uid://slaysg3foja" path="res://art/Terrain/SynthwaveTerrain_Plane.glb" id="7_bnhpw"]
 [ext_resource type="PackedScene" uid="uid://ba0vxdpdxmw6q" path="res://scenes/PlayerFloppy.tscn" id="7_jyykg"]
 [ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="12_2c6xe"]
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/RestartButton.gd" id="12_kd8ca"]
@@ -40,8 +42,10 @@ score_label = NodePath("HUD/ScoreLabel")
 difficulty_curve = SubResource("Curve_u1hvi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276924402]
-transform = Transform3D(0.5446391, 0.72631, -0.41933522, 0, 0.49999997, 0.86602545, 0.8386705, -0.47167134, 0.27231953, 0, 0, 0)
-shadow_enabled = true
+transform = Transform3D(1, 0, 0, 0, -0.8360565, 0.54864347, 0, -0.54864347, -0.8360565, 0, 1.8766732, 0)
+visible = false
+light_energy = 0.1
+light_specular = 5.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=688706798]
 environment = SubResource("Environment_2v7ry")
@@ -49,10 +53,9 @@ environment = SubResource("Environment_2v7ry")
 [node name="TerrainSegmentManager" type="Node3D" parent="." unique_id=260624578]
 script = ExtResource("1_wkt5j")
 base_terrain_speed = 2.0
-terrains = Array[Resource]([ExtResource("3_lujic"), ExtResource("4_anrmw")])
+terrains = Array[Resource]([ExtResource("3_lujic"), ExtResource("4_u1hvi"), ExtResource("4_anrmw")])
 
 [node name="TerrainCheckTimer" type="Timer" parent="TerrainSegmentManager" unique_id=93723995]
-wait_time = 3.0
 autostart = true
 
 [node name="TerrainSegments" type="Node3D" parent="TerrainSegmentManager" unique_id=180250620]
@@ -74,10 +77,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
 [node name="TerrainSegment" parent="TerrainSegmentManager/TerrainSegments" unique_id=1747596346 instance=ExtResource("2_wkt5j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 
+[node name="TerrainSegmentsBackground" type="Node3D" parent="TerrainSegmentManager" unique_id=1860192839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="SynthwaveTerrain_Plane" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1481661696 instance=ExtResource("7_bnhpw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane2" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1978535532 instance=ExtResource("7_bnhpw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane3" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=515337479 instance=ExtResource("7_bnhpw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane4" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1423516482 instance=ExtResource("7_bnhpw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane5" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=382343465 instance=ExtResource("7_bnhpw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane6" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=220860055 instance=ExtResource("7_bnhpw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, 0)
+
 [node name="TerrainSegmentsDistant" type="Node3D" parent="TerrainSegmentManager" unique_id=200854100]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
 
 [node name="SynthwaveTerrain_Distant" parent="TerrainSegmentManager/TerrainSegmentsDistant" unique_id=1282399969 instance=ExtResource("14_5p1a1")]
+
+[node name="BackgroundSprite" type="Sprite3D" parent="." unique_id=479728626]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 19.328157, -24.451464)
+texture = ExtResource("12_2c6xe")
 
 [node name="PlayerFloppy" parent="." unique_id=188171447 instance=ExtResource("7_jyykg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.5)
@@ -242,9 +270,14 @@ layout_mode = 2
 text = "Exit"
 script = ExtResource("13_70qg3")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=479728626]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 19.328157, -24.451464)
-texture = ExtResource("12_2c6xe")
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1272466041]
+transform = Transform3D(1, 0, 0, 0, -0.9569809, 0.29015118, 0, -0.29015118, -0.9569809, 0, 17.420866, -36.130466)
+light_color = Color(0.9999997, 0.12269535, 0.33580896, 1)
+light_size = 1.0
+light_specular = 1.0
+spot_range = 74.75938
+spot_angle = 42.983753
+spot_angle_attenuation = 0.14358711
 
 [connection signal="passed_pillar" from="." to="PlayerFloppy" method="_on_world_passed_pillar"]
 [connection signal="segment_spawned" from="TerrainSegmentManager" to="." method="_on_terrain_segment_manager_segment_spawned"]
