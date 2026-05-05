@@ -103,6 +103,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
 
 [node name="SynthwaveTerrain_Distant" parent="TerrainSegmentManager/TerrainSegmentsDistant" unique_id=1282399969 instance=ExtResource("14_5p1a1")]
 
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1272466041]
+transform = Transform3D(1, 0, 0, 0, -0.9569809, 0.29015118, 0, -0.29015118, -0.9569809, 0, 17.420866, -36.130466)
+light_color = Color(0.9999997, 0.12269535, 0.33580896, 1)
+light_size = 1.0
+light_specular = 2.0
+spot_range = 74.75938
+spot_angle = 42.983753
+
 [node name="BackgroundSprite" type="Sprite3D" parent="." unique_id=479728626]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 19.328157, -24.451464)
 texture = ExtResource("12_2c6xe")
@@ -269,15 +277,6 @@ script = ExtResource("12_kd8ca")
 layout_mode = 2
 text = "Exit"
 script = ExtResource("13_70qg3")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1272466041]
-transform = Transform3D(1, 0, 0, 0, -0.9569809, 0.29015118, 0, -0.29015118, -0.9569809, 0, 17.420866, -36.130466)
-light_color = Color(0.9999997, 0.12269535, 0.33580896, 1)
-light_size = 1.0
-light_specular = 1.0
-spot_range = 74.75938
-spot_angle = 42.983753
-spot_angle_attenuation = 0.14358711
 
 [connection signal="passed_pillar" from="." to="PlayerFloppy" method="_on_world_passed_pillar"]
 [connection signal="segment_spawned" from="TerrainSegmentManager" to="." method="_on_terrain_segment_manager_segment_spawned"]
