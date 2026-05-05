@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://elyhnmad3klq"]
+
+[ext_resource type="FontFile" uid="uid://co5avcht0ifn3" path="res://resources/Theme/Orbitron-VariableFont_wght.ttf" id="1_ojy50"]
+
+[resource]
+default_font = ExtResource("1_ojy50")
+default_font_size = 20

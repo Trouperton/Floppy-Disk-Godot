@@ -49,7 +49,7 @@ func increase_score(points: int):
 	#print_debug(name," node added ",points, " points, new score is " , score)
 	
 	# TODO: change the direct manipulation of score label to a signal.
-	score_label.text = "Score: " + str(score)
+	score_label.text = str(score)
 
 
 #region Movement

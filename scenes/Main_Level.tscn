@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://slaysg3foja" path="res://art/Terrain/SynthwaveTerrain_Plane.glb" id="7_bnhpw"]
 [ext_resource type="PackedScene" uid="uid://ba0vxdpdxmw6q" path="res://scenes/PlayerFloppy.tscn" id="7_jyykg"]
 [ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="12_2c6xe"]
+[ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/Theme/ui_theme.tres" id="12_5p1a1"]
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/RestartButton.gd" id="12_kd8ca"]
 [ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/ExitButton.gd" id="13_70qg3"]
 [ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="14_5p1a1"]
@@ -130,6 +131,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("12_5p1a1")
 
 [node name="ScoreLabel" type="Label" parent="HUD" unique_id=1952512950]
 layout_mode = 0
@@ -138,7 +140,7 @@ offset_top = 10.0
 offset_right = 141.0
 offset_bottom = 55.0
 theme_override_font_sizes/font_size = 32
-text = "Score: 0"
+text = "0"
 
 [node name="EndScreen" type="Control" parent="." unique_id=520132344]
 process_mode = 3
@@ -149,6 +151,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("12_5p1a1")
 
 [node name="Panel" type="Panel" parent="EndScreen" unique_id=1159359007]
 layout_mode = 1
@@ -213,6 +216,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("12_5p1a1")
 script = ExtResource("14_71oo0")
 
 [node name="Panel" type="Panel" parent="PauseScreen" unique_id=801291354]
