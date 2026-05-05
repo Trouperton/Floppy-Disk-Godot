@@ -22,15 +22,9 @@ func _ready() -> void:
 	for terrain in terrains:
 		find_segments(terrain)
 		for segment in terrain.segments:
-			if segment is GridMap:
+			if segment.get_node_or_null("ScoreThreshold") != null:
 				segment_spawned.emit(segment)
 		check_terrain(terrain) 
-	
-	#for segment in terrains[0].segments:
-		#segment_spawned.emit(segment)
-	#
-	#for terrain in terrains:
-		#check_terrain(terrain) 
 
 
 func _physics_process(delta: float) -> void:
