@@ -94,14 +94,11 @@ func check_terrain(terrain: Resource):
 		return
 	
 	if furthest_forward.position.x < terrain.spawning_threshold:
-		rng.randomize()
 		for i in terrain.number_to_spawn:
-			rng.seed = rng.seed + i
 			var new_segment = terrain.segment_collection[rng.randi_range(0, terrain.segment_collection.size() - 1)].instantiate()
 			node_parent.add_child(new_segment)
 			new_segment.position.x = furthest_forward.position.x + (terrain.segment_width * (i + 1))
 			if new_segment.get_node_or_null("ScoreThreshold") != null:
-				
 				segment_spawned.emit(new_segment)
 		
 		segments_changed = true
@@ -111,6 +108,7 @@ func check_terrain(terrain: Resource):
 
 
 func _on_terrain_check_timer_timeout() -> void:
+	rng.randomize()
 	for terrain in terrains:
 		check_terrain(terrain)
 #endregion
