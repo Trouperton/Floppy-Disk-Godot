@@ -67,14 +67,15 @@ func _physics_process(delta: float) -> void:
 ## Handles collision checks that are detected by move_and_slide() and
 ## WallCheckCast3D node looking for collisions with obstacles.
 func check_collisions():
+	if is_dead:
+		return
+	
 	# Checks if the player collided using a cast
 	for cast in all_shape_casts:
 		for i in cast.get_collision_count():
 			if cast.get_collider(i).is_in_group(OBSTACLE_GROUP):
 				is_dead = true
-	
-	if is_dead:
-		kill_player()
+				kill_player()
 
 
 func kill_player():
