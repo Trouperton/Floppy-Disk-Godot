@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cb8s2r5w0fnwu" path="res://resources/Jingle Win 003.wav" id="5_n4g6x"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_et5am"]
+radius = 0.49
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ko03r"]
 random_pitch = 1.0594631
@@ -34,15 +35,6 @@ shape = SubResource("SphereShape3D_et5am")
 shape = SubResource("SphereShape3D_et5am")
 target_position = Vector3(0, 0, 0)
 margin = 0.1
-
-[node name="WallRayCast3D" type="RayCast3D" parent="." unique_id=2137365386]
-target_position = Vector3(0.5, 0, 0)
-
-[node name="CeilingRayCast3D" type="RayCast3D" parent="." unique_id=161863068]
-target_position = Vector3(0, 0.5, 0)
-
-[node name="FloorRayCast3D" type="RayCast3D" parent="." unique_id=642302225]
-target_position = Vector3(0, -0.5, 0)
 
 [node name="DashCooldownTimer" type="Timer" parent="." unique_id=1608018954]
 wait_time = 0.1
