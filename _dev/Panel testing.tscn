@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bjcqe2lhlfbft"]
+
+[ext_resource type="Texture2D" uid="uid://dm11wxbhbtxis" path="res://art/UI Panel.png" id="1_u6fmn"]
+[ext_resource type="Texture2D" uid="uid://jr45w4g6y3a0" path="res://art/UI Panel Score.png" id="2_vrpgp"]
+[ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/Theme/ui_theme.tres" id="3_47xvg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrpgp"]
+texture = ExtResource("1_u6fmn")
+texture_margin_left = 50.0
+texture_margin_top = 50.0
+texture_margin_right = 50.0
+texture_margin_bottom = 50.0
+region_rect = Rect2(0, 0, 810, 810)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47xvg"]
+texture = ExtResource("2_vrpgp")
+texture_margin_left = 38.554333
+texture_margin_right = 145.45497
+region_rect = Rect2(3, 10, 326, 140)
+
+[node name="Control" type="Control" unique_id=1463516739]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 108.0
+offset_top = 9.0
+offset_right = 108.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=846107240]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 65.0
+offset_right = 1026.0
+offset_bottom = 575.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vrpgp")
+
+[node name="UiPanelScore" type="Sprite2D" parent="." unique_id=1158223214]
+visible = false
+position = Vector2(44, 1011)
+texture = ExtResource("2_vrpgp")
+
+[node name="Panel" type="Panel" parent="." unique_id=258458180]
+visible = false
+layout_mode = 0
+offset_left = -116.0
+offset_top = 942.0
+offset_right = 255.0
+offset_bottom = 1082.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_47xvg")
+
+[node name="Label" type="Label" parent="." unique_id=2137431212]
+layout_mode = 0
+offset_left = -117.0
+offset_top = 956.0
+offset_right = 244.00931
+offset_bottom = 1079.0
+theme = ExtResource("3_47xvg")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_47xvg")
+text = "000"
+vertical_alignment = 1
