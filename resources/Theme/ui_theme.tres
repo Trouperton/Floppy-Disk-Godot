@@ -1,7 +1,21 @@
 [gd_resource type="Theme" format=3 uid="uid://elyhnmad3klq"]
 
+[ext_resource type="Texture2D" uid="uid://dm11wxbhbtxis" path="res://art/UI Panel.png" id="1_l003u"]
 [ext_resource type="FontFile" uid="uid://co5avcht0ifn3" path="res://resources/Theme/Orbitron-VariableFont_wght.ttf" id="1_ojy50"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrpgp"]
+texture = ExtResource("1_l003u")
+texture_margin_left = 50.0
+texture_margin_top = 50.0
+texture_margin_right = 50.0
+texture_margin_bottom = 50.0
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 810, 810)
 
 [resource]
 default_font = ExtResource("1_ojy50")
 default_font_size = 20
+Panel/styles/panel = SubResource("StyleBoxTexture_vrpgp")
