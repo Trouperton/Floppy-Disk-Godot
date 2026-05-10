@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dltqfqq4a1akj"]
+[gd_scene format=3 uid="uid://dgabwr3imfpdi"]
 
 [ext_resource type="Script" uid="uid://c8fbihv1boefu" path="res://code/scripts/level_manager.gd" id="1_uk2yf"]
 [ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/terrain_segment_manager.gd" id="2_ondrs"]
@@ -12,11 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="10_sjhni"]
 [ext_resource type="PackedScene" uid="uid://ba0vxdpdxmw6q" path="res://scenes/player_floppy.tscn" id="11_7sk5s"]
 [ext_resource type="PackedScene" uid="uid://bgk428qqircr2" path="res://scenes/user_interfaces/hud.tscn" id="12_cssx7"]
-[ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/Theme/ui_theme.tres" id="13_1irq3"]
 [ext_resource type="PackedScene" uid="uid://66jnh1ig0oxi" path="res://scenes/user_interfaces/end_screen.tscn" id="13_ondrs"]
-[ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/user_interface/restart_button.gd" id="14_iycfq"]
-[ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/user_interface/exit_button.gd" id="15_rcrbw"]
-[ext_resource type="Script" uid="uid://bpc55oex1bfxf" path="res://code/scripts/user_interface/pause_screen.gd" id="16_c88u2"]
+[ext_resource type="PackedScene" uid="uid://d133u5mnogym7" path="res://scenes/user_interfaces/pause_screen.tscn" id="14_adxub"]
 
 [sub_resource type="Curve" id="Curve_u1hvi"]
 _limits = [0.0, 3.0, 0.0, 75.0]
@@ -35,9 +32,6 @@ background_mode = 2
 sky = SubResource("Sky_wfdhh")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70qg3"]
-bg_color = Color(0.32544088, 0.3254409, 0.32544076, 1)
 
 [node name="World" type="Node3D" unique_id=1983202797]
 script = ExtResource("1_uk2yf")
@@ -128,81 +122,10 @@ current = true
 [node name="HUD" parent="." unique_id=1914340225 instance=ExtResource("12_cssx7")]
 
 [node name="EndScreen" parent="." unique_id=709823429 instance=ExtResource("13_ondrs")]
-
-[node name="PauseScreen" type="Control" parent="." unique_id=235882125]
-process_mode = 3
 visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("13_1irq3")
-script = ExtResource("16_c88u2")
 
-[node name="Panel" type="Panel" parent="PauseScreen" unique_id=801291354]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_70qg3")
-
-[node name="Panel2" type="Panel" parent="PauseScreen" unique_id=92607214]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.37
-anchor_top = 0.19100001
-anchor_right = 0.63000005
-anchor_bottom = 0.573
-offset_left = -0.23999023
-offset_top = 0.231987
-offset_right = 0.2399292
-offset_bottom = -0.3040161
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen/Panel2" unique_id=118973077]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="FinalScoreLabel" type="Label" parent="PauseScreen/Panel2/VBoxContainer" unique_id=1218418814]
-layout_mode = 2
-theme_override_font_sizes/font_size = 36
-text = "Current Score:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ScoreDisplayLabel" type="Label" parent="PauseScreen/Panel2/VBoxContainer" unique_id=411150765]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "00000"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control" type="Control" parent="PauseScreen/Panel2/VBoxContainer" unique_id=1061253132]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-
-[node name="RestartButton" type="Button" parent="PauseScreen/Panel2/VBoxContainer" unique_id=1603006794]
-layout_mode = 2
-text = "Restart"
-script = ExtResource("14_iycfq")
-
-[node name="ExitButton" type="Button" parent="PauseScreen/Panel2/VBoxContainer" unique_id=927511354]
-layout_mode = 2
-text = "Exit"
-script = ExtResource("15_rcrbw")
+[node name="PauseScreen" parent="." unique_id=987105522 instance=ExtResource("14_adxub")]
+visible = false
 
 [connection signal="game_end" from="." to="HUD" method="_on_world_game_end"]
 [connection signal="game_end" from="." to="EndScreen" method="_on_world_game_end"]
@@ -214,4 +137,3 @@ script = ExtResource("15_rcrbw")
 [connection signal="dashed_vertically" from="PlayerFloppy" to="." method="_on_player_floppy_dashed_vertically"]
 [connection signal="died" from="PlayerFloppy" to="." method="_on_player_floppy_died"]
 [connection signal="jumped" from="PlayerFloppy" to="." method="_on_player_floppy_jumped"]
-[connection signal="visibility_changed" from="PauseScreen" to="PauseScreen" method="_on_visibility_changed"]

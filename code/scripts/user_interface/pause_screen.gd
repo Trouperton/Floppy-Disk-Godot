@@ -9,8 +9,9 @@ func _process(_delta: float) -> void:
 
 func _on_visibility_changed() -> void:
 	if visible:
-		get_tree().paused = true
+		get_parent().get_tree().paused = true
 		$Panel2/VBoxContainer/ScoreDisplayLabel.text = str($"..".score)
 		$Panel2/VBoxContainer/RestartButton.grab_focus()
 	else:
-		get_tree().paused = false
+		if get_parent() != null:
+			get_parent().get_tree().paused = false

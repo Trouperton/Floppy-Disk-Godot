@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Floppy Disk"
-run/main_scene="uid://dltqfqq4a1akj"
+run/main_scene="uid://cunqur7p2rllo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b1pa8shx5i1gi"
 
