@@ -1,6 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://7d2esih81gtk"]
 
-[ext_resource type="Script" uid="uid://cypm1g13s1h57" path="res://code/scripts/TerrainSegmentsManagerProperties.gd" id="1_ise26"]
+[ext_resource type="Script" uid="uid://cypm1g13s1h57" path="res://code/scripts/terrain_segments_manager_properties.gd" id="1_ise26"]
 [ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="2_ta8f2"]
 
 [resource]

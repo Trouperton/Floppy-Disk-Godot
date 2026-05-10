@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ba0vxdpdxmw6q"]
 
-[ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/CharacterController.gd" id="1_io1uj"]
+[ext_resource type="Script" uid="uid://bjvja0cw66hro" path="res://code/scripts/character_controller.gd" id="1_io1uj"]
 [ext_resource type="PackedScene" uid="uid://doaklmqjy54id" path="res://art/objects/floppy_disk/Floppy Disk.glb" id="2_et5am"]
 [ext_resource type="AudioStream" uid="uid://bh3eyad0ghgdm" path="res://resources/sfx_movement_jump11.wav" id="3_n4g6x"]
 [ext_resource type="AudioStream" uid="uid://b72rlrtbb18wq" path="res://resources/sfx_sound_neutral7.wav" id="4_n4g6x"]
