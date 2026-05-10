@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bgk428qqircr2"]
 
 [ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/Theme/ui_theme.tres" id="1_axnvt"]
-[ext_resource type="Script" uid="uid://b4n2armdrcl4t" path="res://code/scripts/hud.gd" id="2_e0ri3"]
+[ext_resource type="Script" uid="uid://b4n2armdrcl4t" path="res://code/scripts/user_interface/hud.gd" id="2_e0ri3"]
 [ext_resource type="Texture2D" uid="uid://jr45w4g6y3a0" path="res://art/UI Panel Score.png" id="3_rhxml"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ombjf"]

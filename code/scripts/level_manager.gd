@@ -3,6 +3,7 @@ extends Node3D
 
 signal passed_pillar()
 signal score_updated(current_score: int)
+signal game_end(final_score: int)
 
 
 @export var score: int = 0
@@ -94,9 +95,8 @@ func reset_movement():
 
 #region Player State
 func _on_player_floppy_died() -> void:
-	$HUD.hide()
-	$EndScreen/Panel/VBoxContainer/ScoreDisplayLabel.text = str(score)
-	$EndScreen.show()
+	get_tree().paused = true
+	game_end.emit(score)
 #endregion
 
 
