@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://doaklmqjy54id" path="res://art/objects/floppy_disk/Floppy Disk.glb" id="2_et5am"]
 [ext_resource type="AudioStream" uid="uid://bh3eyad0ghgdm" path="res://resources/sfx_movement_jump11.wav" id="3_n4g6x"]
 [ext_resource type="AudioStream" uid="uid://b72rlrtbb18wq" path="res://resources/sfx_sound_neutral7.wav" id="4_n4g6x"]
-[ext_resource type="AudioStream" uid="uid://cb8s2r5w0fnwu" path="res://resources/Jingle Win 003.wav" id="5_n4g6x"]
+[ext_resource type="AudioStream" uid="uid://cb8s2r5w0fnwu" path="res://resources/sfx_jingle_win_003.wav" id="5_n4g6x"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_et5am"]
 radius = 0.49

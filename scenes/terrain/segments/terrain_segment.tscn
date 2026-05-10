@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b12h8njnd3dna"]
 
-[ext_resource type="MeshLibrary" uid="uid://bsb8ejg3bfdlc" path="res://resources/ML_Synthwave.tres" id="1_w7erq"]
+[ext_resource type="MeshLibrary" uid="uid://bsb8ejg3bfdlc" path="res://resources/ml_synthwave.tres" id="1_w7erq"]
 [ext_resource type="Script" uid="uid://p0skfi2qf02d" path="res://code/scripts/score_threshold.gd" id="2_q3rvf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tp6my"]

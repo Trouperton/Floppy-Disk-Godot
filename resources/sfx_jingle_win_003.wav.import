@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cb8s2r5w0fnwu"
-path="res://.godot/imported/Jingle Win 003.wav-7beb4d9afa9a4aa3b037ec500a061647.sample"
+path="res://.godot/imported/sfx_jingle_win_003.wav-aaa6b1c45c95981896d637a0cabcdebf.sample"
 
 [deps]
 
-source_file="res://resources/Jingle Win 003.wav"
-dest_files=["res://.godot/imported/Jingle Win 003.wav-7beb4d9afa9a4aa3b037ec500a061647.sample"]
+source_file="res://resources/sfx_jingle_win_003.wav"
+dest_files=["res://.godot/imported/sfx_jingle_win_003.wav-aaa6b1c45c95981896d637a0cabcdebf.sample"]
 
 [params]
 

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c8fbihv1boefu" path="res://code/scripts/level_manager.gd" id="1_uk2yf"]
 [ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/terrain_segment_manager.gd" id="2_ondrs"]
-[ext_resource type="Resource" uid="uid://7f5fl4wcmpry" path="res://resources/TerrainSegmentsProperties.tres" id="3_0e4v7"]
-[ext_resource type="Resource" uid="uid://1a33nq4gwnwv" path="res://resources/TerrainSegmentsBackgroundProperties.tres" id="4_6nivd"]
-[ext_resource type="Resource" uid="uid://7d2esih81gtk" path="res://resources/TerrainSegmentsDistantProperties.tres" id="5_al56o"]
+[ext_resource type="Resource" uid="uid://7f5fl4wcmpry" path="res://resources/p_terrain_segment.tres" id="3_0e4v7"]
+[ext_resource type="Resource" uid="uid://1a33nq4gwnwv" path="res://resources/p_terrain_segment_background.tres" id="4_6nivd"]
+[ext_resource type="Resource" uid="uid://7d2esih81gtk" path="res://resources/p_terrain_segment_distant.tres" id="5_al56o"]
 [ext_resource type="PackedScene" uid="uid://b7gbl2o8jgcy2" path="res://scenes/terrain/segments/terrain_segment-empty.tscn" id="6_1bmon"]
 [ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/terrain_segment.tscn" id="7_siio1"]
 [ext_resource type="PackedScene" uid="uid://slaysg3foja" path="res://art/Terrain/SynthwaveTerrain_Plane.glb" id="8_ndwfr"]
