@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="12_2c6xe"]
 [ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/Theme/ui_theme.tres" id="12_5p1a1"]
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/RestartButton.gd" id="12_kd8ca"]
+[ext_resource type="PackedScene" uid="uid://bgk428qqircr2" path="res://scenes/user_interfaces/hud.tscn" id="12_lujic"]
 [ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/ExitButton.gd" id="13_70qg3"]
 [ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="14_5p1a1"]
 [ext_resource type="Script" uid="uid://bpc55oex1bfxf" path="res://code/scripts/PauseScreen.gd" id="14_71oo0"]
@@ -37,9 +38,8 @@ glow_enabled = true
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70qg3"]
 bg_color = Color(0.32544088, 0.3254409, 0.32544076, 1)
 
-[node name="World" type="Node3D" unique_id=1983202797 node_paths=PackedStringArray("score_label")]
+[node name="World" type="Node3D" unique_id=1983202797]
 script = ExtResource("1_5slh6")
-score_label = NodePath("HUD/ScoreLabel")
 difficulty_curve = SubResource("Curve_u1hvi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276924402]
@@ -124,23 +124,7 @@ forward_dash_speed_factor = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 10)
 current = true
 
-[node name="HUD" type="Control" parent="." unique_id=1578123926]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("12_5p1a1")
-
-[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1952512950]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 10.0
-offset_right = 141.0
-offset_bottom = 55.0
-theme_override_font_sizes/font_size = 32
-text = "0"
+[node name="HUD" parent="." unique_id=1914340225 instance=ExtResource("12_lujic")]
 
 [node name="EndScreen" type="Control" parent="." unique_id=520132344]
 process_mode = 3
@@ -283,6 +267,7 @@ text = "Exit"
 script = ExtResource("13_70qg3")
 
 [connection signal="passed_pillar" from="." to="PlayerFloppy" method="_on_world_passed_pillar"]
+[connection signal="score_updated" from="." to="HUD" method="_on_world_score_updated"]
 [connection signal="segment_spawned" from="TerrainSegmentManager" to="." method="_on_terrain_segment_manager_segment_spawned"]
 [connection signal="timeout" from="TerrainSegmentManager/TerrainCheckTimer" to="TerrainSegmentManager" method="_on_terrain_check_timer_timeout"]
 [connection signal="dashed_forward" from="PlayerFloppy" to="." method="_on_player_floppy_dashed_forward"]

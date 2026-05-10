@@ -2,6 +2,7 @@ extends Node3D
 
 
 signal passed_pillar()
+signal score_updated(current_score: int)
 
 
 @export var score: int = 0
@@ -46,10 +47,8 @@ func _on_score_threshold_triggered(points: int):
 ## Increases the score and updates the score label with the new value.
 func increase_score(points: int):
 	score += points
-	#print_debug(name," node added ",points, " points, new score is " , score)
 	
-	# TODO: change the direct manipulation of score label to a signal.
-	score_label.text = str(score)
+	score_updated.emit(score)
 
 
 #region Movement
