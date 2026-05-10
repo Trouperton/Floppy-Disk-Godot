@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7gbl2o8jgcy2"]
 
-[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="1_juioh"]
+[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/terrain_segment.tscn" id="1_juioh"]
 
 [node name="TerrainSegment_Empty" unique_id=960714774 instance=ExtResource("1_juioh")]
 data = {

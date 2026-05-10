@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1wbg62mj1x38"]
 
-[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="1_50qmh"]
+[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/terrain_segment.tscn" id="1_50qmh"]
 
 [node name="TerrainSegment_High" unique_id=960714774 instance=ExtResource("1_50qmh")]
 data = {

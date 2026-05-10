@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dghnsv1glw8n0"]
 
-[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="1_keykt"]
+[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/terrain_segment.tscn" id="1_keykt"]
 
 [node name="TerrainSegment_Mid" unique_id=960714774 instance=ExtResource("1_keykt")]
 data = {

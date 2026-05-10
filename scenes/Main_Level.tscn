@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://dltqfqq4a1akj"]
 
-[ext_resource type="Script" uid="uid://c8fbihv1boefu" path="res://code/scripts/level_manager.gd" id="1_5slh6"]
-[ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/terrain_segment_manager.gd" id="1_wkt5j"]
-[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/TerrainSegment.tscn" id="2_wkt5j"]
-[ext_resource type="Resource" uid="uid://7f5fl4wcmpry" path="res://resources/TerrainSegmentsProperties.tres" id="3_lujic"]
-[ext_resource type="Resource" uid="uid://7d2esih81gtk" path="res://resources/TerrainSegmentsDistantProperties.tres" id="4_anrmw"]
-[ext_resource type="Resource" uid="uid://1a33nq4gwnwv" path="res://resources/TerrainSegmentsBackgroundProperties.tres" id="4_u1hvi"]
-[ext_resource type="PackedScene" uid="uid://b7gbl2o8jgcy2" path="res://scenes/terrain/segments/TerrainSegment_Empty.tscn" id="6_jyykg"]
-[ext_resource type="PackedScene" uid="uid://slaysg3foja" path="res://art/Terrain/SynthwaveTerrain_Plane.glb" id="7_bnhpw"]
-[ext_resource type="PackedScene" uid="uid://ba0vxdpdxmw6q" path="res://scenes/PlayerFloppy.tscn" id="7_jyykg"]
-[ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="12_2c6xe"]
-[ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/Theme/ui_theme.tres" id="12_5p1a1"]
-[ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/restart_button.gd" id="12_kd8ca"]
-[ext_resource type="PackedScene" uid="uid://bgk428qqircr2" path="res://scenes/user_interfaces/hud.tscn" id="12_lujic"]
-[ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/exit_button.gd" id="13_70qg3"]
-[ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="14_5p1a1"]
-[ext_resource type="Script" uid="uid://bpc55oex1bfxf" path="res://code/scripts/pause_screen.gd" id="14_71oo0"]
+[ext_resource type="Script" uid="uid://c8fbihv1boefu" path="res://code/scripts/level_manager.gd" id="1_uk2yf"]
+[ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/terrain_segment_manager.gd" id="2_ondrs"]
+[ext_resource type="Resource" uid="uid://7f5fl4wcmpry" path="res://resources/TerrainSegmentsProperties.tres" id="3_0e4v7"]
+[ext_resource type="Resource" uid="uid://1a33nq4gwnwv" path="res://resources/TerrainSegmentsBackgroundProperties.tres" id="4_6nivd"]
+[ext_resource type="Resource" uid="uid://7d2esih81gtk" path="res://resources/TerrainSegmentsDistantProperties.tres" id="5_al56o"]
+[ext_resource type="PackedScene" uid="uid://b7gbl2o8jgcy2" path="res://scenes/terrain/segments/terrain_segment-empty.tscn" id="6_1bmon"]
+[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/terrain_segment.tscn" id="7_siio1"]
+[ext_resource type="PackedScene" uid="uid://slaysg3foja" path="res://art/Terrain/SynthwaveTerrain_Plane.glb" id="8_ndwfr"]
+[ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="9_nc5r2"]
+[ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="10_sjhni"]
+[ext_resource type="PackedScene" uid="uid://ba0vxdpdxmw6q" path="res://scenes/player_floppy.tscn" id="11_7sk5s"]
+[ext_resource type="PackedScene" uid="uid://bgk428qqircr2" path="res://scenes/user_interfaces/hud.tscn" id="12_cssx7"]
+[ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/Theme/ui_theme.tres" id="13_1irq3"]
+[ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/restart_button.gd" id="14_iycfq"]
+[ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/exit_button.gd" id="15_rcrbw"]
+[ext_resource type="Script" uid="uid://bpc55oex1bfxf" path="res://code/scripts/pause_screen.gd" id="16_c88u2"]
 
 [sub_resource type="Curve" id="Curve_u1hvi"]
 _limits = [0.0, 3.0, 0.0, 75.0]
@@ -39,7 +39,7 @@ glow_enabled = true
 bg_color = Color(0.32544088, 0.3254409, 0.32544076, 1)
 
 [node name="World" type="Node3D" unique_id=1983202797]
-script = ExtResource("1_5slh6")
+script = ExtResource("1_uk2yf")
 difficulty_curve = SubResource("Curve_u1hvi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276924402]
@@ -52,57 +52,57 @@ light_specular = 5.0
 environment = SubResource("Environment_2v7ry")
 
 [node name="TerrainSegmentManager" type="Node3D" parent="." unique_id=260624578]
-script = ExtResource("1_wkt5j")
+script = ExtResource("2_ondrs")
 base_terrain_speed = 2.0
-terrains = Array[Resource]([ExtResource("3_lujic"), ExtResource("4_u1hvi"), ExtResource("4_anrmw")])
+terrains = Array[Resource]([ExtResource("3_0e4v7"), ExtResource("4_6nivd"), ExtResource("5_al56o")])
 
 [node name="TerrainCheckTimer" type="Timer" parent="TerrainSegmentManager" unique_id=93723995]
 autostart = true
 
 [node name="TerrainSegments" type="Node3D" parent="TerrainSegmentManager" unique_id=180250620]
 
-[node name="TerrainSegment_Empty4" parent="TerrainSegmentManager/TerrainSegments" unique_id=960714774 instance=ExtResource("6_jyykg")]
+[node name="TerrainSegment_Empty4" parent="TerrainSegmentManager/TerrainSegments" unique_id=960714774 instance=ExtResource("6_1bmon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0)
 
-[node name="TerrainSegment_Empty3" parent="TerrainSegmentManager/TerrainSegments" unique_id=2046376729 instance=ExtResource("6_jyykg")]
+[node name="TerrainSegment_Empty3" parent="TerrainSegmentManager/TerrainSegments" unique_id=2046376729 instance=ExtResource("6_1bmon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 0)
 
-[node name="TerrainSegment_Empty2" parent="TerrainSegmentManager/TerrainSegments" unique_id=933223107 instance=ExtResource("6_jyykg")]
+[node name="TerrainSegment_Empty2" parent="TerrainSegmentManager/TerrainSegments" unique_id=933223107 instance=ExtResource("6_1bmon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
 
-[node name="TerrainSegment_Empty1" parent="TerrainSegmentManager/TerrainSegments" unique_id=1423568598 instance=ExtResource("6_jyykg")]
+[node name="TerrainSegment_Empty1" parent="TerrainSegmentManager/TerrainSegments" unique_id=1423568598 instance=ExtResource("6_1bmon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
 
-[node name="TerrainSegment_Empty" parent="TerrainSegmentManager/TerrainSegments" unique_id=145448650 instance=ExtResource("6_jyykg")]
+[node name="TerrainSegment_Empty" parent="TerrainSegmentManager/TerrainSegments" unique_id=145448650 instance=ExtResource("6_1bmon")]
 
-[node name="TerrainSegment" parent="TerrainSegmentManager/TerrainSegments" unique_id=1747596346 instance=ExtResource("2_wkt5j")]
+[node name="TerrainSegment" parent="TerrainSegmentManager/TerrainSegments" unique_id=1747596346 instance=ExtResource("7_siio1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 
 [node name="TerrainSegmentsBackground" type="Node3D" parent="TerrainSegmentManager" unique_id=1860192839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
-[node name="SynthwaveTerrain_Plane" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1481661696 instance=ExtResource("7_bnhpw")]
+[node name="SynthwaveTerrain_Plane" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1481661696 instance=ExtResource("8_ndwfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0)
 
-[node name="SynthwaveTerrain_Plane2" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1978535532 instance=ExtResource("7_bnhpw")]
+[node name="SynthwaveTerrain_Plane2" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1978535532 instance=ExtResource("8_ndwfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
 
-[node name="SynthwaveTerrain_Plane3" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=515337479 instance=ExtResource("7_bnhpw")]
+[node name="SynthwaveTerrain_Plane3" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=515337479 instance=ExtResource("8_ndwfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0)
 
-[node name="SynthwaveTerrain_Plane4" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1423516482 instance=ExtResource("7_bnhpw")]
+[node name="SynthwaveTerrain_Plane4" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1423516482 instance=ExtResource("8_ndwfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0)
 
-[node name="SynthwaveTerrain_Plane5" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=382343465 instance=ExtResource("7_bnhpw")]
+[node name="SynthwaveTerrain_Plane5" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=382343465 instance=ExtResource("8_ndwfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0, 0)
 
-[node name="SynthwaveTerrain_Plane6" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=220860055 instance=ExtResource("7_bnhpw")]
+[node name="SynthwaveTerrain_Plane6" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=220860055 instance=ExtResource("8_ndwfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, 0)
 
 [node name="TerrainSegmentsDistant" type="Node3D" parent="TerrainSegmentManager" unique_id=200854100]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
 
-[node name="SynthwaveTerrain_Distant" parent="TerrainSegmentManager/TerrainSegmentsDistant" unique_id=1282399969 instance=ExtResource("14_5p1a1")]
+[node name="SynthwaveTerrain_Distant" parent="TerrainSegmentManager/TerrainSegmentsDistant" unique_id=1282399969 instance=ExtResource("9_nc5r2")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1272466041]
 transform = Transform3D(1, 0, 0, 0, -0.9569809, 0.29015118, 0, -0.29015118, -0.9569809, 0, 17.420866, -36.130466)
@@ -114,9 +114,9 @@ spot_angle = 42.983753
 
 [node name="BackgroundSprite" type="Sprite3D" parent="." unique_id=479728626]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 19.328157, -24.451464)
-texture = ExtResource("12_2c6xe")
+texture = ExtResource("10_sjhni")
 
-[node name="PlayerFloppy" parent="." unique_id=188171447 instance=ExtResource("7_jyykg")]
+[node name="PlayerFloppy" parent="." unique_id=188171447 instance=ExtResource("11_7sk5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.5)
 forward_dash_speed_factor = 5.0
 
@@ -124,7 +124,7 @@ forward_dash_speed_factor = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 10)
 current = true
 
-[node name="HUD" parent="." unique_id=1914340225 instance=ExtResource("12_lujic")]
+[node name="HUD" parent="." unique_id=1914340225 instance=ExtResource("12_cssx7")]
 
 [node name="EndScreen" type="Control" parent="." unique_id=520132344]
 process_mode = 3
@@ -135,7 +135,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("12_5p1a1")
+theme = ExtResource("13_1irq3")
 
 [node name="Panel" type="Panel" parent="EndScreen" unique_id=1159359007]
 layout_mode = 1
@@ -184,12 +184,12 @@ layout_mode = 2
 [node name="RestartButton" type="Button" parent="EndScreen/Panel/VBoxContainer" unique_id=2017570921]
 layout_mode = 2
 text = "Restart"
-script = ExtResource("12_kd8ca")
+script = ExtResource("14_iycfq")
 
 [node name="ExitButton" type="Button" parent="EndScreen/Panel/VBoxContainer" unique_id=1565158284]
 layout_mode = 2
 text = "Exit"
-script = ExtResource("13_70qg3")
+script = ExtResource("15_rcrbw")
 
 [node name="PauseScreen" type="Control" parent="." unique_id=235882125]
 process_mode = 3
@@ -200,8 +200,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("12_5p1a1")
-script = ExtResource("14_71oo0")
+theme = ExtResource("13_1irq3")
+script = ExtResource("16_c88u2")
 
 [node name="Panel" type="Panel" parent="PauseScreen" unique_id=801291354]
 layout_mode = 1
@@ -259,12 +259,12 @@ layout_mode = 2
 [node name="RestartButton" type="Button" parent="PauseScreen/Panel2/VBoxContainer" unique_id=1603006794]
 layout_mode = 2
 text = "Restart"
-script = ExtResource("12_kd8ca")
+script = ExtResource("14_iycfq")
 
 [node name="ExitButton" type="Button" parent="PauseScreen/Panel2/VBoxContainer" unique_id=927511354]
 layout_mode = 2
 text = "Exit"
-script = ExtResource("13_70qg3")
+script = ExtResource("15_rcrbw")
 
 [connection signal="passed_pillar" from="." to="PlayerFloppy" method="_on_world_passed_pillar"]
 [connection signal="score_updated" from="." to="HUD" method="_on_world_score_updated"]
