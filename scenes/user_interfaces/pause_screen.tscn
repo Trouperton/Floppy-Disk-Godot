@@ -30,15 +30,15 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_16hq2")
 
 [node name="Panel2" type="Panel" parent="." unique_id=1382888360]
-custom_minimum_size = Vector2(400, 300)
+custom_minimum_size = Vector2(400, 280)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -200.0
-offset_top = 150.0
+offset_top = 300.0
 offset_right = 200.0
-offset_bottom = 450.0
+offset_bottom = 580.0
 grow_horizontal = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel2" unique_id=1030956802]
@@ -70,6 +70,11 @@ vertical_alignment = 1
 [node name="Control" type="Control" parent="Panel2/VBoxContainer" unique_id=144110399]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="Panel2/VBoxContainer" unique_id=774220409]
+layout_mode = 2
+text = "Resume
+"
 
 [node name="RestartButton" type="Button" parent="Panel2/VBoxContainer" unique_id=218325145]
 layout_mode = 2

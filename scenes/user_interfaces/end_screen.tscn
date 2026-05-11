@@ -17,18 +17,16 @@ theme = ExtResource("1_crnl8")
 script = ExtResource("2_cvvcs")
 
 [node name="Panel" type="Panel" parent="." unique_id=1845516669]
+custom_minimum_size = Vector2(400, 220)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.37
-anchor_top = 0.19100001
-anchor_right = 0.63000005
-anchor_bottom = 0.573
-offset_left = -0.23999023
-offset_top = 0.231987
-offset_right = 0.2399292
-offset_bottom = -0.3040161
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 300.0
+offset_right = 200.0
+offset_bottom = 520.00024
 grow_horizontal = 2
-grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=585323174]
 layout_mode = 1
@@ -57,7 +55,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Control" type="Control" parent="Panel/VBoxContainer" unique_id=105723898]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="RestartButton" type="Button" parent="Panel/VBoxContainer" unique_id=99257868]
