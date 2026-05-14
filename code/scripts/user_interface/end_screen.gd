@@ -1,9 +1,4 @@
-extends Control
-
-
-func _on_visibility_changed() -> void:
-	if visible:
-		$Panel/VBoxContainer/RestartButton.grab_focus()
+extends BaseUI
 
 
 func _on_world_game_end(final_score: int) -> void:

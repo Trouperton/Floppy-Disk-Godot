@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/user_interface/restart_button.gd" id="3_dcyms"]
 [ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/user_interface/exit_button.gd" id="4_3jxrw"]
 
-[node name="EndScreen" type="Control" unique_id=709823429]
+[node name="EndScreen" type="Control" unique_id=709823429 node_paths=PackedStringArray("element_to_focus")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -15,6 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_crnl8")
 script = ExtResource("2_cvvcs")
+element_to_focus = NodePath("Panel/VBoxContainer/RestartButton")
 
 [node name="Panel" type="Panel" parent="." unique_id=1845516669]
 custom_minimum_size = Vector2(400, 220)

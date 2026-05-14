@@ -9,7 +9,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16hq2"]
 texture = ExtResource("3_lvt7j")
 
-[node name="PauseScreen" type="Control" unique_id=987105522]
+[node name="PauseScreen" type="Control" unique_id=987105522 node_paths=PackedStringArray("element_to_focus")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -19,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_aij7g")
 script = ExtResource("2_1ot33")
+element_to_focus = NodePath("Panel2/VBoxContainer/ResumeButton")
 
 [node name="Panel" type="Panel" parent="." unique_id=807860124]
 layout_mode = 1
