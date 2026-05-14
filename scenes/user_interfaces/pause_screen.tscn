@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bpc55oex1bfxf" path="res://code/scripts/user_interface/pause_screen.gd" id="2_1ot33"]
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/user_interface/restart_button.gd" id="3_lp113"]
 [ext_resource type="Texture2D" uid="uid://cbfqug6d067l5" path="res://art/UI Background Grid.png" id="3_lvt7j"]
+[ext_resource type="Script" uid="uid://cahfl5c6p5jiv" path="res://code/scripts/user_interface/resume_button.gd" id="4_lp113"]
 [ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/user_interface/exit_button.gd" id="4_lvt7j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16hq2"]
@@ -72,10 +73,12 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="ResumeButton" type="Button" parent="Panel2/VBoxContainer" unique_id=774220409]
+[node name="ResumeButton" type="Button" parent="Panel2/VBoxContainer" unique_id=774220409 node_paths=PackedStringArray("parent_to_hide")]
 layout_mode = 2
 text = "Resume
 "
+script = ExtResource("4_lp113")
+parent_to_hide = NodePath("../../..")
 
 [node name="RestartButton" type="Button" parent="Panel2/VBoxContainer" unique_id=218325145]
 layout_mode = 2
