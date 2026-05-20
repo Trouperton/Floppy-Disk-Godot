@@ -1,11 +1,29 @@
 extends Control
 
 
+var just_opened: bool = true
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if get_parent() is not Control:
+		printerr("Parent is not UI")
+
+
+func play_audio(audio_player: AudioStreamPlayer):
+	if just_opened:
+		just_opened = false
+	else:
+		audio_player.play()
+
+
+func _on_hidden() -> void:
+	just_opened = true
 
 
 func _on_button_focus_entered() -> void:
-	print(name, " received button focus signal")
-	$"Hover Audio".play()
+	play_audio($"Focus Audio")
+
+
+func _on_button_mouse_entered() -> void:
+	play_audio($"Hover Audio")

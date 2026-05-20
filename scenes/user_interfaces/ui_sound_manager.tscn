@@ -2,10 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bucqpj74tgt3b" path="res://code/scripts/user_interface/ui_sound_manager.gd" id="1_3talr"]
 [ext_resource type="AudioStream" uid="uid://bq1ugdqee0ji" path="res://resources/audio/pluck_002.ogg" id="2_0m3hd"]
+[ext_resource type="AudioStream" uid="uid://cwwcr8rts4twb" path="res://resources/audio/pluck_001.ogg" id="3_78opr"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_78opr"]
+random_pitch = 1.0116194
+random_volume_offset_db = 0.5
 streams_count = 1
 stream_0/stream = ExtResource("2_0m3hd")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_70emj"]
+random_pitch = 1.0116194
+random_volume_offset_db = 0.5
+streams_count = 1
+stream_0/stream = ExtResource("3_78opr")
 
 [node name="UI Sound Manager" type="Control" unique_id=540255166]
 layout_mode = 3
@@ -19,3 +28,10 @@ script = ExtResource("1_3talr")
 [node name="Hover Audio" type="AudioStreamPlayer" parent="." unique_id=1392006608]
 stream = SubResource("AudioStreamRandomizer_78opr")
 volume_db = -15.0
+
+[node name="Focus Audio" type="AudioStreamPlayer" parent="." unique_id=892581628]
+stream = SubResource("AudioStreamRandomizer_70emj")
+volume_db = -15.0
+
+[connection signal="hidden" from="." to="." method="_on_hidden"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
