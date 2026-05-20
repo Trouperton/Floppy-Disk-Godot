@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ba5febbon06ik" path="res://art/UI Button Hover.png" id="1_bcyug"]
 [ext_resource type="Texture2D" uid="uid://dm11wxbhbtxis" path="res://art/UI Panel.png" id="1_l003u"]
 [ext_resource type="Texture2D" uid="uid://cdyr6s50el148" path="res://art/UI Button Focus.png" id="1_o1hbi"]
-[ext_resource type="FontFile" uid="uid://co5avcht0ifn3" path="res://resources/Theme/Orbitron-VariableFont_wght.ttf" id="1_ojy50"]
+[ext_resource type="FontFile" uid="uid://co5avcht0ifn3" path="res://resources/theme/Orbitron-VariableFont_wght.ttf" id="1_ojy50"]
 [ext_resource type="Texture2D" uid="uid://dppig77dlrrgp" path="res://art/UI Button Pressed.png" id="3_o1hbi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plu37"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dm11wxbhbtxis" path="res://art/UI Panel.png" id="1_u6fmn"]
 [ext_resource type="Texture2D" uid="uid://jr45w4g6y3a0" path="res://art/UI Panel Score.png" id="2_vrpgp"]
-[ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/Theme/ui_theme.tres" id="3_47xvg"]
+[ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/theme/ui_theme.tres" id="3_47xvg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrpgp"]
 texture = ExtResource("1_u6fmn")

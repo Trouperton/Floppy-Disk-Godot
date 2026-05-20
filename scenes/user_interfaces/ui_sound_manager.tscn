@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cqm3vob2dyii8"]
+
+[ext_resource type="Script" uid="uid://bucqpj74tgt3b" path="res://code/scripts/user_interface/ui_sound_manager.gd" id="1_3talr"]
+[ext_resource type="AudioStream" uid="uid://bq1ugdqee0ji" path="res://resources/audio/pluck_002.ogg" id="2_0m3hd"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_78opr"]
+streams_count = 1
+stream_0/stream = ExtResource("2_0m3hd")
+
+[node name="UI Sound Manager" type="Control" unique_id=540255166]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3talr")
+
+[node name="Hover Audio" type="AudioStreamPlayer" parent="." unique_id=1392006608]
+stream = SubResource("AudioStreamRandomizer_78opr")
+volume_db = -15.0
