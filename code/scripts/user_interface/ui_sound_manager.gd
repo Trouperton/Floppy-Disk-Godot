@@ -6,27 +6,13 @@ var just_opened: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if get_parent() is not Control:
-		printerr("Parent is not UI")
+	get_tree().scene_changed.connect(_on_scene_changed)
+	
+	find_buttons()
 
 
-func play_audio(audio_player: AudioStreamPlayer):
-	if just_opened:
-		just_opened = false
-	else:
-		audio_player.play()
-
-
-func _on_hidden() -> void:
-	just_opened = true
-
-
-func _on_button_focus_entered() -> void:
-	play_audio($"Focus Audio")
-
-
-func _on_button_mouse_entered() -> void:
-	play_audio($"Hover Audio")
+func _on_scene_changed() -> void:
+	find_buttons()
 
 
 func _on_button_button_down() -> void:
@@ -39,3 +25,34 @@ func _on_button_button_up() -> void:
 
 func _on_button_pressed() -> void:
 	play_audio($"Button Pressed Audio")
+	$"Button Up Audio".stop()
+
+
+func _on_button_focus_entered() -> void:
+	play_audio($"Focus Audio")
+
+
+func _on_button_mouse_entered() -> void:
+	play_audio($"Hover Audio")
+
+
+func find_buttons():
+	var temp_buttons = get_tree().get_nodes_in_group("button")
+	
+	for i in temp_buttons:
+		var button: Button = i
+		
+		button.button_down.connect(_on_button_button_down)
+		button.button_up.connect(_on_button_button_up)
+		button.pressed.connect(_on_button_pressed)
+		button.focus_entered.connect(_on_button_focus_entered)
+		button.mouse_entered.connect(_on_button_mouse_entered)
+	
+	print(temp_buttons.size())
+
+
+func play_audio(audio_player: AudioStreamPlayer):
+	if just_opened:
+		just_opened = false
+	else:
+		audio_player.play()

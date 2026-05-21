@@ -2,7 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/theme/ui_theme.tres" id="1_aij7g"]
 [ext_resource type="Script" uid="uid://bpc55oex1bfxf" path="res://code/scripts/user_interface/pause_screen.gd" id="2_1ot33"]
-[ext_resource type="PackedScene" uid="uid://cqm3vob2dyii8" path="res://scenes/user_interfaces/ui_sound_manager.tscn" id="3_16hq2"]
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/user_interface/restart_button.gd" id="3_lp113"]
 [ext_resource type="Texture2D" uid="uid://cbfqug6d067l5" path="res://art/UI Background Grid.png" id="3_lvt7j"]
 [ext_resource type="Script" uid="uid://cahfl5c6p5jiv" path="res://code/scripts/user_interface/resume_button.gd" id="4_lp113"]
@@ -22,9 +21,6 @@ grow_vertical = 2
 theme = ExtResource("1_aij7g")
 script = ExtResource("2_1ot33")
 element_to_focus = NodePath("Panel2/VBoxContainer/ResumeButton")
-
-[node name="UI Sound Manager" parent="." unique_id=540255166 instance=ExtResource("3_16hq2")]
-layout_mode = 1
 
 [node name="Panel" type="Panel" parent="." unique_id=807860124]
 layout_mode = 1
@@ -77,30 +73,21 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="ResumeButton" type="Button" parent="Panel2/VBoxContainer" unique_id=774220409 node_paths=PackedStringArray("parent_to_hide")]
+[node name="ResumeButton" type="Button" parent="Panel2/VBoxContainer" unique_id=774220409 node_paths=PackedStringArray("parent_to_hide") groups=["button"]]
 layout_mode = 2
 text = "Resume
 "
 script = ExtResource("4_lp113")
 parent_to_hide = NodePath("../../..")
 
-[node name="RestartButton" type="Button" parent="Panel2/VBoxContainer" unique_id=218325145]
+[node name="RestartButton" type="Button" parent="Panel2/VBoxContainer" unique_id=218325145 groups=["button"]]
 layout_mode = 2
 text = "Restart"
 script = ExtResource("3_lp113")
 
-[node name="ExitButton" type="Button" parent="Panel2/VBoxContainer" unique_id=1604746531]
+[node name="ExitButton" type="Button" parent="Panel2/VBoxContainer" unique_id=1604746531 groups=["button"]]
 layout_mode = 2
 text = "Exit"
 script = ExtResource("4_lvt7j")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="button_down" from="Panel2/VBoxContainer/ResumeButton" to="UI Sound Manager" method="_on_button_button_down"]
-[connection signal="button_up" from="Panel2/VBoxContainer/ResumeButton" to="UI Sound Manager" method="_on_button_button_up"]
-[connection signal="focus_entered" from="Panel2/VBoxContainer/ResumeButton" to="UI Sound Manager" method="_on_button_focus_entered"]
-[connection signal="mouse_entered" from="Panel2/VBoxContainer/ResumeButton" to="UI Sound Manager" method="_on_button_mouse_entered"]
-[connection signal="pressed" from="Panel2/VBoxContainer/ResumeButton" to="UI Sound Manager" method="_on_button_pressed"]
-[connection signal="focus_entered" from="Panel2/VBoxContainer/RestartButton" to="UI Sound Manager" method="_on_button_focus_entered"]
-[connection signal="mouse_entered" from="Panel2/VBoxContainer/RestartButton" to="UI Sound Manager" method="_on_button_mouse_entered"]
-[connection signal="focus_entered" from="Panel2/VBoxContainer/ExitButton" to="UI Sound Manager" method="_on_button_focus_entered"]
-[connection signal="mouse_entered" from="Panel2/VBoxContainer/ExitButton" to="UI Sound Manager" method="_on_button_mouse_entered"]

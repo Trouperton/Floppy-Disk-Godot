@@ -1,41 +1,41 @@
 [gd_scene format=3 uid="uid://cqm3vob2dyii8"]
 
-[ext_resource type="Script" uid="uid://bucqpj74tgt3b" path="res://code/scripts/user_interface/ui_sound_manager.gd" id="1_3talr"]
-[ext_resource type="AudioStream" uid="uid://bq1ugdqee0ji" path="res://resources/audio/pluck_002.ogg" id="2_0m3hd"]
-[ext_resource type="AudioStream" uid="uid://cwwcr8rts4twb" path="res://resources/audio/pluck_001.ogg" id="3_78opr"]
-[ext_resource type="AudioStream" uid="uid://cvxnn1b6nicpg" path="res://resources/audio/mouseclick1.ogg" id="4_r027j"]
-[ext_resource type="AudioStream" uid="uid://dyw0qyrnr1iyd" path="res://resources/audio/switch_006.ogg" id="5_htfva"]
-[ext_resource type="AudioStream" uid="uid://bjrli8frd7r8u" path="res://resources/audio/mouserelease1.ogg" id="5_ihgd6"]
+[ext_resource type="Script" uid="uid://bucqpj74tgt3b" path="res://code/scripts/user_interface/ui_sound_manager.gd" id="1_hm23x"]
+[ext_resource type="AudioStream" uid="uid://bq1ugdqee0ji" path="res://resources/audio/pluck_002.ogg" id="2_vrns3"]
+[ext_resource type="AudioStream" uid="uid://cwwcr8rts4twb" path="res://resources/audio/pluck_001.ogg" id="3_2a0s2"]
+[ext_resource type="AudioStream" uid="uid://cvxnn1b6nicpg" path="res://resources/audio/mouseclick1.ogg" id="4_h45rc"]
+[ext_resource type="AudioStream" uid="uid://dyw0qyrnr1iyd" path="res://resources/audio/switch_006.ogg" id="5_imx2j"]
+[ext_resource type="AudioStream" uid="uid://bjrli8frd7r8u" path="res://resources/audio/mouserelease1.ogg" id="6_u1l0f"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_78opr"]
 random_pitch = 1.0116194
 random_volume_offset_db = 0.5
 streams_count = 1
-stream_0/stream = ExtResource("2_0m3hd")
+stream_0/stream = ExtResource("2_vrns3")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_70emj"]
 random_pitch = 1.0116194
 random_volume_offset_db = 0.5
 streams_count = 1
-stream_0/stream = ExtResource("3_78opr")
+stream_0/stream = ExtResource("3_2a0s2")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_htfva"]
 random_pitch = 1.0116194
 random_volume_offset_db = 0.5
 streams_count = 1
-stream_0/stream = ExtResource("4_r027j")
+stream_0/stream = ExtResource("4_h45rc")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ehjca"]
 random_pitch = 1.0116194
 random_volume_offset_db = 0.5
 streams_count = 1
-stream_0/stream = ExtResource("5_htfva")
+stream_0/stream = ExtResource("5_imx2j")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_r027j"]
 random_pitch = 1.0116194
 random_volume_offset_db = 0.5
 streams_count = 1
-stream_0/stream = ExtResource("5_ihgd6")
+stream_0/stream = ExtResource("6_u1l0f")
 
 [node name="UI Sound Manager" type="Control" unique_id=540255166]
 layout_mode = 3
@@ -44,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3talr")
+script = ExtResource("1_hm23x")
 
 [node name="Hover Audio" type="AudioStreamPlayer" parent="." unique_id=1392006608]
 stream = SubResource("AudioStreamRandomizer_78opr")

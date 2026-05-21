@@ -2,7 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/theme/ui_theme.tres" id="1_crnl8"]
 [ext_resource type="Script" uid="uid://mm50uq80lvq5" path="res://code/scripts/user_interface/end_screen.gd" id="2_cvvcs"]
-[ext_resource type="PackedScene" uid="uid://cqm3vob2dyii8" path="res://scenes/user_interfaces/ui_sound_manager.tscn" id="3_cvvcs"]
 [ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/user_interface/restart_button.gd" id="3_dcyms"]
 [ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/user_interface/exit_button.gd" id="4_3jxrw"]
 
@@ -17,9 +16,6 @@ grow_vertical = 2
 theme = ExtResource("1_crnl8")
 script = ExtResource("2_cvvcs")
 element_to_focus = NodePath("Panel/VBoxContainer/RestartButton")
-
-[node name="UI Sound Manager" parent="." unique_id=540255166 instance=ExtResource("3_cvvcs")]
-layout_mode = 1
 
 [node name="Panel" type="Panel" parent="." unique_id=1845516669]
 custom_minimum_size = Vector2(400, 220)
@@ -63,24 +59,14 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="RestartButton" type="Button" parent="Panel/VBoxContainer" unique_id=99257868]
+[node name="RestartButton" type="Button" parent="Panel/VBoxContainer" unique_id=99257868 groups=["button"]]
 layout_mode = 2
 text = "Restart"
 script = ExtResource("3_dcyms")
 
-[node name="ExitButton" type="Button" parent="Panel/VBoxContainer" unique_id=1192913643]
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer" unique_id=1192913643 groups=["button"]]
 layout_mode = 2
 text = "Exit"
 script = ExtResource("4_3jxrw")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="button_down" from="Panel/VBoxContainer/RestartButton" to="UI Sound Manager" method="_on_button_button_down"]
-[connection signal="button_up" from="Panel/VBoxContainer/RestartButton" to="UI Sound Manager" method="_on_button_button_up"]
-[connection signal="focus_entered" from="Panel/VBoxContainer/RestartButton" to="UI Sound Manager" method="_on_button_focus_entered"]
-[connection signal="mouse_entered" from="Panel/VBoxContainer/RestartButton" to="UI Sound Manager" method="_on_button_mouse_entered"]
-[connection signal="pressed" from="Panel/VBoxContainer/RestartButton" to="UI Sound Manager" method="_on_button_pressed"]
-[connection signal="button_down" from="Panel/VBoxContainer/ExitButton" to="UI Sound Manager" method="_on_button_button_down"]
-[connection signal="button_up" from="Panel/VBoxContainer/ExitButton" to="UI Sound Manager" method="_on_button_button_up"]
-[connection signal="focus_entered" from="Panel/VBoxContainer/ExitButton" to="UI Sound Manager" method="_on_button_focus_entered"]
-[connection signal="mouse_entered" from="Panel/VBoxContainer/ExitButton" to="UI Sound Manager" method="_on_button_mouse_entered"]
-[connection signal="pressed" from="Panel/VBoxContainer/ExitButton" to="UI Sound Manager" method="_on_button_pressed"]

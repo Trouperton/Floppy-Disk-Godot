@@ -15,6 +15,10 @@ run/main_scene="uid://dgabwr3imfpdi"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b1pa8shx5i1gi"
 
+[autoload]
+
+UiSoundManager="*uid://cqm3vob2dyii8"
+
 [display]
 
 window/size/viewport_width=1920
@@ -25,6 +29,7 @@ window/stretch/mode="canvas_items"
 
 obstacle="Cause the player to lose if collided with."
 player=""
+button="Group intended for buttons."
 
 [input]
 
