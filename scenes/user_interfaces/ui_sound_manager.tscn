@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bucqpj74tgt3b" path="res://code/scripts/user_interface/ui_sound_manager.gd" id="1_3talr"]
 [ext_resource type="AudioStream" uid="uid://bq1ugdqee0ji" path="res://resources/audio/pluck_002.ogg" id="2_0m3hd"]
 [ext_resource type="AudioStream" uid="uid://cwwcr8rts4twb" path="res://resources/audio/pluck_001.ogg" id="3_78opr"]
+[ext_resource type="AudioStream" uid="uid://cvxnn1b6nicpg" path="res://resources/audio/mouseclick1.ogg" id="4_r027j"]
+[ext_resource type="AudioStream" uid="uid://dyw0qyrnr1iyd" path="res://resources/audio/switch_006.ogg" id="5_htfva"]
+[ext_resource type="AudioStream" uid="uid://bjrli8frd7r8u" path="res://resources/audio/mouserelease1.ogg" id="5_ihgd6"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_78opr"]
 random_pitch = 1.0116194
@@ -15,6 +18,24 @@ random_pitch = 1.0116194
 random_volume_offset_db = 0.5
 streams_count = 1
 stream_0/stream = ExtResource("3_78opr")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_htfva"]
+random_pitch = 1.0116194
+random_volume_offset_db = 0.5
+streams_count = 1
+stream_0/stream = ExtResource("4_r027j")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ehjca"]
+random_pitch = 1.0116194
+random_volume_offset_db = 0.5
+streams_count = 1
+stream_0/stream = ExtResource("5_htfva")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_r027j"]
+random_pitch = 1.0116194
+random_volume_offset_db = 0.5
+streams_count = 1
+stream_0/stream = ExtResource("5_ihgd6")
 
 [node name="UI Sound Manager" type="Control" unique_id=540255166]
 layout_mode = 3
@@ -31,6 +52,18 @@ volume_db = -15.0
 
 [node name="Focus Audio" type="AudioStreamPlayer" parent="." unique_id=892581628]
 stream = SubResource("AudioStreamRandomizer_70emj")
+volume_db = -15.0
+
+[node name="Button Down Audio" type="AudioStreamPlayer" parent="." unique_id=1809326401]
+stream = SubResource("AudioStreamRandomizer_htfva")
+volume_db = -15.0
+
+[node name="Button Up Audio" type="AudioStreamPlayer" parent="." unique_id=493154585]
+stream = SubResource("AudioStreamRandomizer_ehjca")
+volume_db = -15.0
+
+[node name="Button Pressed Audio" type="AudioStreamPlayer" parent="." unique_id=1005564206]
+stream = SubResource("AudioStreamRandomizer_r027j")
 volume_db = -15.0
 
 [connection signal="hidden" from="." to="." method="_on_hidden"]

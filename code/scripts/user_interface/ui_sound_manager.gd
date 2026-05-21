@@ -27,3 +27,15 @@ func _on_button_focus_entered() -> void:
 
 func _on_button_mouse_entered() -> void:
 	play_audio($"Hover Audio")
+
+
+func _on_button_button_down() -> void:
+	play_audio($"Button Down Audio")
+
+
+func _on_button_button_up() -> void:
+	play_audio($"Button Up Audio")
+
+
+func _on_button_pressed() -> void:
+	play_audio($"Button Pressed Audio")

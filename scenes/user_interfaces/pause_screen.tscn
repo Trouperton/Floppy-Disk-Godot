@@ -95,8 +95,11 @@ text = "Exit"
 script = ExtResource("4_lvt7j")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="button_down" from="Panel2/VBoxContainer/ResumeButton" to="UI Sound Manager" method="_on_button_button_down"]
+[connection signal="button_up" from="Panel2/VBoxContainer/ResumeButton" to="UI Sound Manager" method="_on_button_button_up"]
 [connection signal="focus_entered" from="Panel2/VBoxContainer/ResumeButton" to="UI Sound Manager" method="_on_button_focus_entered"]
 [connection signal="mouse_entered" from="Panel2/VBoxContainer/ResumeButton" to="UI Sound Manager" method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Panel2/VBoxContainer/ResumeButton" to="UI Sound Manager" method="_on_button_pressed"]
 [connection signal="focus_entered" from="Panel2/VBoxContainer/RestartButton" to="UI Sound Manager" method="_on_button_focus_entered"]
 [connection signal="mouse_entered" from="Panel2/VBoxContainer/RestartButton" to="UI Sound Manager" method="_on_button_mouse_entered"]
 [connection signal="focus_entered" from="Panel2/VBoxContainer/ExitButton" to="UI Sound Manager" method="_on_button_focus_entered"]
