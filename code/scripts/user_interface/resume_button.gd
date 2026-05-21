@@ -6,4 +6,4 @@ extends Button
 
 func _pressed() -> void:
 	parent_to_hide.hide()
-	get_tree().paused = false
+	#get_tree().paused = false
