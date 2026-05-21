@@ -36,6 +36,14 @@ func _on_button_mouse_entered() -> void:
 	play_audio($"Hover Audio")
 
 
+func _on_game_paused() -> void:
+	play_audio($"Pause Audio")
+
+
+func _on_game_resume() -> void:
+	play_audio($"Resume Audio")
+
+
 func find_buttons():
 	var temp_buttons = get_tree().get_nodes_in_group("button")
 	
