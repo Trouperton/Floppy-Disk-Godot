@@ -9,10 +9,12 @@ func _ready() -> void:
 	get_tree().scene_changed.connect(_on_scene_changed)
 	
 	find_buttons()
+	find_pause_screen()
 
 
 func _on_scene_changed() -> void:
 	find_buttons()
+	find_pause_screen()
 
 
 func _on_button_button_down() -> void:
@@ -36,12 +38,13 @@ func _on_button_mouse_entered() -> void:
 	play_audio($"Hover Audio")
 
 
-func _on_game_paused() -> void:
-	play_audio($"Pause Audio")
-
-
-func _on_game_resume() -> void:
-	play_audio($"Resume Audio")
+func _on_game_paused_changed(is_paused: bool):
+	if is_paused:
+		print("playing pause sound")
+		$"Pause Audio".play()
+	else:
+		print("playing resume sound")
+		$"Resume Audio".play()
 
 
 func find_buttons():
@@ -57,6 +60,13 @@ func find_buttons():
 		button.mouse_entered.connect(_on_button_mouse_entered)
 	
 	print(temp_buttons.size())
+
+
+func find_pause_screen():
+	var pause_screen = get_tree().root.find_child("PauseScreen", true, false)
+	
+	if pause_screen != null:
+		pause_screen.paused_changed.connect(_on_game_paused_changed)
 
 
 func play_audio(audio_player: AudioStreamPlayer):
