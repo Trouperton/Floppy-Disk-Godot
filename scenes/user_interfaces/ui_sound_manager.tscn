@@ -52,6 +52,7 @@ streams_count = 1
 stream_0/stream = ExtResource("8_blv1i")
 
 [node name="UI Sound Manager" type="Control" unique_id=540255166]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

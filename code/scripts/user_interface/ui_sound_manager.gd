@@ -1,12 +1,16 @@
 extends Control
 
 
-var just_opened: bool = true
+var focus_skipped: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_tree().scene_changed.connect(_on_scene_changed)
+	
+	if get_tree().root.get_node("World").get_script() == LevelManager:
+		print("binding end to pause")
+		get_tree().root.get_node("World").game_end.connect(_on_game_paused_changed)
 	
 	find_buttons()
 	find_pause_screen()
@@ -15,35 +19,42 @@ func _ready() -> void:
 func _on_scene_changed() -> void:
 	find_buttons()
 	find_pause_screen()
+	
+	focus_skipped = false
 
 
 func _on_button_button_down() -> void:
-	play_audio($"Button Down Audio")
+	$"Button Down Audio".play()
 
 
 func _on_button_button_up() -> void:
-	play_audio($"Button Up Audio")
+	$"Button Up Audio".play()
 
 
 func _on_button_pressed() -> void:
-	play_audio($"Button Pressed Audio")
+	$"Button Pressed Audio".play()
 	$"Button Up Audio".stop()
 
 
 func _on_button_focus_entered() -> void:
-	play_audio($"Focus Audio")
+	if focus_skipped:
+		$"Focus Audio".play()
+	else:
+		focus_skipped = true
 
 
 func _on_button_mouse_entered() -> void:
-	play_audio($"Hover Audio")
+	$"Hover Audio".play()
 
 
 func _on_game_paused_changed(is_paused: bool):
+	print(name, " is_paused: ", is_paused)
 	if is_paused:
 		print("playing pause sound")
 		$"Pause Audio".play()
 	else:
 		print("playing resume sound")
+		focus_skipped = false
 		$"Resume Audio".play()
 
 
@@ -67,10 +78,3 @@ func find_pause_screen():
 	
 	if pause_screen != null:
 		pause_screen.paused_changed.connect(_on_game_paused_changed)
-
-
-func play_audio(audio_player: AudioStreamPlayer):
-	if just_opened:
-		just_opened = false
-	else:
-		audio_player.play()

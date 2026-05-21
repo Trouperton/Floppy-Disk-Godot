@@ -1,3 +1,4 @@
+class_name LevelManager
 extends Node3D
 
 
