@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dt2djv8u7x4bk"]
+
+[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/terrain_segment.tscn" id="1_8nqvx"]
+
+[node name="TerrainSegment_MidLow" unique_id=960714774 instance=ExtResource("1_8nqvx")]
+data = {
+"cells": PackedInt32Array(-65536, 0, 0, 917504, 0, 0, -65535, 0, 0, 917505, 0, 0, -65534, 0, 0, 917506, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, -65532, 0, 0, 917508, 0, 0, -65531, 0, 0, 917509, 0, 0, -65530, 0, 0, 917510, 0, 0, 655363, 0, 0, 589827, 0, 0, 524291, 0, 0, 458755, 0, 0)
+}
+metadata/_editor_floor_ = Vector3(3, -1, 0)

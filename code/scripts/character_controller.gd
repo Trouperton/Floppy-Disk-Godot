@@ -125,7 +125,9 @@ func forward_dash():
 	velocity = Vector3(0, 0, 0)
 	dashed_forward.emit(forward_dash_points)
 	
-	$DashForwardAudioPlayer.play()
+	if animation_state != AnimationStates.FORWARD_DASH:
+		$DashForwardAudioPlayer.play()
+	
 	animation_state = AnimationStates.FORWARD_DASH
 
 
