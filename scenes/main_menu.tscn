@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cubksod0vv7ed"]
+
+[ext_resource type="PackedScene" uid="uid://slaysg3foja" path="res://art/Terrain/SynthwaveTerrain_Plane.glb" id="8_gw5y6"]
+[ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="9_svtp6"]
+[ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="10_1dfpl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_wfdhh"]
+sky_material = SubResource("ProceduralSkyMaterial_7nyux")
+
+[sub_resource type="Environment" id="Environment_2v7ry"]
+background_mode = 2
+sky = SubResource("Sky_wfdhh")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D" unique_id=1983202797]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276924402]
+transform = Transform3D(1, 0, 0, 0, -0.8360565, 0.54864347, 0, -0.54864347, -0.8360565, 0, 1.8766732, 0)
+visible = false
+light_energy = 0.1
+light_specular = 5.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=688706798]
+environment = SubResource("Environment_2v7ry")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1272466041]
+transform = Transform3D(1, 0, 0, 0, -0.9569809, 0.29015118, 0, -0.29015118, -0.9569809, 0, 17.420866, -36.130466)
+light_color = Color(0.9999997, 0.12269535, 0.33580896, 1)
+light_size = 1.0
+light_specular = 2.0
+spot_range = 74.75938
+spot_angle = 42.983753
+
+[node name="BackgroundSprite" type="Sprite3D" parent="." unique_id=479728626]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 19.328157, -24.451464)
+texture = ExtResource("10_1dfpl")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1100286366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 10)
+current = true
+
+[node name="Terrain" type="Node3D" parent="." unique_id=49446399]
+
+[node name="TerrainSegmentsDistant" type="Node3D" parent="Terrain" unique_id=200854100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+
+[node name="SynthwaveTerrain_Distant" parent="Terrain/TerrainSegmentsDistant" unique_id=1282399969 instance=ExtResource("9_svtp6")]
+
+[node name="TerrainSegmentsBackground" type="Node3D" parent="Terrain" unique_id=1860192839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="SynthwaveTerrain_Plane7" parent="Terrain/TerrainSegmentsBackground" unique_id=1481661696 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane8" parent="Terrain/TerrainSegmentsBackground" unique_id=2138714592 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane" parent="Terrain/TerrainSegmentsBackground" unique_id=1988169004 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane2" parent="Terrain/TerrainSegmentsBackground" unique_id=1978535532 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane3" parent="Terrain/TerrainSegmentsBackground" unique_id=515337479 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane4" parent="Terrain/TerrainSegmentsBackground" unique_id=1423516482 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane5" parent="Terrain/TerrainSegmentsBackground" unique_id=382343465 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane6" parent="Terrain/TerrainSegmentsBackground" unique_id=220860055 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, 0)
+
+[node name="TerrainSegmentsBackground2" type="Node3D" parent="Terrain" unique_id=1495045655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="SynthwaveTerrain_Plane7" parent="Terrain/TerrainSegmentsBackground2" unique_id=1156815285 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane8" parent="Terrain/TerrainSegmentsBackground2" unique_id=1889769916 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane" parent="Terrain/TerrainSegmentsBackground2" unique_id=42509617 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane2" parent="Terrain/TerrainSegmentsBackground2" unique_id=1897167919 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane3" parent="Terrain/TerrainSegmentsBackground2" unique_id=641696790 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane4" parent="Terrain/TerrainSegmentsBackground2" unique_id=441789350 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane5" parent="Terrain/TerrainSegmentsBackground2" unique_id=885760768 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane6" parent="Terrain/TerrainSegmentsBackground2" unique_id=489168182 instance=ExtResource("8_gw5y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, 0)
