@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bs20jflgg2lpa"]
+
+[ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/user_interface/restart_button.gd" id="1_fibey"]
+
+[node name="RestartButton" type="Button" unique_id=1745920389 groups=["button"]]
+text = "Restart"
+script = ExtResource("1_fibey")

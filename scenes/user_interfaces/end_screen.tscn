@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/theme/ui_theme.tres" id="1_crnl8"]
 [ext_resource type="Script" uid="uid://mm50uq80lvq5" path="res://code/scripts/user_interface/end_screen.gd" id="2_cvvcs"]
-[ext_resource type="Script" uid="uid://m56ei0ddcyxu" path="res://code/scripts/user_interface/restart_button.gd" id="3_dcyms"]
-[ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/user_interface/exit_button.gd" id="4_3jxrw"]
+[ext_resource type="PackedScene" uid="uid://bs20jflgg2lpa" path="res://scenes/user_interfaces/elements/restart_button.tscn" id="3_crnl8"]
+[ext_resource type="PackedScene" uid="uid://bcw4e4sck2w0x" path="res://scenes/user_interfaces/elements/exit_button.tscn" id="4_crnl8"]
 
 [node name="EndScreen" type="Control" unique_id=709823429 node_paths=PackedStringArray("element_to_focus")]
 process_mode = 3
@@ -59,14 +59,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="RestartButton" type="Button" parent="Panel/VBoxContainer" unique_id=99257868 groups=["button"]]
+[node name="RestartButton" parent="Panel/VBoxContainer" unique_id=1745920389 instance=ExtResource("3_crnl8")]
 layout_mode = 2
-text = "Restart"
-script = ExtResource("3_dcyms")
 
-[node name="ExitButton" type="Button" parent="Panel/VBoxContainer" unique_id=1192913643 groups=["button"]]
+[node name="ExitButton" parent="Panel/VBoxContainer" unique_id=1379313657 instance=ExtResource("4_crnl8")]
 layout_mode = 2
-text = "Exit"
-script = ExtResource("4_3jxrw")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
