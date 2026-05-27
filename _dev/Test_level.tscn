@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://dltqfqq4a1akj"]
+
+[ext_resource type="Script" uid="uid://c8fbihv1boefu" path="res://code/scripts/level_manager.gd" id="1_k4mrb"]
+[ext_resource type="Script" uid="uid://bb0c4wvxjg78l" path="res://code/scripts/terrain_segment_manager.gd" id="2_0nvn1"]
+[ext_resource type="Resource" uid="uid://7f5fl4wcmpry" path="res://resources/p_terrain_segment.tres" id="3_yumge"]
+[ext_resource type="Resource" uid="uid://1a33nq4gwnwv" path="res://resources/p_terrain_segment_background.tres" id="4_qcxof"]
+[ext_resource type="Resource" uid="uid://7d2esih81gtk" path="res://resources/p_terrain_segment_distant.tres" id="5_wxg8f"]
+[ext_resource type="PackedScene" uid="uid://b7gbl2o8jgcy2" path="res://scenes/terrain/segments/terrain_segment-empty.tscn" id="6_u8i8a"]
+[ext_resource type="PackedScene" uid="uid://b12h8njnd3dna" path="res://scenes/terrain/segments/terrain_segment.tscn" id="7_tbfcq"]
+[ext_resource type="PackedScene" uid="uid://slaysg3foja" path="res://art/Terrain/SynthwaveTerrain_Plane.glb" id="8_yc80a"]
+[ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="9_hjov3"]
+[ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="10_gl0is"]
+[ext_resource type="PackedScene" uid="uid://bgk428qqircr2" path="res://scenes/user_interfaces/hud.tscn" id="12_d5ijd"]
+[ext_resource type="PackedScene" uid="uid://66jnh1ig0oxi" path="res://scenes/user_interfaces/end_screen.tscn" id="13_shvpn"]
+[ext_resource type="PackedScene" uid="uid://d133u5mnogym7" path="res://scenes/user_interfaces/pause_screen.tscn" id="14_74ifu"]
+[ext_resource type="PackedScene" uid="uid://bjcqe2lhlfbft" path="res://_dev/Panel testing.tscn" id="15_4rc35"]
+
+[sub_resource type="Curve" id="Curve_u1hvi"]
+_limits = [0.0, 3.0, 0.0, 75.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(25, 2), 0.0, 0.0, 0, 0, Vector2(75, 3), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_wfdhh"]
+sky_material = SubResource("ProceduralSkyMaterial_7nyux")
+
+[sub_resource type="Environment" id="Environment_2v7ry"]
+background_mode = 2
+sky = SubResource("Sky_wfdhh")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D" unique_id=1983202797]
+script = ExtResource("1_k4mrb")
+difficulty_curve = SubResource("Curve_u1hvi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276924402]
+transform = Transform3D(1, 0, 0, 0, -0.8360565, 0.54864347, 0, -0.54864347, -0.8360565, 0, 1.8766732, 0)
+visible = false
+light_energy = 0.1
+light_specular = 5.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=688706798]
+environment = SubResource("Environment_2v7ry")
+
+[node name="TerrainSegmentManager" type="Node3D" parent="." unique_id=260624578]
+script = ExtResource("2_0nvn1")
+base_terrain_speed = 0.0
+terrains = Array[Resource]([ExtResource("3_yumge"), ExtResource("4_qcxof"), ExtResource("5_wxg8f")])
+
+[node name="TerrainCheckTimer" type="Timer" parent="TerrainSegmentManager" unique_id=93723995]
+autostart = true
+
+[node name="TerrainSegments" type="Node3D" parent="TerrainSegmentManager" unique_id=180250620]
+
+[node name="TerrainSegment_Empty4" parent="TerrainSegmentManager/TerrainSegments" unique_id=960714774 instance=ExtResource("6_u8i8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0)
+
+[node name="TerrainSegment_Empty3" parent="TerrainSegmentManager/TerrainSegments" unique_id=2046376729 instance=ExtResource("6_u8i8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 0)
+
+[node name="TerrainSegment_Empty2" parent="TerrainSegmentManager/TerrainSegments" unique_id=933223107 instance=ExtResource("6_u8i8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+
+[node name="TerrainSegment_Empty1" parent="TerrainSegmentManager/TerrainSegments" unique_id=1423568598 instance=ExtResource("6_u8i8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="TerrainSegment_Empty" parent="TerrainSegmentManager/TerrainSegments" unique_id=145448650 instance=ExtResource("6_u8i8a")]
+
+[node name="TerrainSegment" parent="TerrainSegmentManager/TerrainSegments" unique_id=1747596346 instance=ExtResource("7_tbfcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="TerrainSegmentsBackground" type="Node3D" parent="TerrainSegmentManager" unique_id=1860192839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="SynthwaveTerrain_Plane" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1481661696 instance=ExtResource("8_yc80a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane2" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1978535532 instance=ExtResource("8_yc80a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane3" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=515337479 instance=ExtResource("8_yc80a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane4" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=1423516482 instance=ExtResource("8_yc80a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane5" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=382343465 instance=ExtResource("8_yc80a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0, 0)
+
+[node name="SynthwaveTerrain_Plane6" parent="TerrainSegmentManager/TerrainSegmentsBackground" unique_id=220860055 instance=ExtResource("8_yc80a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, 0)
+
+[node name="TerrainSegmentsDistant" type="Node3D" parent="TerrainSegmentManager" unique_id=200854100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+
+[node name="SynthwaveTerrain_Distant" parent="TerrainSegmentManager/TerrainSegmentsDistant" unique_id=1282399969 instance=ExtResource("9_hjov3")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1272466041]
+transform = Transform3D(1, 0, 0, 0, -0.9569809, 0.29015118, 0, -0.29015118, -0.9569809, 0, 17.420866, -36.130466)
+light_color = Color(0.9999997, 0.12269535, 0.33580896, 1)
+light_size = 1.0
+light_specular = 2.0
+spot_range = 74.75938
+spot_angle = 42.983753
+
+[node name="BackgroundSprite" type="Sprite3D" parent="." unique_id=479728626]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 19.328157, -24.451464)
+texture = ExtResource("10_gl0is")
+
+[node name="PlayerFloppy" parent="." unique_id=188171447 instance_placeholder="res://scenes/player_floppy.tscn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.5)
+forward_dash_speed_factor = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1100286366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 10)
+current = true
+
+[node name="HUD" parent="." unique_id=1914340225 instance=ExtResource("12_d5ijd")]
+
+[node name="EndScreen" parent="." unique_id=709823429 instance=ExtResource("13_shvpn")]
+visible = false
+
+[node name="PauseScreen" parent="." unique_id=987105522 instance=ExtResource("14_74ifu")]
+visible = false
+
+[node name="Control" parent="." unique_id=1463516739 instance=ExtResource("15_4rc35")]
+
+[connection signal="game_end" from="." to="HUD" method="_on_world_game_end"]
+[connection signal="game_end" from="." to="EndScreen" method="_on_world_game_end"]
+[connection signal="passed_pillar" from="." to="PlayerFloppy" method="_on_world_passed_pillar"]
+[connection signal="score_updated" from="." to="HUD" method="_on_world_score_updated"]
+[connection signal="segment_spawned" from="TerrainSegmentManager" to="." method="_on_terrain_segment_manager_segment_spawned"]
+[connection signal="timeout" from="TerrainSegmentManager/TerrainCheckTimer" to="TerrainSegmentManager" method="_on_terrain_check_timer_timeout"]
+[connection signal="dashed_forward" from="PlayerFloppy" to="." method="_on_player_floppy_dashed_forward"]
+[connection signal="dashed_vertically" from="PlayerFloppy" to="." method="_on_player_floppy_dashed_vertically"]
+[connection signal="died" from="PlayerFloppy" to="." method="_on_player_floppy_died"]
+[connection signal="jumped" from="PlayerFloppy" to="." method="_on_player_floppy_jumped"]

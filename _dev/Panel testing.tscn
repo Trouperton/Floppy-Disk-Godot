@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dm11wxbhbtxis" path="res://art/UI Panel.png" id="1_u6fmn"]
 [ext_resource type="Texture2D" uid="uid://jr45w4g6y3a0" path="res://art/UI Panel Score.png" id="2_vrpgp"]
 [ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/theme/ui_theme.tres" id="3_47xvg"]
+[ext_resource type="Script" uid="uid://cy4abas44u8u1" path="res://_dev/h_slider-bus_volume.gd" id="4_86fgm"]
+[ext_resource type="AudioStream" uid="uid://c15gvwat6d5jd" path="res://resources/audio/laserLarge_002.ogg" id="5_iy8pl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrpgp"]
 texture = ExtResource("1_u6fmn")
@@ -62,3 +64,39 @@ offset_top = 76.0
 offset_right = 306.0
 offset_bottom = 107.0
 text = "Button"
+
+[node name="HSlider" type="HSlider" parent="." unique_id=957767303]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 355.0
+offset_right = 623.0
+offset_bottom = 371.0
+script = ExtResource("4_86fgm")
+
+[node name="HSlider2" type="HSlider" parent="." unique_id=221156545]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 381.0
+offset_right = 623.0
+offset_bottom = 397.0
+script = ExtResource("4_86fgm")
+index = "Music"
+
+[node name="HSlider3" type="HSlider" parent="." unique_id=125795270]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 410.0
+offset_right = 621.0
+offset_bottom = 426.0
+script = ExtResource("4_86fgm")
+index = "SFX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1341359258]
+stream = ExtResource("5_iy8pl")
+autoplay = true
+bus = &"SFX"
+parameters/looping = true
+
+[connection signal="drag_ended" from="HSlider" to="HSlider" method="_on_drag_ended"]
+[connection signal="drag_ended" from="HSlider2" to="HSlider2" method="_on_drag_ended"]
+[connection signal="drag_ended" from="HSlider3" to="HSlider3" method="_on_drag_ended"]
