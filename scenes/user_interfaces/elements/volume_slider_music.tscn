@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dyqcnussvv4s3"]
+
+[ext_resource type="PackedScene" uid="uid://beg2j7n0k3mb0" path="res://scenes/user_interfaces/elements/volume_slider_master.tscn" id="1_8dwup"]
+
+[node name="MusicSlider" unique_id=1116613166 instance=ExtResource("1_8dwup")]
+
+[node name="AudioLabel" parent="." index="0" unique_id=385408210]
+text = "Music"
+
+[node name="AudioVolumeSlider" parent="." index="1" unique_id=66896956]
+bus_index = "Music"

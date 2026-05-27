@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://beg2j7n0k3mb0"]
+
+[ext_resource type="Script" uid="uid://ctcfp7nf0ldnt" path="res://code/scripts/user_interface/volume_slider.gd" id="1_scjxi"]
+
+[node name="MasterSlider" type="VBoxContainer" unique_id=1116613166]
+
+[node name="AudioLabel" type="Label" parent="." unique_id=385408210]
+layout_mode = 2
+text = "Master"
+
+[node name="AudioVolumeSlider" type="HSlider" parent="." unique_id=66896956]
+layout_mode = 2
+value = 100.0
+script = ExtResource("1_scjxi")
+
+[connection signal="value_changed" from="AudioVolumeSlider" to="AudioVolumeSlider" method="_on_value_changed"]
