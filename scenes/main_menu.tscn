@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cubksod0vv7ed"]
 
+[ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/theme/ui_theme.tres" id="4_wu84c"]
+[ext_resource type="PackedScene" uid="uid://bcw4e4sck2w0x" path="res://scenes/user_interfaces/elements/exit_button.tscn" id="5_8ln24"]
 [ext_resource type="PackedScene" uid="uid://slaysg3foja" path="res://art/Terrain/SynthwaveTerrain_Plane.glb" id="8_gw5y6"]
 [ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="9_svtp6"]
 [ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="10_1dfpl"]
@@ -104,3 +106,55 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0, 0)
 
 [node name="SynthwaveTerrain_Plane6" parent="Terrain/TerrainSegmentsBackground2" unique_id=489168182 instance=ExtResource("8_gw5y6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, 0)
+
+[node name="MainMenuScreen" type="Control" parent="." unique_id=500595419]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_wu84c")
+
+[node name="MainMenu" type="Control" parent="MainMenuScreen" unique_id=1118209345]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MainMenuScreen/MainMenu" unique_id=1123345688]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 113.455
+offset_top = -141.0
+offset_right = 374.45502
+offset_bottom = 140.60004
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuScreen/MainMenu/Panel" unique_id=349353225]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0000305
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="MainMenuScreen/MainMenu/Panel/VBoxContainer" unique_id=881996726 groups=["button"]]
+layout_mode = 2
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="MainMenuScreen/MainMenu/Panel/VBoxContainer" unique_id=853006574 groups=["button"]]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" parent="MainMenuScreen/MainMenu/Panel/VBoxContainer" unique_id=1379313657 instance=ExtResource("5_8ln24")]
+layout_mode = 2
