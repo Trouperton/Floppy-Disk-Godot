@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bd5s8yauxwavp"]
+
+[ext_resource type="Texture2D" uid="uid://dadgpfca8lqnj" path="res://art/UI Slider.png" id="1_mu4uk"]
+
+[resource]
+atlas = ExtResource("1_mu4uk")
+region = Rect2(7, 7, 16, 16)

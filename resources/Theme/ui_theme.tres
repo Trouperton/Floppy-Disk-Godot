@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cdyr6s50el148" path="res://art/UI Button Focus.png" id="1_o1hbi"]
 [ext_resource type="FontFile" uid="uid://co5avcht0ifn3" path="res://resources/theme/Orbitron-VariableFont_wght.ttf" id="1_ojy50"]
 [ext_resource type="Texture2D" uid="uid://dppig77dlrrgp" path="res://art/UI Button Pressed.png" id="3_o1hbi"]
+[ext_resource type="Texture2D" uid="uid://bd5s8yauxwavp" path="res://art/ui_grabber.tres" id="5_cp3te"]
+[ext_resource type="Texture2D" uid="uid://88ijl0j0ec7k" path="res://art/ui_grabber_h.tres" id="6_da0ql"]
+[ext_resource type="Texture2D" uid="uid://b17eyu5tx4rue" path="res://art/ui_grabber_area.tres" id="7_q8xle"]
+[ext_resource type="Texture2D" uid="uid://drklkm0xle1l0" path="res://art/ui_grabber_area_h.tres" id="8_4ymxe"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plu37"]
 texture = ExtResource("1_o1hbi")
@@ -39,6 +43,18 @@ texture_margin_top = 5.0
 texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3o3d"]
+texture = ExtResource("7_q8xle")
+texture_margin_left = 6.0
+texture_margin_right = 6.0
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8xle"]
+texture = ExtResource("8_4ymxe")
+texture_margin_left = 6.0
+texture_margin_right = 6.0
+axis_stretch_horizontal = 1
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrpgp"]
 texture = ExtResource("1_l003u")
 texture_margin_left = 50.0
@@ -58,4 +74,8 @@ Button/styles/focus = SubResource("StyleBoxTexture_plu37")
 Button/styles/hover = SubResource("StyleBoxTexture_pl4bh")
 Button/styles/normal = SubResource("StyleBoxTexture_dubcc")
 Button/styles/pressed = SubResource("StyleBoxTexture_wuan5")
+HSlider/icons/grabber = ExtResource("5_cp3te")
+HSlider/icons/grabber_highlight = ExtResource("6_da0ql")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_x3o3d")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_q8xle")
 Panel/styles/panel = SubResource("StyleBoxTexture_vrpgp")
