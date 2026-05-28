@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dpheax8b2fsws" path="res://art/UI Button Close P.png" id="10_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://bm0cqhwcov3lq" path="res://art/UI Button Close H.png" id="11_flqon"]
 [ext_resource type="Texture2D" uid="uid://dtojypfteviha" path="res://art/UI Button Close Icon.png" id="12_flqon"]
+[ext_resource type="Script" uid="uid://h5q2j6vrloux" path="res://code/scripts/user_interface/back_button.gd" id="13_rcqid"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -136,6 +137,7 @@ grow_vertical = 2
 theme = ExtResource("4_wu84c")
 
 [node name="MainMenu" type="Control" parent="MainMenuScreen" unique_id=1118209345]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -228,7 +230,7 @@ layout_mode = 2
 [node name="SFXSlider" parent="MainMenuScreen/SettingsMenu/Panel/VBoxContainer" unique_id=524595361 instance=ExtResource("8_lgwnu")]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MainMenuScreen/SettingsMenu/Panel" unique_id=1330513734]
+[node name="BackButton" type="Button" parent="MainMenuScreen/SettingsMenu/Panel" unique_id=1330513734 node_paths=PackedStringArray("parent_to_hide", "grandparent_to_show") groups=["button"]]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -244,3 +246,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_1ajci")
 icon = ExtResource("12_flqon")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("13_rcqid")
+parent_to_hide = NodePath("../..")
+grandparent_to_show = NodePath("../../../MainMenu")
