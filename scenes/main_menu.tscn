@@ -6,8 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dyqcnussvv4s3" path="res://scenes/user_interfaces/elements/volume_slider_music.tscn" id="7_5dd4i"]
 [ext_resource type="PackedScene" uid="uid://slaysg3foja" path="res://art/Terrain/SynthwaveTerrain_Plane.glb" id="8_gw5y6"]
 [ext_resource type="PackedScene" uid="uid://cn5r0vb3g2aht" path="res://scenes/user_interfaces/elements/volume_slider_sfx.tscn" id="8_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://dv1ygdvrprkp2" path="res://art/UI Button Close.png" id="9_jk1qb"]
 [ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="9_svtp6"]
 [ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="10_1dfpl"]
+[ext_resource type="Texture2D" uid="uid://dpheax8b2fsws" path="res://art/UI Button Close P.png" id="10_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://bm0cqhwcov3lq" path="res://art/UI Button Close H.png" id="11_flqon"]
+[ext_resource type="Texture2D" uid="uid://dtojypfteviha" path="res://art/UI Button Close Icon.png" id="12_flqon"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,6 +25,18 @@ background_mode = 2
 sky = SubResource("Sky_wfdhh")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
+texture = ExtResource("9_jk1qb")
+region_rect = Rect2(5, 5, 118, 118)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcqid"]
+texture = ExtResource("10_lgwnu")
+region_rect = Rect2(5, 5, 118, 118)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ajci"]
+texture = ExtResource("11_flqon")
+region_rect = Rect2(5, 5, 118, 118)
 
 [node name="World" type="Node3D" unique_id=1983202797]
 
@@ -163,7 +179,6 @@ text = "Settings"
 layout_mode = 2
 
 [node name="SettingsMenu" type="Control" parent="MainMenuScreen" unique_id=2078711530]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -212,3 +227,20 @@ layout_mode = 2
 
 [node name="SFXSlider" parent="MainMenuScreen/SettingsMenu/Panel/VBoxContainer" unique_id=524595361 instance=ExtResource("8_lgwnu")]
 layout_mode = 2
+
+[node name="Button" type="Button" parent="MainMenuScreen/SettingsMenu/Panel" unique_id=1330513734]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -26.0
+offset_top = -27.0
+offset_right = 28.0
+offset_bottom = 26.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_5dd4i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1ajci")
+icon = ExtResource("12_flqon")
+icon_alignment = 1
+expand_icon = true
