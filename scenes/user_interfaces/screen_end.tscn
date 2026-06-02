@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://66jnh1ig0oxi"]
 
 [ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/theme/ui_theme.tres" id="1_crnl8"]
-[ext_resource type="Script" uid="uid://mm50uq80lvq5" path="res://code/scripts/user_interface/end_screen.gd" id="2_cvvcs"]
-[ext_resource type="PackedScene" uid="uid://bs20jflgg2lpa" path="res://scenes/user_interfaces/elements/restart_button.tscn" id="3_crnl8"]
-[ext_resource type="PackedScene" uid="uid://bcw4e4sck2w0x" path="res://scenes/user_interfaces/elements/exit_button.tscn" id="4_crnl8"]
+[ext_resource type="Script" uid="uid://mm50uq80lvq5" path="res://code/scripts/user_interface/screen_end.gd" id="2_cvvcs"]
+[ext_resource type="PackedScene" uid="uid://bs20jflgg2lpa" path="res://scenes/user_interfaces/elements/button_restart.tscn" id="3_crnl8"]
+[ext_resource type="PackedScene" uid="uid://bcw4e4sck2w0x" path="res://scenes/user_interfaces/elements/button_exit.tscn" id="4_crnl8"]
 
 [node name="EndScreen" type="Control" unique_id=709823429 node_paths=PackedStringArray("element_to_focus")]
 process_mode = 3

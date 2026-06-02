@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcw4e4sck2w0x"]
 
-[ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/user_interface/exit_button.gd" id="1_i4474"]
+[ext_resource type="Script" uid="uid://brieoc0y6x1ef" path="res://code/scripts/user_interface/button_exit.gd" id="1_i4474"]
 
 [node name="ExitButton" type="Button" unique_id=1379313657 groups=["button"]]
 text = "Exit"

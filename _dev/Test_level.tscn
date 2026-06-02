@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cg3j1e051jeur" path="res://art/Terrain/SynthwaveTerrain_Distant.glb" id="9_hjov3"]
 [ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="10_gl0is"]
 [ext_resource type="PackedScene" uid="uid://bgk428qqircr2" path="res://scenes/user_interfaces/hud.tscn" id="12_d5ijd"]
-[ext_resource type="PackedScene" uid="uid://66jnh1ig0oxi" path="res://scenes/user_interfaces/end_screen.tscn" id="13_shvpn"]
-[ext_resource type="PackedScene" uid="uid://d133u5mnogym7" path="res://scenes/user_interfaces/pause_screen.tscn" id="14_74ifu"]
+[ext_resource type="PackedScene" uid="uid://66jnh1ig0oxi" path="res://scenes/user_interfaces/screen_end.tscn" id="13_shvpn"]
+[ext_resource type="PackedScene" uid="uid://d133u5mnogym7" path="res://scenes/user_interfaces/screen_pause.tscn" id="14_74ifu"]
 [ext_resource type="PackedScene" uid="uid://bjcqe2lhlfbft" path="res://_dev/Panel testing.tscn" id="15_4rc35"]
 
 [sub_resource type="Curve" id="Curve_u1hvi"]

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cubksod0vv7ed"]
 
 [ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/theme/ui_theme.tres" id="4_wu84c"]
-[ext_resource type="Script" uid="uid://c5p2hbh4pshnl" path="res://code/scripts/user_interface/submenu_button.gd" id="5_1ajci"]
-[ext_resource type="Script" uid="uid://rmk68fo85ipi" path="res://scenes/button_scene_transition.gd" id="5_7b55j"]
-[ext_resource type="PackedScene" uid="uid://bcw4e4sck2w0x" path="res://scenes/user_interfaces/elements/exit_button.tscn" id="5_8ln24"]
+[ext_resource type="Script" uid="uid://c5p2hbh4pshnl" path="res://code/scripts/user_interface/button_submenu.gd" id="5_1ajci"]
+[ext_resource type="Script" uid="uid://rmk68fo85ipi" path="res://code/scripts/user_interface/button_scene_transition.gd" id="5_7b55j"]
+[ext_resource type="PackedScene" uid="uid://bcw4e4sck2w0x" path="res://scenes/user_interfaces/elements/button_exit.tscn" id="5_8ln24"]
 [ext_resource type="PackedScene" uid="uid://dgabwr3imfpdi" path="res://scenes/main_level.tscn" id="6_7b55j"]
 [ext_resource type="PackedScene" uid="uid://beg2j7n0k3mb0" path="res://scenes/user_interfaces/elements/volume_slider_master.tscn" id="6_jk1qb"]
 [ext_resource type="PackedScene" uid="uid://dyqcnussvv4s3" path="res://scenes/user_interfaces/elements/volume_slider_music.tscn" id="7_5dd4i"]

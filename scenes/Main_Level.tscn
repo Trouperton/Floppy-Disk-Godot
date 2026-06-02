@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dp24gxtj0vs8t" path="res://art/Terrain/Textures/Background.svg" id="10_sjhni"]
 [ext_resource type="PackedScene" uid="uid://ba0vxdpdxmw6q" path="res://scenes/player_floppy.tscn" id="11_7sk5s"]
 [ext_resource type="PackedScene" uid="uid://bgk428qqircr2" path="res://scenes/user_interfaces/hud.tscn" id="12_cssx7"]
-[ext_resource type="PackedScene" uid="uid://66jnh1ig0oxi" path="res://scenes/user_interfaces/end_screen.tscn" id="13_ondrs"]
-[ext_resource type="PackedScene" uid="uid://d133u5mnogym7" path="res://scenes/user_interfaces/pause_screen.tscn" id="14_adxub"]
+[ext_resource type="PackedScene" uid="uid://66jnh1ig0oxi" path="res://scenes/user_interfaces/screen_end.tscn" id="13_ondrs"]
+[ext_resource type="PackedScene" uid="uid://d133u5mnogym7" path="res://scenes/user_interfaces/screen_pause.tscn" id="14_adxub"]
 
 [sub_resource type="Curve" id="Curve_u1hvi"]
 _limits = [0.0, 3.0, 0.0, 75.0]

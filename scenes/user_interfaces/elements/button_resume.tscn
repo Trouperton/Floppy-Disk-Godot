@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bocmpjh1uio54"]
 
-[ext_resource type="Script" uid="uid://cahfl5c6p5jiv" path="res://code/scripts/user_interface/resume_button.gd" id="1_bx4r4"]
+[ext_resource type="Script" uid="uid://cahfl5c6p5jiv" path="res://code/scripts/user_interface/button_resume.gd" id="1_bx4r4"]
 
 [node name="ResumeButton" type="Button" unique_id=263075520 node_paths=PackedStringArray("parent_to_hide") groups=["button"]]
 text = "Resume

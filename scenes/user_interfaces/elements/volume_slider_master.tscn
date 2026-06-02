@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://beg2j7n0k3mb0"]
 
-[ext_resource type="Script" uid="uid://ctcfp7nf0ldnt" path="res://code/scripts/user_interface/volume_slider.gd" id="1_scjxi"]
+[ext_resource type="Script" uid="uid://ctcfp7nf0ldnt" path="res://code/scripts/user_interface/slider_volume.gd" id="1_scjxi"]
 
 [node name="MasterSlider" type="VBoxContainer" unique_id=1116613166]
 
