@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cubksod0vv7ed"]
 
 [ext_resource type="Theme" uid="uid://elyhnmad3klq" path="res://resources/theme/ui_theme.tres" id="4_wu84c"]
+[ext_resource type="Script" uid="uid://c5p2hbh4pshnl" path="res://code/scripts/user_interface/submenu_button.gd" id="5_1ajci"]
 [ext_resource type="PackedScene" uid="uid://bcw4e4sck2w0x" path="res://scenes/user_interfaces/elements/exit_button.tscn" id="5_8ln24"]
 [ext_resource type="PackedScene" uid="uid://beg2j7n0k3mb0" path="res://scenes/user_interfaces/elements/volume_slider_master.tscn" id="6_jk1qb"]
 [ext_resource type="PackedScene" uid="uid://dyqcnussvv4s3" path="res://scenes/user_interfaces/elements/volume_slider_music.tscn" id="7_5dd4i"]
@@ -12,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://dpheax8b2fsws" path="res://art/UI Button Close P.png" id="10_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://bm0cqhwcov3lq" path="res://art/UI Button Close H.png" id="11_flqon"]
 [ext_resource type="Texture2D" uid="uid://dtojypfteviha" path="res://art/UI Button Close Icon.png" id="12_flqon"]
-[ext_resource type="Script" uid="uid://h5q2j6vrloux" path="res://code/scripts/user_interface/back_button.gd" id="13_rcqid"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nyux"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -173,9 +173,12 @@ grow_vertical = 2
 layout_mode = 2
 text = "Start"
 
-[node name="SettingsButton" type="Button" parent="MainMenuScreen/MainMenu/Panel/VBoxContainer" unique_id=853006574 groups=["button"]]
+[node name="SettingsButton" type="Button" parent="MainMenuScreen/MainMenu/Panel/VBoxContainer" unique_id=853006574 node_paths=PackedStringArray("parent_to_hide", "menu_to_show") groups=["button"]]
 layout_mode = 2
 text = "Settings"
+script = ExtResource("5_1ajci")
+parent_to_hide = NodePath("../../..")
+menu_to_show = NodePath("../../../../SettingsMenu")
 
 [node name="ExitButton" parent="MainMenuScreen/MainMenu/Panel/VBoxContainer" unique_id=1379313657 instance=ExtResource("5_8ln24")]
 layout_mode = 2
@@ -230,7 +233,7 @@ layout_mode = 2
 [node name="SFXSlider" parent="MainMenuScreen/SettingsMenu/Panel/VBoxContainer" unique_id=524595361 instance=ExtResource("8_lgwnu")]
 layout_mode = 2
 
-[node name="BackButton" type="Button" parent="MainMenuScreen/SettingsMenu/Panel" unique_id=1330513734 node_paths=PackedStringArray("parent_to_hide", "grandparent_to_show") groups=["button"]]
+[node name="BackButton" type="Button" parent="MainMenuScreen/SettingsMenu/Panel" unique_id=1330513734 node_paths=PackedStringArray("parent_to_hide", "menu_to_show") groups=["button"]]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -246,6 +249,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_1ajci")
 icon = ExtResource("12_flqon")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("13_rcqid")
+script = ExtResource("5_1ajci")
 parent_to_hide = NodePath("../..")
-grandparent_to_show = NodePath("../../../MainMenu")
+menu_to_show = NodePath("../../../MainMenu")
