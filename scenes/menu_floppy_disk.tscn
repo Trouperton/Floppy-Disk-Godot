@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c6lqikwlinaow"]
+
+[ext_resource type="PackedScene" uid="uid://doaklmqjy54id" path="res://art/objects/floppy_disk/Floppy Disk.glb" id="1_ul4wc"]
+[ext_resource type="Script" uid="uid://bqd638wcq30q8" path="res://code/scripts/menu_floppy_disk.gd" id="2_ck7i5"]
+
+[node name="Floppy Disk" unique_id=38324854 instance=ExtResource("1_ul4wc")]
+script = ExtResource("2_ck7i5")
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(949970566) index="0" unique_id=821689567]
+bones/0/rotation = Quaternion(-2.980233e-08, 4.4505066e-07, 1.9421662e-14, 1)
+
+[node name="Bone" parent="Armature/Skeleton3D" index="0" unique_id=1086110257]
+transform = Transform3D(1, -6.537041e-14, 8.9010126e-07, 1.2316232e-14, 0.99999994, 5.960465e-08, -8.901013e-07, -5.960465e-08, 0.99999994, 0, 0, 0)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=2101707708]
+speed_scale = 0.4
