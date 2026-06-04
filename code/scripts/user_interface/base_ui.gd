@@ -12,5 +12,5 @@ func _ready() -> void:
 
 
 func _on_visibility_changed() -> void:
-	if visible:
+	if visible and element_to_focus.is_inside_tree():
 		element_to_focus.grab_focus()
