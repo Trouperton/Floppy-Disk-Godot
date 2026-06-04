@@ -14,5 +14,5 @@ func _ready() -> void:
 		value = (bus_volume_db + 60) / 60 * 100
 
 
-func _on_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_index), -60 + (60 * value/100))
+func _on_value_changed(new_value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_index), -60 + (60 * new_value/100))
