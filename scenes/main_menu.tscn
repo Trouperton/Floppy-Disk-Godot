@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://rmk68fo85ipi" path="res://code/scripts/user_interface/button_scene_transition.gd" id="5_7b55j"]
 [ext_resource type="PackedScene" uid="uid://bcw4e4sck2w0x" path="res://scenes/user_interfaces/elements/button_exit.tscn" id="5_8ln24"]
 [ext_resource type="PackedScene" uid="uid://dgabwr3imfpdi" path="res://scenes/main_level.tscn" id="6_7b55j"]
+[ext_resource type="Script" uid="uid://hbnf1ln8trh6" path="res://code/scripts/user_interface/base_ui.gd" id="6_j7ex8"]
 [ext_resource type="PackedScene" uid="uid://beg2j7n0k3mb0" path="res://scenes/user_interfaces/elements/volume_slider_master.tscn" id="6_jk1qb"]
 [ext_resource type="PackedScene" uid="uid://dyqcnussvv4s3" path="res://scenes/user_interfaces/elements/volume_slider_music.tscn" id="7_5dd4i"]
 [ext_resource type="PackedScene" uid="uid://slaysg3foja" path="res://art/Terrain/SynthwaveTerrain_Plane.glb" id="8_gw5y6"]
@@ -142,13 +143,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_wu84c")
 
-[node name="MainMenu" type="Control" parent="MainMenuScreen" unique_id=1118209345]
+[node name="MainMenu" type="Control" parent="MainMenuScreen" unique_id=1118209345 node_paths=PackedStringArray("element_to_focus")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("6_j7ex8")
+element_to_focus = NodePath("Panel/VBoxContainer/StartButton")
 
 [node name="Panel" type="Panel" parent="MainMenuScreen/MainMenu" unique_id=1123345688]
 layout_mode = 1
@@ -190,7 +193,7 @@ menu_to_show = NodePath("../../../../SettingsMenu")
 [node name="ExitButton" parent="MainMenuScreen/MainMenu/Panel/VBoxContainer" unique_id=1379313657 instance=ExtResource("5_8ln24")]
 layout_mode = 2
 
-[node name="SettingsMenu" type="Control" parent="MainMenuScreen" unique_id=2078711530]
+[node name="SettingsMenu" type="Control" parent="MainMenuScreen" unique_id=2078711530 node_paths=PackedStringArray("element_to_focus")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -198,6 +201,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("6_j7ex8")
+element_to_focus = NodePath("Panel/BackButton")
 
 [node name="Panel" type="Panel" parent="MainMenuScreen/SettingsMenu" unique_id=77872841]
 layout_mode = 1
@@ -260,3 +265,6 @@ expand_icon = true
 script = ExtResource("5_1ajci")
 parent_to_hide = NodePath("../..")
 menu_to_show = NodePath("../../../MainMenu")
+
+[connection signal="visibility_changed" from="MainMenuScreen/MainMenu" to="MainMenuScreen/MainMenu" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="MainMenuScreen/SettingsMenu" to="MainMenuScreen/SettingsMenu" method="_on_visibility_changed"]

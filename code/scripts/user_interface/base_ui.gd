@@ -6,6 +6,11 @@ extends Control
 @export var element_to_focus: Control
 
 
+func _ready() -> void:
+	if visible:
+		element_to_focus.grab_focus()
+
+
 func _on_visibility_changed() -> void:
 	if visible:
 		element_to_focus.grab_focus()
