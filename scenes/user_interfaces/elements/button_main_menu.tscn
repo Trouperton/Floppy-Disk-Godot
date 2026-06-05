@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c3hu3cts66q5g"]
+
+[ext_resource type="Script" uid="uid://rmk68fo85ipi" path="res://code/scripts/user_interface/button_scene_transition.gd" id="1_ew367"]
+
+[node name="MainMenuButton" type="Button" unique_id=1004622083 groups=["button"]]
+text = "Exit to Menu"
+script = ExtResource("1_ew367")
+scene_to_open = "res://scenes/main_menu.tscn"
