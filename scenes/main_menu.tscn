@@ -201,7 +201,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_j7ex8")
-element_to_focus = NodePath("Panel/VBoxContainer/MasterSlider")
+element_to_focus = NodePath("Panel/BackButton")
 
 [node name="Panel" type="Panel" parent="MainMenuScreen/SettingsMenu" unique_id=77872841]
 layout_mode = 1
