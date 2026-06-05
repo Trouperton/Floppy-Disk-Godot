@@ -38,8 +38,7 @@ script = ExtResource("1_uk2yf")
 difficulty_curve = SubResource("Curve_u1hvi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276924402]
-transform = Transform3D(1, 0, 0, 0, -0.8360565, 0.54864347, 0, -0.54864347, -0.8360565, 0, 1.8766732, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 0.9051983, 0.42498952, 0, -0.42498952, 0.9051983, 0, 1.8766732, 0)
 light_energy = 0.1
 light_specular = 5.0
 
