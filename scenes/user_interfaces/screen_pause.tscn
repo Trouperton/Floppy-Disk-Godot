@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bocmpjh1uio54" path="res://scenes/user_interfaces/elements/button_resume.tscn" id="4_lp113"]
 [ext_resource type="PackedScene" uid="uid://bs20jflgg2lpa" path="res://scenes/user_interfaces/elements/button_restart.tscn" id="5_lp113"]
 [ext_resource type="Script" uid="uid://rmk68fo85ipi" path="res://code/scripts/user_interface/button_scene_transition.gd" id="6_5nqdj"]
-[ext_resource type="PackedScene" uid="uid://cubksod0vv7ed" path="res://scenes/main_menu.tscn" id="7_j32w6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16hq2"]
 texture = ExtResource("3_lvt7j")
@@ -81,10 +80,10 @@ parent_to_hide = NodePath("../../..")
 [node name="RestartButton" parent="Panel2/VBoxContainer" unique_id=1745920389 instance=ExtResource("5_lp113")]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Panel2/VBoxContainer" unique_id=1147857473 groups=["button"]]
+[node name="MainMenuButton" type="Button" parent="Panel2/VBoxContainer" unique_id=1147857473 groups=["button"]]
 layout_mode = 2
 text = "Exit to Menu"
 script = ExtResource("6_5nqdj")
-scene_to_open = ExtResource("7_j32w6")
+scene_to_open = "res://scenes/main_menu.tscn"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://c5p2hbh4pshnl" path="res://code/scripts/user_interface/button_submenu.gd" id="5_1ajci"]
 [ext_resource type="Script" uid="uid://rmk68fo85ipi" path="res://code/scripts/user_interface/button_scene_transition.gd" id="5_7b55j"]
 [ext_resource type="PackedScene" uid="uid://bcw4e4sck2w0x" path="res://scenes/user_interfaces/elements/button_exit.tscn" id="5_8ln24"]
-[ext_resource type="PackedScene" uid="uid://dgabwr3imfpdi" path="res://scenes/main_level.tscn" id="6_7b55j"]
 [ext_resource type="Script" uid="uid://hbnf1ln8trh6" path="res://code/scripts/user_interface/base_ui.gd" id="6_j7ex8"]
 [ext_resource type="PackedScene" uid="uid://beg2j7n0k3mb0" path="res://scenes/user_interfaces/elements/volume_slider_master.tscn" id="6_jk1qb"]
 [ext_resource type="PackedScene" uid="uid://dyqcnussvv4s3" path="res://scenes/user_interfaces/elements/volume_slider_music.tscn" id="7_5dd4i"]
@@ -181,7 +180,7 @@ grow_vertical = 2
 layout_mode = 2
 text = "Start"
 script = ExtResource("5_7b55j")
-scene_to_open = ExtResource("6_7b55j")
+scene_to_open = "res://scenes/main_level.tscn"
 
 [node name="SettingsButton" type="Button" parent="MainMenuScreen/MainMenu/Panel/VBoxContainer" unique_id=853006574 node_paths=PackedStringArray("parent_to_hide", "menu_to_show") groups=["button"]]
 layout_mode = 2
