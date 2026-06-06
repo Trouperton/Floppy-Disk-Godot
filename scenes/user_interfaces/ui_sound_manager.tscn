@@ -64,30 +64,37 @@ script = ExtResource("1_hm23x")
 [node name="Button Down Audio" type="AudioStreamPlayer" parent="." unique_id=1809326401]
 stream = SubResource("AudioStreamRandomizer_htfva")
 volume_db = -15.0
+bus = &"SFX"
 
 [node name="Button Up Audio" type="AudioStreamPlayer" parent="." unique_id=493154585]
 stream = SubResource("AudioStreamRandomizer_ehjca")
 volume_db = -15.0
+bus = &"SFX"
 
 [node name="Button Pressed Audio" type="AudioStreamPlayer" parent="." unique_id=1005564206]
 stream = SubResource("AudioStreamRandomizer_r027j")
 volume_db = -15.0
+bus = &"SFX"
 
 [node name="Hover Audio" type="AudioStreamPlayer" parent="." unique_id=1392006608]
 stream = SubResource("AudioStreamRandomizer_78opr")
 volume_db = -15.0
+bus = &"SFX"
 
 [node name="Focus Audio" type="AudioStreamPlayer" parent="." unique_id=892581628]
 stream = SubResource("AudioStreamRandomizer_70emj")
 volume_db = -15.0
+bus = &"SFX"
 
 [node name="Pause Audio" type="AudioStreamPlayer" parent="." unique_id=530356513]
 stream = SubResource("AudioStreamRandomizer_lrrfh")
 volume_db = -15.0
+bus = &"SFX"
 
 [node name="Resume Audio" type="AudioStreamPlayer" parent="." unique_id=2021658020]
 stream = SubResource("AudioStreamRandomizer_k3lx7")
 volume_db = -15.0
+bus = &"SFX"
 
 [connection signal="hidden" from="." to="." method="_on_hidden"]
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
