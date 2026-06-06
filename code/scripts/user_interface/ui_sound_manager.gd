@@ -48,12 +48,12 @@ func _on_button_mouse_entered() -> void:
 
 
 func _on_game_paused_changed(is_paused: bool):
-	print(name, " is_paused: ", is_paused)
+	#print(name, " is_paused: ", is_paused)
 	if is_paused:
-		print("playing pause sound")
+		#print("playing pause sound")
 		$"Pause Audio".play()
 	else:
-		print("playing resume sound")
+		#print("playing resume sound")
 		focus_skipped = false
 		$"Resume Audio".play()
 
@@ -70,7 +70,7 @@ func find_buttons():
 		button.focus_entered.connect(_on_button_focus_entered)
 		button.mouse_entered.connect(_on_button_mouse_entered)
 	
-	print(temp_buttons.size())
+	#print(temp_buttons.size())
 
 
 func find_pause_screen():
