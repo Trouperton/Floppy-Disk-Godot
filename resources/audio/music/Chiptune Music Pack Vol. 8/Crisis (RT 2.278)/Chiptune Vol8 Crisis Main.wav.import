@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clucqmvckgp2f"
+path="res://.godot/imported/Chiptune Vol8 Crisis Main.wav-0ef9612367a57ec2da725bb3ea762881.sample"
+
+[deps]
+
+source_file="res://resources/audio/music/Chiptune Music Pack Vol. 8/Crisis (RT 2.278)/Chiptune Vol8 Crisis Main.wav"
+dest_files=["res://.godot/imported/Chiptune Vol8 Crisis Main.wav-0ef9612367a57ec2da725bb3ea762881.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

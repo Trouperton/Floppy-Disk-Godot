@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cu1j7erm8dcc5"
+path="res://.godot/imported/Chiptune Vol8 Pirates Intensity 1.wav-0be598583298f650a52fa14934bb83e5.sample"
+
+[deps]
+
+source_file="res://resources/audio/music/Chiptune Music Pack Vol. 8/Pirates (RT 3.253)/Chiptune Vol8 Pirates Intensity 1.wav"
+dest_files=["res://.godot/imported/Chiptune Vol8 Pirates Intensity 1.wav-0be598583298f650a52fa14934bb83e5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

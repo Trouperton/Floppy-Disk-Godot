@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://dgxs0fjxsa6md"]
+
+[ext_resource type="AudioStream" uid="uid://gjsx0vvh22et" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Disco (RT 3.484)/Chiptune Vol8 Disco Intensity 1.wav" id="1_wsvg3"]
+[ext_resource type="Script" uid="uid://bvf8e6bgo15uc" path="res://OvaniPlugin/OvaniSong.gd" id="1_xpeyy"]
+[ext_resource type="AudioStream" uid="uid://bccvnmk0yf6ky" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Disco (RT 3.484)/Chiptune Vol8 Disco Intensity 2.wav" id="2_jt0om"]
+[ext_resource type="AudioStream" uid="uid://cvwok171ic4f0" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Disco (RT 3.484)/Chiptune Vol8 Disco Main.wav" id="3_k42g6"]
+[ext_resource type="AudioStream" uid="uid://b3le4um5pihf" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Disco (RT 3.484)/Chiptune Vol8 Disco Cut 30.wav" id="4_qyt45"]
+[ext_resource type="AudioStream" uid="uid://bqtpsowsg68nw" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Disco (RT 3.484)/Chiptune Vol8 Disco Cut 60.wav" id="5_2sgaq"]
+
+[resource]
+script = ExtResource("1_xpeyy")
+Intensity1 = ExtResource("1_wsvg3")
+Intensity2 = ExtResource("2_jt0om")
+Intensity3 = ExtResource("3_k42g6")
+Loop30 = ExtResource("4_qyt45")
+Loop60 = ExtResource("5_2sgaq")
+ReverbTail = 3.484
+metadata/_custom_type_script = "uid://bvf8e6bgo15uc"

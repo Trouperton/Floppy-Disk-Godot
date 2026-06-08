@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://jvwj04ftiiy5"
+path="res://.godot/imported/Chiptune Vol8 Island Intensity 1.wav-e3eb82025cbab858143134de00a8ebad.sample"
+
+[deps]
+
+source_file="res://resources/audio/music/Chiptune Music Pack Vol. 8/Island (RT 4.331)/Chiptune Vol8 Island Intensity 1.wav"
+dest_files=["res://.godot/imported/Chiptune Vol8 Island Intensity 1.wav-e3eb82025cbab858143134de00a8ebad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

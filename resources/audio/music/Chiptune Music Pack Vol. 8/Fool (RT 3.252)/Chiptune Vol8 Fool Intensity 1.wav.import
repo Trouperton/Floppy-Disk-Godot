@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0phvxjgxitix"
+path="res://.godot/imported/Chiptune Vol8 Fool Intensity 1.wav-b845fa967f6d35c9f71c4be5614287a6.sample"
+
+[deps]
+
+source_file="res://resources/audio/music/Chiptune Music Pack Vol. 8/Fool (RT 3.252)/Chiptune Vol8 Fool Intensity 1.wav"
+dest_files=["res://.godot/imported/Chiptune Vol8 Fool Intensity 1.wav-b845fa967f6d35c9f71c4be5614287a6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

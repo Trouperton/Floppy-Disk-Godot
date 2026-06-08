@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dd6h541i3uetb"
+path="res://.godot/imported/Chiptune Vol8 Building Blocks Cut 60.wav-2f7fe547964f4118bf0778b0e73db7e8.sample"
+
+[deps]
+
+source_file="res://resources/audio/music/Chiptune Music Pack Vol. 8/Building Blocks (RT 3.227)/Chiptune Vol8 Building Blocks Cut 60.wav"
+dest_files=["res://.godot/imported/Chiptune Vol8 Building Blocks Cut 60.wav-2f7fe547964f4118bf0778b0e73db7e8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

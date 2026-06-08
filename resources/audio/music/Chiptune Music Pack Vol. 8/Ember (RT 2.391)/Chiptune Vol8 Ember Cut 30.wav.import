@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7l0i06drehrl"
+path="res://.godot/imported/Chiptune Vol8 Ember Cut 30.wav-c7bb32f54e1b205fb8d4bda1e50c36f7.sample"
+
+[deps]
+
+source_file="res://resources/audio/music/Chiptune Music Pack Vol. 8/Ember (RT 2.391)/Chiptune Vol8 Ember Cut 30.wav"
+dest_files=["res://.godot/imported/Chiptune Vol8 Ember Cut 30.wav-c7bb32f54e1b205fb8d4bda1e50c36f7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
