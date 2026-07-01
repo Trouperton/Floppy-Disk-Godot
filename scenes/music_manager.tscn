@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c1kl4n5xr6e8b" path="res://code/scripts/music_manager.gd" id="1_hetdf"]
 [ext_resource type="Script" uid="uid://bsdhnhsyxsven" path="res://OvaniPlugin/OvaniPlayer.gd" id="2_jd6i5"]
 [ext_resource type="Script" uid="uid://bvf8e6bgo15uc" path="res://OvaniPlugin/OvaniSong.gd" id="3_yodp2"]
-[ext_resource type="Resource" uid="uid://b17ggoqmsj7s8" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/pirates.tres" id="4_yodp2"]
+[ext_resource type="Resource" uid="uid://g4tgj6ojb1ee" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/lost_in_adventure.tres" id="4_yodp2"]
 
 [node name="Music Manager" type="Control" unique_id=1989173590 node_paths=PackedStringArray("music_player")]
 process_mode = 3
@@ -19,6 +19,5 @@ music_player = NodePath("OvaniPlayer")
 [node name="OvaniPlayer" type="Node" parent="." unique_id=2016025912]
 script = ExtResource("2_jd6i5")
 QueuedSongs = Array[ExtResource("3_yodp2")]([ExtResource("4_yodp2")])
-Intensity = 1.0
 Bus = &"Music"
 metadata/_custom_type_script = "uid://bsdhnhsyxsven"
