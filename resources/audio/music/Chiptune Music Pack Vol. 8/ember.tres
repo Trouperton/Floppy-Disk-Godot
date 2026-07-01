@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://bcquiymij5ta"]
+
+[ext_resource type="AudioStream" uid="uid://m0twdygviemo" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Ember (RT 2.391)/Chiptune Vol8 Ember Intensity 1.wav" id="1_2u6ro"]
+[ext_resource type="Script" uid="uid://bvf8e6bgo15uc" path="res://OvaniPlugin/OvaniSong.gd" id="1_v7mex"]
+[ext_resource type="AudioStream" uid="uid://ckdqubwbhjtjw" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Ember (RT 2.391)/Chiptune Vol8 Ember Intensity 2.wav" id="2_5y13b"]
+[ext_resource type="AudioStream" uid="uid://vtwud7hqlt3v" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Ember (RT 2.391)/Chiptune Vol8 Ember Main.wav" id="3_4ei16"]
+[ext_resource type="AudioStream" uid="uid://c7l0i06drehrl" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Ember (RT 2.391)/Chiptune Vol8 Ember Cut 30.wav" id="4_pi7mu"]
+[ext_resource type="AudioStream" uid="uid://dlt6l1emfwt5u" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Ember (RT 2.391)/Chiptune Vol8 Ember Cut 60.wav" id="5_f0cue"]
+
+[resource]
+script = ExtResource("1_v7mex")
+Intensity1 = ExtResource("1_2u6ro")
+Intensity2 = ExtResource("2_5y13b")
+Intensity3 = ExtResource("3_4ei16")
+Loop30 = ExtResource("4_pi7mu")
+Loop60 = ExtResource("5_f0cue")
+ReverbTail = 2.391
+metadata/_custom_type_script = "uid://bvf8e6bgo15uc"

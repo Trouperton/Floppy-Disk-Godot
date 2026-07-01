@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://bnoc2v8kur4y5"]
+
+[ext_resource type="Script" uid="uid://bvf8e6bgo15uc" path="res://OvaniPlugin/OvaniSong.gd" id="1_0idta"]
+[ext_resource type="AudioStream" uid="uid://b3iyny6rdo330" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Crisis (RT 2.278)/Chiptune Vol8 Crisis Intensity 1.wav" id="1_wchd6"]
+[ext_resource type="AudioStream" uid="uid://bcgsbbnxa42ii" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Crisis (RT 2.278)/Chiptune Vol8 Crisis Intensity 2.wav" id="2_g6y2q"]
+[ext_resource type="AudioStream" uid="uid://clucqmvckgp2f" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Crisis (RT 2.278)/Chiptune Vol8 Crisis Main.wav" id="3_qy30j"]
+[ext_resource type="AudioStream" uid="uid://dpcstcf21orfv" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Crisis (RT 2.278)/Chiptune Vol8 Crisis Cut 30.wav" id="4_a3m22"]
+[ext_resource type="AudioStream" uid="uid://cymkbuefa35kj" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Crisis (RT 2.278)/Chiptune Vol8 Crisis Cut 60.wav" id="5_24v6i"]
+
+[resource]
+script = ExtResource("1_0idta")
+Intensity1 = ExtResource("1_wchd6")
+Intensity2 = ExtResource("2_g6y2q")
+Intensity3 = ExtResource("3_qy30j")
+Loop30 = ExtResource("4_a3m22")
+Loop60 = ExtResource("5_24v6i")
+ReverbTail = 2.278
+metadata/_custom_type_script = "uid://bvf8e6bgo15uc"

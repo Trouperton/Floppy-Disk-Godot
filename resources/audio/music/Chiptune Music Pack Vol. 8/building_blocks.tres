@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://gcwksl1amsu2"]
+
+[ext_resource type="AudioStream" uid="uid://c4r8esgyqel7a" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Building Blocks (RT 3.227)/Chiptune Vol8 Building Blocks Intensity 1.wav" id="1_i8e11"]
+[ext_resource type="Script" uid="uid://bvf8e6bgo15uc" path="res://OvaniPlugin/OvaniSong.gd" id="1_qlgjb"]
+[ext_resource type="AudioStream" uid="uid://bfsoh2x8p7npc" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Building Blocks (RT 3.227)/Chiptune Vol8 Building Blocks Intensity 2.wav" id="2_fp061"]
+[ext_resource type="AudioStream" uid="uid://c671o6kv4nuy7" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Building Blocks (RT 3.227)/Chiptune Vol8 Building Blocks Main.wav" id="3_egdqa"]
+[ext_resource type="AudioStream" uid="uid://qc3a0013wcc" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Building Blocks (RT 3.227)/Chiptune Vol8 Building Blocks Cut 30.wav" id="4_aqvqm"]
+[ext_resource type="AudioStream" uid="uid://dd6h541i3uetb" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Building Blocks (RT 3.227)/Chiptune Vol8 Building Blocks Cut 60.wav" id="5_t3gm2"]
+
+[resource]
+script = ExtResource("1_qlgjb")
+Intensity1 = ExtResource("1_i8e11")
+Intensity2 = ExtResource("2_fp061")
+Intensity3 = ExtResource("3_egdqa")
+Loop30 = ExtResource("4_aqvqm")
+Loop60 = ExtResource("5_t3gm2")
+ReverbTail = 3.227
+metadata/_custom_type_script = "uid://bvf8e6bgo15uc"

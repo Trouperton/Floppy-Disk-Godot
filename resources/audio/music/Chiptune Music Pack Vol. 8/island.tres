@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://0f2opunbh3qr"]
+
+[ext_resource type="Script" uid="uid://bvf8e6bgo15uc" path="res://OvaniPlugin/OvaniSong.gd" id="1_sedxa"]
+[ext_resource type="AudioStream" uid="uid://jvwj04ftiiy5" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Island (RT 4.331)/Chiptune Vol8 Island Intensity 1.wav" id="1_vu1f5"]
+[ext_resource type="AudioStream" uid="uid://co0pagmnlrn8p" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Island (RT 4.331)/Chiptune Vol8 Island Intensity 2.wav" id="2_i8uys"]
+[ext_resource type="AudioStream" uid="uid://81ojmvonasm7" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Island (RT 4.331)/Chiptune Vol8 Island Main.wav" id="3_mhqoy"]
+[ext_resource type="AudioStream" uid="uid://dxnpmvex2ku5f" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Island (RT 4.331)/Chiptune Vol8 Island Cut 30.wav" id="4_xd4jd"]
+[ext_resource type="AudioStream" uid="uid://do7eiaw553xxl" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Island (RT 4.331)/Chiptune Vol8 Island Cut 60.wav" id="5_g5i2f"]
+
+[resource]
+script = ExtResource("1_sedxa")
+Intensity1 = ExtResource("1_vu1f5")
+Intensity2 = ExtResource("2_i8uys")
+Intensity3 = ExtResource("3_mhqoy")
+Loop30 = ExtResource("4_xd4jd")
+Loop60 = ExtResource("5_g5i2f")
+ReverbTail = 4.331
+metadata/_custom_type_script = "uid://bvf8e6bgo15uc"

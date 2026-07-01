@@ -22,12 +22,23 @@ buses/default_bus_layout="uid://oh3rlpxfniaa"
 [autoload]
 
 UiSoundManager="*uid://cqm3vob2dyii8"
+MusicManager="*uid://dgjqmo2tbgwgu"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://_dev/": "gray",
+"res://art/": "pink",
+"res://code/": "red",
+"res://resources/": "green",
+"res://scenes/": "blue"
+}
 
 [global_group]
 

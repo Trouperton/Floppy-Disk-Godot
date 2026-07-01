@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://g4tgj6ojb1ee"]
+
+[ext_resource type="AudioStream" uid="uid://sg7heipiaxe5" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Lost In Adventure (RT 3.706)/Chiptune Vol8 Lost In Adventure Intensity 1.wav" id="1_5sgu4"]
+[ext_resource type="Script" uid="uid://bvf8e6bgo15uc" path="res://OvaniPlugin/OvaniSong.gd" id="1_f3ld3"]
+[ext_resource type="AudioStream" uid="uid://dehfvq3814tse" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Lost In Adventure (RT 3.706)/Chiptune Vol8 Lost In Adventure Intensity 2.wav" id="2_6trx8"]
+[ext_resource type="AudioStream" uid="uid://cbb37085yjccl" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Lost In Adventure (RT 3.706)/Chiptune Vol8 Lost In Adventure Main.wav" id="3_qlp4j"]
+[ext_resource type="AudioStream" uid="uid://t0lp2fsrmhqo" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Lost In Adventure (RT 3.706)/Chiptune Vol8 Lost In Adventure Cut 30.wav" id="4_kbnk0"]
+[ext_resource type="AudioStream" uid="uid://bi3wym8vb5i5i" path="res://resources/audio/music/Chiptune Music Pack Vol. 8/Lost In Adventure (RT 3.706)/Chiptune Vol8 Lost In Adventure Cut 60.wav" id="5_orvkq"]
+
+[resource]
+script = ExtResource("1_f3ld3")
+Intensity1 = ExtResource("1_5sgu4")
+Intensity2 = ExtResource("2_6trx8")
+Intensity3 = ExtResource("3_qlp4j")
+Loop30 = ExtResource("4_kbnk0")
+Loop60 = ExtResource("5_orvkq")
+ReverbTail = 3.706
+metadata/_custom_type_script = "uid://bvf8e6bgo15uc"
